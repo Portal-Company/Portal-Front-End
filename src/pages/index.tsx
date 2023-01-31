@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Banner from '../components/banner'
 import { Layout } from '../components/layout'
 import React from 'react'
+import ShoolCardsContainer from '../components/shoolCardsContainer'
 
 const Home: NextPage = () => {
 
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
     </Head>
     <React.Fragment>
       <Banner/>
+      <ShoolCardsContainer/>
     </React.Fragment>
   </React.Fragment>
   )
