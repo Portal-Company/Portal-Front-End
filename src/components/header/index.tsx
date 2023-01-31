@@ -12,6 +12,18 @@ const Header=()=>{
 
             <S.BottomHeader>
                 <Image src={logoportal} width={180} height={70} alt='appLogo'/>
+                <S.Menu>
+                    <li>
+                        <a href="#">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Escolas
+                        </a>
+                    </li>     
+                </S.Menu>
             </S.BottomHeader>
         </S.MainContainer>
     )
