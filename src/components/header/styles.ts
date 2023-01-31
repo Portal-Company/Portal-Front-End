@@ -7,6 +7,7 @@ export const MainContainer=styled.div`
 export const TopHeader=styled.header`
     display: flex;
     justify-content: center;
+    padding: ${({theme})=>theme.spacings.xxxxxmultipleeight};
 `;
 
 export const Menu=styled.ul`
