@@ -23,7 +23,6 @@ const Header=()=>{
                             Escolas
                         </a>
                     </li>     
-                    <Button children='Entrar'/>
                 </S.Menu>
             </S.BottomHeader>
         </S.MainContainer>
