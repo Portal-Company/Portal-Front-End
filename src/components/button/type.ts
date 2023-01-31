@@ -3,5 +3,6 @@ import { ButtonHTMLAttributes } from 'react'
 type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonProps = {
-  children: React.ReactNode,
+  Icon:React.ReactNode,
+  textName: React.ReactNode,
 } & ButtonTypes
