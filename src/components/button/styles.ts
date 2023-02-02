@@ -9,9 +9,11 @@ export const Button = styled.button`
   background: ${({ theme }) => theme.colors.primary.xblue};
   color: ${({ theme }) => theme.colors.tertiary.white};
   font-size: ${({ theme }) => theme.font.sizes.midle};
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   span {
-    margin: 0 0.3rem;
+    margin: 0 0.7rem;
   }
 
   :hover {
