@@ -32,7 +32,7 @@ const slider = keyframes`
   left: -300%;
 }
 100%{
-  left: -400%;
+  left: 0;
 }
 `;
 
@@ -40,6 +40,7 @@ export const ContainerContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
+  height: 80vh;
 `;
 
 export const ContainerMain = styled.div`
@@ -82,9 +83,8 @@ export const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 20%;
-  height: 100vh;
+  height: 80vh;
   flex-direction: column;
   color: #fff;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
