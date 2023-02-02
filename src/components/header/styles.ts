@@ -1,33 +1,30 @@
 import styled from "styled-components";
 
-export const MainContainer = styled.main`
-  background-color: #161d26;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 6.5rem;
+export const MainContainer=styled.div`
+
 `;
 
-export const Content = styled.div`
-  display: flex;
-  width: 90%;
-  align-items: center;
-  justify-content: space-between;
+export const TopHeader=styled.header`
+    display: flex;
+    justify-content: center;
+    padding: ${({theme})=>theme.spacings.xxxxxmultipleeight};
 `;
 
-export const Menu = styled.div`
-  color: #9fa0ad;
-  display: flex;
-  margin: 5%;
-
-  li {
-    margin: 0 3rem;
-    font-size: 1.7rem;
-  }
+export const Menu=styled.ul`
+    color: #9FA0AD;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    li{
+        font-size: 1.7rem;
+        font-weight: ${({theme})=>theme.font.medium};
+    }
 `;
 
-export const ContentLeft = styled.div`
-  display: flex;
-  align-items: center;
+export const BottomHeader=styled.header`
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    background-color: ${({theme})=>theme.colors.secondary.xxdark};
+    padding: ${({theme})=>theme.spacings.xxxxmultipleeight} 3rem;
 `;
