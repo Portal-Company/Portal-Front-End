@@ -8,7 +8,7 @@ import M7 from "../../../public/assets/m7.jpg";
 import { SiMattermost } from "react-icons/si";
 import { useRouter } from "next/router";
 import Button from "../button/button";
-const ofertaFormativa = () => {
+const OfertaFormativa: React.FC = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   });
@@ -41,4 +41,4 @@ const ofertaFormativa = () => {
   );
 };
 
-export default ofertaFormativa;
+export default OfertaFormativa;
