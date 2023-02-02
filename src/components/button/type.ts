@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes } from "react";
 
-type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement>
+type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type ButtonProps = {
-  Icon:React.ReactNode,
-  textName: React.ReactNode,
-} & ButtonTypes
+  Icon: React.ReactNode;
+  textName: React.ReactNode;
+} & ButtonTypes;
