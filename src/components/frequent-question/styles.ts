@@ -13,7 +13,7 @@ export const Container = styled.section`
     color: #999;
     margin: 5rem 0;
   }
-  `
+`
 
 export const Title = styled.h2`
   color: #4E4E4E;
