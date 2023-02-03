@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import * as S from './styles'
 import { FrequentQuestionsProps } from './type'
 import { questions } from './mock'
-import { FiArrowDown, FiMinus, FiPlus } from 'react-icons/fi'
+import { FiMinus, FiPlus } from 'react-icons/fi'
 
 const FrequentQuestions: React.FC = () => {
   const [clicked, setCliked] = useState<number>()

@@ -22,6 +22,6 @@ export const questions = [
   {
     id: 4,
     question: 'Como usar a App ?',
-    answer: 'clique em inscrever, e preencha o formulário de inscrição'
+    answer: 'Clique em inscrever, e preencha o formulário de inscrição'
   },
 ]

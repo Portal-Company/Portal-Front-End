@@ -13,7 +13,7 @@ export const Container = styled.section`
     color: #999;
     margin: 5rem 0;
   }
-`
+`;
 
 export const Title = styled.h2`
   color: #4E4E4E;
@@ -21,14 +21,14 @@ export const Title = styled.h2`
   font-weight: bold;
   line-height: 30px;
   position: relative;
-  `
+`;
 
 export const AccordionList = styled.ul`
   width: 50%;
   @media (max-width: 1000px) {
     width: 70%;
   }
-  `
+`;
 export const Item = styled.li`
   position: relative;
   height: 100%;
@@ -80,7 +80,7 @@ export const Item = styled.li`
     overflow: hidden;
     transition: 0.3s ease-out;
   }
-`
+`;
 
 export const ContactIndicate = styled.span`
   text-align: center;
@@ -89,4 +89,4 @@ export const ContactIndicate = styled.span`
   justify-content: center;
   margin: 4rem 0;
   font-size: ${({ theme }) => theme.font.sizes.small};
-`
+`;
