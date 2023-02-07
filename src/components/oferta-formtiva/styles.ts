@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   background-color: #fff;
   width: 100%;
-
   display: flex;
   flex-direction: column;
 `;
@@ -19,6 +18,7 @@ export const Title = styled.div`
   h1 {
     display: flex;
     justify-content: center;
+    font-family: Comfortaa;
     font-weight: 300;
     border-bottom: 1px solid #e5e5e5;
     padding: 1.8rem;
@@ -41,7 +41,8 @@ export const CardText = styled.div`
 
   h2 {
     margin-bottom: 5rem;
-    font-weight: 500;
-    font-size: 3.5rem;
+
+    font-size: 2.7rem;
+    font-family: Comfortaa;
   }
 `;

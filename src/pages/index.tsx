@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Banner from "../components/banner";
+import PossivelSaber from "../components/possivel-fazer";
 import OfertaFormativa from "../components/oferta-formtiva";
 import { Layout } from "../components/layout";
 import React from "react";
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       </Head>
       <React.Fragment>
         <Banner />
+        <PossivelSaber />
         <OfertaFormativa />
         <ShoolCardsContainer />
         <Footer />

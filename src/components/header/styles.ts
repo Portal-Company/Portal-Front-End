@@ -7,6 +7,7 @@ export const MainContainer = styled.main`
   align-items: center;
   width: 100%;
   height: 6.5rem;
+  font-family: Comfortaa;
 `;
 
 export const Content = styled.div`

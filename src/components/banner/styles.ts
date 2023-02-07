@@ -70,6 +70,7 @@ export const Button = styled.button`
   border-radius: 1.1rem;
   width: 21rem;
   height: 5rem;
+  font-family: Comfortaa;
   padding: 1.2rem ${({ theme }) => theme.spacings.xxxmultipleeight};
   background-color: ${({ backgroundColor }: buttonProps) => backgroundColor};
   color: ${({ color }: buttonProps) => color};
