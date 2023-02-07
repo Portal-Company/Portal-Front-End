@@ -18,14 +18,8 @@ const PossivelSaber: React.FC = () => {
         <h1>O que é possível fazer no portal?</h1>
       </S.Title>
       <S.Card>
-        <Image
-          src={Img}
-          alt="IMG"
-          width={600}
-          height={400}
-          data-aos="fade-right"
-        />
-        <S.CardText data-aos="fade-left">
+        <Image src={Img} alt="IMG" width={600} height={400} />
+        <S.CardText>
           <div>
             <CiSearch />
             <span>Pesquisar e ver perfil de escola</span>

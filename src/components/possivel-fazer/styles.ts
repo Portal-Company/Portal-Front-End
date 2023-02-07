@@ -21,7 +21,7 @@ export const Title = styled.div`
     font-weight: 300;
     border-bottom: 1px solid #e5e5e5;
     padding: 1.8rem;
-    font-family: Comfortaa;
+
     width: 60%;
   }
 `;
