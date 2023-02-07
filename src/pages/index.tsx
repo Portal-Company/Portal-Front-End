@@ -5,7 +5,6 @@ import OfertaFormativa from "../components/oferta-formtiva";
 import { Layout } from "../components/layout";
 import React from "react";
 import ShoolCardsContainer from "../components/shoolCardsContainer";
-import { Footer } from "../components/footer";
 
 const Home: NextPage = () => {
   return (
@@ -17,7 +16,6 @@ const Home: NextPage = () => {
         <Banner />
         <OfertaFormativa />
         <ShoolCardsContainer />
-        <Footer />
       </React.Fragment>
     </React.Fragment>
   );
