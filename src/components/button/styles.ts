@@ -12,6 +12,7 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Comfortaa;
   span {
     margin: 0 0.7rem;
   }

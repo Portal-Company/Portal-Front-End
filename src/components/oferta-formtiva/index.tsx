@@ -5,7 +5,7 @@ import Aos from "aos";
 import M6 from "../../../public/assets/m6.jpg";
 
 import M7 from "../../../public/assets/m7.jpg";
-import { SiMattermost } from "react-icons/si";
+import { CiGlobe } from "react-icons/ci";
 import { useRouter } from "next/router";
 import Button from "../button/button";
 const OfertaFormativa: React.FC = () => {
@@ -27,13 +27,14 @@ const OfertaFormativa: React.FC = () => {
         />
         <S.CardText data-aos="fade-left">
           <h2>Engenharias e Tecnologias</h2>
-          <Button Icon={<SiMattermost />} textName="Ver Escolas" />
+
+          <Button Icon={<CiGlobe />} textName="Ver Escolas" />
         </S.CardText>
       </S.Card>
       <S.Card>
         <S.CardText>
           <h2>Ciências Sociais Aplicadas</h2>
-          <Button Icon={<SiMattermost />} textName="Ver Escolas" />
+          <Button Icon={<CiGlobe />} textName="Ver Escolas" />
         </S.CardText>
         <Image src={M7} alt="IMG" width={600} height={400} />
       </S.Card>

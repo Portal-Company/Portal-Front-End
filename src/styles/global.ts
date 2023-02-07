@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components'
+import { createGlobalStyle, css } from "styled-components";
 
 export default createGlobalStyle`
   @font-face {
@@ -92,4 +92,4 @@ export default createGlobalStyle`
     html {
       font-size: 62.5%;
     }
-  `}`
+  `}`;
