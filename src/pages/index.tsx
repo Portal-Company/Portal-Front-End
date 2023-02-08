@@ -3,6 +3,7 @@ import Head from "next/head";
 import Banner from "../components/banner";
 import PossivelSaber from "../components/possivel-fazer";
 import OfertaFormativa from "../components/oferta-formtiva";
+import ObjectivoApp from "../components/objectivo-app";
 import { Layout } from "../components/layout";
 import React from "react";
 import ShoolCardsContainer from "../components/shoolCardsContainer";
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
         <Banner />
         <PossivelSaber />
         <OfertaFormativa />
+        <ObjectivoApp />
         <ShoolCardsContainer />
         <Footer />
       </React.Fragment>

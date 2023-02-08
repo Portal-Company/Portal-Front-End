@@ -6,7 +6,7 @@ import M6 from "../../../public/assets/m6.jpg";
 
 import M7 from "../../../public/assets/m7.jpg";
 import { CiGlobe } from "react-icons/ci";
-import { useRouter } from "next/router";
+
 import Button from "../button/button";
 const OfertaFormativa: React.FC = () => {
   useEffect(() => {
