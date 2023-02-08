@@ -3,6 +3,7 @@ import Head from "next/head";
 import Banner from "../components/banner";
 import PossivelSaber from "../components/possivel-fazer";
 import OfertaFormativa from "../components/oferta-formtiva";
+import ObjectivoApp from "../components/objectivo-app";
 import { Layout } from "../components/layout";
 import React from "react";
 import ShoolCardsContainer from "../components/shoolCardsContainer";
@@ -13,11 +14,15 @@ const Home: NextPage = () => {
     <React.Fragment>
       <Head>
         <title>Portal Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
       </Head>
       <React.Fragment>
         <Banner />
         <PossivelSaber />
         <OfertaFormativa />
+        <ObjectivoApp />
         <ShoolCardsContainer />
         <Footer />
       </React.Fragment>

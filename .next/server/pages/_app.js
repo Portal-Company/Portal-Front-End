@@ -126,7 +126,7 @@ const theme = {
         solid: (color)=>`0.1rem solid ${color}`
     },
     font: {
-        family: "Poppins, -apple-system, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+        family: "Comfortaa,Poppins, -apple-system, Roboto, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
         regular: 400,
         medium: 500,
         smallbold: 600,

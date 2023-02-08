@@ -4,7 +4,6 @@ export const Container=styled.footer`
     background-color: ${({theme})=>theme.colors.secondary.xxdark};
     position: relative;
     top:3rem;
-    padding:7rem 0;
 `;
 
 
