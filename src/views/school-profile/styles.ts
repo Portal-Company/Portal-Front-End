@@ -14,16 +14,16 @@ export const CardBackground=styled.div`
         font-size: 4rem;
     }
     p{
-        font-size: 2rem;
+        font-size: 1.7rem;
         color: #333;
     }
-`;
+    `;
 
 export const MainContainer=styled.div`
     position: relative;
     margin:auto;
     padding: 2rem;
-    bottom: 5rem;
+    bottom: 6rem;
     width: 80%;
 `;
 
@@ -41,7 +41,7 @@ export const UserSide=styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
-    `;
+`;
 
 export const Nav=styled.ul`
     display: flex;
@@ -116,7 +116,7 @@ export const UserInfo=styled.div`
 `;
 
 export const Avatar=styled.div`
-
+        
 `;
 
 export const RightSide=styled.div`
