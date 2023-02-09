@@ -5,7 +5,7 @@ export const Container=styled.div`
 `;
 
 export const CardBackground=styled.div`
-    width: 100vw;
+    width: 100%;
     height: 20rem;
     background-color: ${({theme})=>theme.colors.primary.xblue};
     padding: 3rem;
@@ -20,17 +20,17 @@ export const CardBackground=styled.div`
 `;
 
 export const MainContainer=styled.div`
+    position: relative;
+    margin:auto;
     padding: 2rem;
+    bottom: 5rem;
+    width: 80%;
 `;
 
 export const MenuContainer=styled.div`
     border-radius: .5rem;
-    width: 80%;
     height: 7rem;
-    position: relative;
-    bottom: 5rem;
     background-color: #fff;
-    margin:auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,5 +66,47 @@ export const SchoolName=styled.div`
     }
     span{
         color:#999 ;
+    }
+`;
+
+export const LittleCard=styled.div`
+    margin-top: 2rem;
+    background-color: #fff;
+    height: 20rem;
+    width: 25rem;
+
+    div:first-child{
+        h2{
+            color: #333;
+        }
+        padding: 1.5rem;
+        border-bottom: 1px solid #ccc;
+    }
+`;
+
+export const Wrapper=styled.div`
+
+`;
+
+export const LeftSide=styled.div`
+
+`;
+
+export const CenterSide=styled.div`
+
+`;
+
+export const RightSide=styled.div`
+
+`;
+
+export const Noticia=styled.div`
+    display: flex;
+    align-items: center;
+    color: #6d6d6d;
+    margin-top: 1rem;
+    span{
+        padding: 1rem;
+        font-size: 2rem;
     }
 `;

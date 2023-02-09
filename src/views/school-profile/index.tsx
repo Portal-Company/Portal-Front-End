@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import * as S from './styles'
 import avatar from '../../../public/assets/ipil.jpg'
+import { FaEnvelope } from 'react-icons/fa'
 
 const SchoolProfile=()=>{
     return(
@@ -28,6 +29,39 @@ const SchoolProfile=()=>{
                         <li><a href="">Perfil</a></li>
                     </S.Nav>
                 </S.MenuContainer>
+                <S.Wrapper>
+                    <S.LeftSide>
+                        <S.LittleCard>
+                            <div>
+                                <h2>Noticias</h2>
+                            </div>
+                            <S.Noticia>
+                                <span><FaEnvelope/></span>
+                                <p>there is a meetup in your city on fryday at 19:00. see details</p>
+                            </S.Noticia>
+                            <S.Noticia>
+                                <span><FaEnvelope/></span>
+                                <p>20% off coupon on selected items at pharmaprix</p>
+                            </S.Noticia>
+                        </S.LittleCard>
+                        <S.LittleCard>
+                            <div>
+                                <h2>Noticias</h2>
+                            </div>
+                            <S.Noticia>
+                                <span><FaEnvelope/></span>
+                                <p>there is a meetup in your city on fryday at 19:00. see details</p>
+                            </S.Noticia>
+                            <S.Noticia>
+                                <span><FaEnvelope/></span>
+                                <p>20% off coupon on selected items at pharmaprix</p>
+                            </S.Noticia>
+                        </S.LittleCard>
+                    </S.LeftSide>
+                    <S.CenterSide>
+                        
+                    </S.CenterSide>
+                </S.Wrapper>
             </S.MainContainer>
         </S.Container>
     )
