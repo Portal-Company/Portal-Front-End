@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container=styled.div`
     background-color: #f3f3f3;
-`;
+    `;
 
 export const CardBackground=styled.div`
     width: 100%;
@@ -35,13 +35,13 @@ export const MenuContainer=styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-`
+    `
 
 export const UserSide=styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
-`;
+    `;
 
 export const Nav=styled.ul`
     display: flex;
@@ -82,22 +82,45 @@ export const LittleCard=styled.div`
         padding: 1.5rem;
         border-bottom: 1px solid #ccc;
     }
-`;
+    `;
 
 export const Wrapper=styled.div`
-
-`;
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    gap:1.5rem ;
+    `;
 
 export const LeftSide=styled.div`
-
 `;
 
 export const CenterSide=styled.div`
 
 `;
 
-export const RightSide=styled.div`
+export const Item=styled.div`
+    margin-top: 2rem;
+    background-color: #fff;
+    padding: 1rem;
+    span{
+        color: ${({theme})=>theme.colors.primary.xblue};
+    }
+`;
 
+export const Publication=styled.div`
+
+`;
+
+export const UserInfo=styled.div`
+    display: flex;
+    gap: 1rem;
+`;
+
+export const Avatar=styled.div`
+
+`;
+
+export const RightSide=styled.div`
+    
 `;
 
 export const Noticia=styled.div`
@@ -108,5 +131,8 @@ export const Noticia=styled.div`
     span{
         padding: 1rem;
         font-size: 2rem;
+    }
+    a{
+        color: ${({theme})=>theme.colors.primary.xblue};
     }
 `;
