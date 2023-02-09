@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { Layout } from "../components/layout";
 import Head from "next/head";
 import React from "react";
 import SchoolProfile from "../views/school-profile";
@@ -15,5 +16,9 @@ const SchoolProfilePage: NextPage = () => {
     </React.Fragment>
   );
 };
+
+Object.assign(SchoolProfilePage, {
+  Layout,
+});
 
 export default SchoolProfilePage;
