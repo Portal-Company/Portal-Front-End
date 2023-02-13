@@ -28,7 +28,7 @@ export const CardBackground=styled.div`
         align-items: center;
         border-radius: .3rem;
         svg{
-            margin: .3rem;
+            margin:.3rem;
         }
     }
 `;

@@ -12,7 +12,10 @@ const SchoolProfile=()=>{
                     <h2>Bem vindo/a ao meu perfil</h2>
                     <p>Experience a simple yet powerful way to build Dashboards with Qompac UI</p>           
                 </div>
-                <button><FaPen/> Inscrever-se</button>
+                <button>
+                    <FaPen/> 
+                    Inscrever-se
+                </button>
             </S.CardBackground>
             <S.MainContainer>
                 <S.MenuContainer>
