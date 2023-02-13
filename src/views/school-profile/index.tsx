@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import * as S from './styles'
-import avatar from '../../../public/assets/ipil.jpg'
-import { FaEnvelope } from 'react-icons/fa'
+import avatar from '../../../public/assets/ipil2.jpg'
+import { FaEnvelope, FaPen} from 'react-icons/fa'
 import ilustration from '../../../public/assets/m4.jpg'
 
 const SchoolProfile=()=>{
@@ -12,7 +12,7 @@ const SchoolProfile=()=>{
                     <h2>Bem vindo/a ao meu perfil</h2>
                     <p>Experience a simple yet powerful way to build Dashboards with Qompac UI</p>           
                 </div>
-                <button></button>
+                <button><FaPen/> Inscrever-se</button>
             </S.CardBackground>
             <S.MainContainer>
                 <S.MenuContainer>

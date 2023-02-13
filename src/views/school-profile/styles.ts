@@ -2,13 +2,16 @@ import styled from 'styled-components'
 
 export const Container=styled.div`
     background-color: #f3f3f3;
-    `;
+`;
 
 export const CardBackground=styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 20rem;
     background-color: ${({theme})=>theme.colors.primary.xblue};
-    padding: 3rem;
+    padding: 1rem 6rem;
     color: #fff;
     h2{
         font-size: 4rem;
@@ -17,7 +20,18 @@ export const CardBackground=styled.div`
         font-size: 1.7rem;
         color: #333;
     }
-    `;
+    button{
+        border: none;
+        height: 4rem;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        border-radius: .3rem;
+        svg{
+            margin: .3rem;
+        }
+    }
+`;
 
 export const MainContainer=styled.div`
     position: relative;
@@ -35,7 +49,7 @@ export const MenuContainer=styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    `
+`;
 
 export const UserSide=styled.div`
     display: flex;
@@ -82,13 +96,14 @@ export const LittleCard=styled.div`
         padding: 1.5rem;
         border-bottom: 1px solid #ccc;
     }
-    `;
+`;
 
 export const Wrapper=styled.div`
+    position:sticky;
     display:grid;
     grid-template-columns:1fr 2fr 1fr;
-    gap:1.5rem ;
-    `;
+    gap:1.5rem;
+`;
 
 export const LeftSide=styled.div`
 `;
