@@ -86,10 +86,35 @@ export const Card=styled.div`
     }
 `;
 
+export const StepContainer=styled.div`
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    h3{
+        font-size: 2.4rem;
+        width: 53rem;
+    }
+    h2{
+        font-size: 2.9rem;
+    }
+`;
+
+export const FieldContainer=styled.div`
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(40rem,1fr));
+    gap:1.5rem;
+`;
+
+export const Field=styled.div`
+
+`;
+
 export const Button=styled.button`
     background-color: ${({ backgroundColor }: buttonProps) => backgroundColor};
     color: ${({color}:buttonProps)=>color};
     border-radius: .1rem;
     border: none;
     padding: 1rem;
+    margin: 1rem 0;
+    border-radius: .2rem;
 `

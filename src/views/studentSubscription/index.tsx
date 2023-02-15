@@ -1,4 +1,4 @@
-import { FaLock, FaPen } from 'react-icons/fa'
+import { FaCheck, FaLock, FaPen } from 'react-icons/fa'
 import Input from '../../components/input'
 import * as S from './styles'
 
@@ -36,16 +36,34 @@ const StudentSubscription=()=>{
                         </S.Card>
                         <S.Card>
                             <div>
-                                <FaLock/>
+                                <FaCheck/>
                             </div>
-                            <span>Account</span>
+                            <span>Finish</span>
                         </S.Card>
                     </S.CardsContainer>
-                    <label htmlFor="">Nome:</label>
-                    <Input type='text' placeholder='informe o seu nome'/>
-                    <label htmlFor="">Email:</label>
-                    <Input type='email' placeholder='informe o seu email'/>
-
+                    <S.StepContainer>
+                        <h3>Account Information:</h3>
+                        <h2>Step 1-4</h2>
+                    </S.StepContainer>
+                    <S.FieldContainer>
+                        <S.Field>
+                            <label htmlFor="">Nome:</label>
+                            <Input type='text' placeholder='informe o seu nome'/>
+                        </S.Field>
+                        <S.Field>
+                            <label htmlFor="">Email:</label>
+                            <Input type='email' placeholder='informe o seu email'/>
+                        </S.Field>
+                        <S.Field>
+                            <label htmlFor="">Nome:</label>
+                            <Input type='text' placeholder='informe o seu nome'/>
+                        </S.Field>
+                        <S.Field>
+                            <label htmlFor="">Email:</label>
+                            <Input type='email' placeholder='informe o seu email'/>
+                        </S.Field>
+                    </S.FieldContainer>
+                    <S.Button color='#fff' backgroundColor='#1C9DEA'>Next</S.Button>
             </S.FormCard>
         </S.Container>
     )
