@@ -98,7 +98,7 @@ export const Content = styled.div`
   span {
     font-size: 2rem;
     color: #bfbfbf;
-    margin: 1rem 0 5rem 0;
+    margin: 1rem 0 1rem 0;
   }
 `;
 
