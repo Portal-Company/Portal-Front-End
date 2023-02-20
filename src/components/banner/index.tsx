@@ -19,9 +19,6 @@ const Banner = () => {
               <S.Button color="#fff" backgroundColor="#1C9DEA">
                 Inscrever-se
               </S.Button>
-              <S.Button color="#fff" backgroundColor="#161D2B">
-                Cadastrar
-              </S.Button>
             </S.ButtonsContainer>
           </S.Content>
           <Image
@@ -40,9 +37,6 @@ const Banner = () => {
               <S.Button color="#fff" backgroundColor="#1C9DEA">
                 Inscrever-se
               </S.Button>
-              <S.Button color="#fff" backgroundColor="#161D2B">
-                Cadastrar
-              </S.Button>
             </S.ButtonsContainer>
           </S.Content>
           <Image
@@ -60,9 +54,6 @@ const Banner = () => {
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
                 Inscrever-se
-              </S.Button>
-              <S.Button color="#fff" backgroundColor="#161D2B">
-                Cadastrar
               </S.Button>
             </S.ButtonsContainer>
           </S.Content>
@@ -83,9 +74,6 @@ const Banner = () => {
               <S.Button color="#fff" backgroundColor="#1C9DEA">
                 Inscrever-se
               </S.Button>
-              <S.Button color="#fff" backgroundColor="#161D2B">
-                Cadastrar
-              </S.Button>
             </S.ButtonsContainer>
           </S.Content>
           <Image
@@ -104,9 +92,6 @@ const Banner = () => {
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
                 Inscrever-se
-              </S.Button>
-              <S.Button color="#fff" backgroundColor="#161D2B">
-                Cadastrar
               </S.Button>
             </S.ButtonsContainer>
           </S.Content>

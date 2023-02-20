@@ -27,7 +27,7 @@ const Header = () => {
               <a href="#">Escolas</a>
             </li>
           </S.Menu>
-          <Button Icon={<FaRegUser />} textName="Entrar" />
+          {/* <Button Icon={<FaRegUser />} textName="Entrar" /> */}
         </S.ContentLeft>
       </S.Content>
     </S.MainContainer>
