@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const SectionCard = styled.div`
     padding: 1rem;
     position: relative;
-    width: 45rem;
+    width: 30%;
     height: 35rem;
     background: #fff;
     border: 1px solid #ddd;
@@ -14,6 +14,11 @@ export const SectionCard = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 1rem;
+
+    @media screen and (max-width: 894px) {
+        width: 90%;
+        min-width: 250px;
+    }
 
 
     &:hover{
