@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.footer`
   background-color: #161d26;
-  position: relative;
-  top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 `;
 
 export const FooterInformations = styled.div`
