@@ -70,5 +70,5 @@ export const MenuBar=styled.div`
   li:hover{
     background-color:${({theme})=>theme.colors.primary.xblue};
   }
-  max-height:${({showMenu}:showMenuProps)=>showMenu?'10rem':'0rem'}
+  max-height:${({showMenu}:showMenuProps)=>showMenu?'10rem':'0px'}
 `;
