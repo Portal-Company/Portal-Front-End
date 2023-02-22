@@ -59,8 +59,9 @@ export const MenuMobile = styled.div`
 `;
 
 export const MenuBar=styled.div`
-  display:none;
-  padding:1rem;
+  border-top:1px solid #333;
+  border-bottom:1px solid #333;
+  padding:${({showMenu}:showMenuProps)=>showMenu?'1rem':'0rem'};
   background-color:#161d26;
   li{
     color:#fff;
@@ -70,5 +71,6 @@ export const MenuBar=styled.div`
   li:hover{
     background-color:${({theme})=>theme.colors.primary.xblue};
   }
-  max-height:${({showMenu}:showMenuProps)=>showMenu?'10rem':'0px'}
+  height:${({showMenu}:showMenuProps)=>showMenu?'10rem':'0rem'};
+  transition: .3s;
 `;
