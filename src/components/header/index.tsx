@@ -48,6 +48,7 @@ const Header = () => {
           </a>
         </li>
         <li><a href="#">Escolas</a></li>
+        <li><a href="#">Inscrever/se</a></li>
       </S.MenuBar>
     </S.Wrapper>
   );

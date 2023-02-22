@@ -59,18 +59,25 @@ export const MenuMobile = styled.div`
 `;
 
 export const MenuBar=styled.div`
+  display: none;
+  @media screen and  (max-width: 500px) {
+    display:block;
+  }
   border-top:1px solid #333;
   border-bottom:1px solid #333;
   padding:${({showMenu}:showMenuProps)=>showMenu?'1rem':'0rem'};
   background-color:#161d26;
+  height:${({showMenu}:showMenuProps)=>showMenu?'15rem':'0rem'};
+  transition: .3s;
   li{
     color:#fff;
     border-radius:.3rem;
     padding:1rem;
+    background-color: #161d30;
+    margin: .5rem;
+    cursor: pointer;
   }
   li:hover{
     background-color:${({theme})=>theme.colors.primary.xblue};
   }
-  height:${({showMenu}:showMenuProps)=>showMenu?'10rem':'0rem'};
-  transition: .3s;
 `;
