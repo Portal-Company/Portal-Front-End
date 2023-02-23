@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container=styled.div`
-    height: 100vh;
+    height: max-height;
     background-color: #f7fcfe;
 `;
 
@@ -118,6 +118,20 @@ export const Forms=styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    >label{
+        width:100%;
+        max-width:40rem;
+        margin: 2rem 0;
+        text-align:start;
+        font-weight: 500;
+    }
+    >div{
+        width:100%;
+        max-width:40rem;
+        display:flex;
+        align-items: center;
+        justify-content:space-between;
+    }
 `;
 
 export const Footer=styled.div`
@@ -145,4 +159,10 @@ export const ForewardButton=styled(BackButton)`
         margin-top:.5rem;
         margin-left:.5rem ;
     }
+`;
+
+export const Field=styled.div`
+    display:flex;
+    align-items: center;
+    justify-content:center;
 `;
