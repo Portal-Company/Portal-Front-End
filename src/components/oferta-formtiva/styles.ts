@@ -6,32 +6,29 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 2rem;
+  flex-wrap: wrap;
+  >div:nth-child(3){
+    flex-direction: column-reverse;
+  }
 `;
 
-export const Title = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-  align-items: center;
-  margin-top: 6rem;
-
-  h1 {
-    display: flex;
-    justify-content: center;
-    font-family: Comfortaa;
-    font-weight: 300;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 1.8rem;
-    width: 60%;
-  }
+export const Title = styled.h1`
+  margin-top: 5rem;
+  text-align: center;
+  font-family: Comfortaa;
+  font-weight: 300;
+  padding: 1.8rem;
 `;
 
 export const Card = styled.div`
   margin-top: 10rem;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   width: 100%;
+  h2{
+    margin-top: 3rem;
+  }
 `;
 
 export const CardText = styled.div`

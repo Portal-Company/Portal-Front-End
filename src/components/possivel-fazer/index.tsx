@@ -15,7 +15,7 @@ const PossivelSaber: React.FC = () => {
   return (
     <S.Container>
       <S.Title>
-        <h1>O que é possível fazer no portal?</h1>
+        O que é possível fazer no portal?
       </S.Title>
       <S.Card>
         <Image src={Img} alt="IMG" width={600} height={400} />

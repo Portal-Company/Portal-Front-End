@@ -15,13 +15,12 @@ const OfertaFormativa: React.FC = () => {
   return (
     <S.Container>
       <S.Title>
-        <h1>Conheça a nossa Oferta Formativa</h1>
+        Conheça a nossa Oferta Formativa
       </S.Title>
       <S.Card>
         <Image src={M6} alt="IMG" width={600} height={400} data-aos="fade-up" />
         <S.CardText data-aos="fade-down">
           <h2>Engenharias e Tecnologias</h2>
-
           <Button Icon={<CiGlobe />} textName="Ver Escolas" />
         </S.CardText>
       </S.Card>

@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+interface showMenuProps{
+  showMenu:boolean
+}
+
+export const Wrapper=styled.div`
+
+`;
+
 export const MainContainer = styled.main`
   background-color: #161d26;
   display: flex;
@@ -26,9 +34,50 @@ export const Menu = styled.div`
     margin: 0 3rem;
     font-size: 1.7rem;
   }
+  @media screen and  (max-width: 500px) {
+    display:none;
+  }
 `;
 
 export const ContentLeft = styled.div`
-  display: flex;
-  align-items: center;
+ 
+`;
+
+export const MenuMobile = styled.div`
+  display:none;
+  color: #fff;
+  
+  padding: .5rem;
+  font-size: 2.5rem;
+  width:3.5rem;
+  cursor:pointer;
+  @media screen and  (max-width: 500px) {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+`;
+
+export const MenuBar=styled.div`
+  display: none;
+  @media screen and  (max-width: 500px) {
+    display:block;
+  }
+  border-top:1px solid #333;
+  border-bottom:1px solid #333;
+  padding:${({showMenu}:showMenuProps)=>showMenu?'1rem':'0rem'};
+  background-color:#161d26;
+  height:${({showMenu}:showMenuProps)=>showMenu?'15rem':'0rem'};
+  transition: .3s;
+  li{
+    color:#fff;
+    border-radius:.3rem;
+    padding:1rem;
+    background-color: #161d30;
+    margin: .5rem;
+    cursor: pointer;
+  }
+  li:hover{
+    background-color:${({theme})=>theme.colors.primary.xblue};
+  }
 `;

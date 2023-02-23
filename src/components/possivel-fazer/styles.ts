@@ -7,23 +7,12 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const Title = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 6rem;
+export const Title = styled.h1`
+  margin-top: 5rem;
+  text-align: center;
   font-family: Comfortaa;
-
-  h1 {
-    display: flex;
-    justify-content: flex-end;
-    font-weight: 300;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 1.8rem;
-
-    width: 60%;
-  }
+  font-weight: 300;
+  padding: 1.8rem;
 `;
 
 export const Card = styled.div`
@@ -31,6 +20,7 @@ export const Card = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  flex-wrap: wrap;
 `;
 
 export const CardText = styled.div`
