@@ -7,9 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   padding-bottom: 2rem;
   flex-wrap: wrap;
-  >div:nth-child(3){
-    flex-direction: column-reverse;
-  }
+  
 `;
 
 export const Title = styled.h1`
@@ -39,7 +37,6 @@ export const CardText = styled.div`
 
   h2 {
     margin-bottom: 5rem;
-
     font-size: 2.7rem;
     font-family: Comfortaa;
   }
