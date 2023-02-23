@@ -1,9 +1,15 @@
+import { useState } from 'react'
 import { FaCheck, FaFile, FaArrowRight , FaUser } from 'react-icons/fa'
 import Input from '../../components/input'
+import CancelModal from '../cancelModal'
 import * as S from './styles'
+
 const StudentSubscription=()=>{
+
+    const [showModal,setShowModal]=useState<boolean>(false)
     return(
         <S.Container>
+            <CancelModal showModal={showModal} setShowModal={setShowModal}/>
              <S.CardBackground>
                 <S.CenterContent>
                     <h2>Fazer Inscrição de estudante</h2>
@@ -74,7 +80,7 @@ const StudentSubscription=()=>{
                 </S.FormCard>
             </S.WrapperContainer>
             <S.Footer>
-                <S.BackButton>
+                <S.BackButton onClick={()=>setShowModal(!showModal)}>
                     Cancelar
                 </S.BackButton>
                 <S.ForewardButton>
