@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.footer`
+  position: relative;
   background-color: #161d26;
   display: flex;
   flex-direction: column;
   justify-content: end;
+  @media screen and  (max-width: 1150px) {
+    top:30rem;
+  }
+  @media screen and  (max-width: 760px) {
+    top:65rem;
+  }
 `;
 
 export const FooterInformations = styled.div`
@@ -36,7 +43,7 @@ export const PortalSocialMedia = styled.div`
   }
   div {
     display: flex;
-    justify-content: centar;
+    justify-content: center;
     gap: 4.6rem;
     svg {
       font-size: 2.5rem;
