@@ -8,13 +8,17 @@ export const Container=styled.div`
     background-color: #f3f3f3;
 `;
 
+export const WrapperContainer=styled.div`
+    
+`;
+
 export const CardBackground=styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 20rem;
-    background-color: ${({theme})=>theme.colors.primary.xblue};
+    background-color:#1ba6e2;
     padding: 1rem 6rem;
     color: #fff;
     h2{
@@ -34,6 +38,46 @@ export const CardBackground=styled.div`
         svg{
             margin:.3rem;
         }
+    }
+`;
+
+export const CenterContent=styled.div`
+    color: #fff;
+    text-align: center;
+    margin: auto;
+    h2{
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+    span{
+        color: #a1d3f0;
+    }
+`;
+
+export const IconsContainer=styled.div`
+    display: flex;
+    align-items: center;
+    >div:first-child{
+        div{
+            color:#1ba6e2;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+    }
+    >div{
+        div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            border:1px solid #a1d3f0;
+        }
+        color: #a1d3f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 `;
 
@@ -86,18 +130,7 @@ export const Card=styled.div`
     }
 `;
 
-export const StepContainer=styled.div`
-    display: flex;
-    align-items: center;
-    margin: 2rem 0;
-    h3{
-        font-size: 2.4rem;
-        width: 53rem;
-    }
-    h2{
-        font-size: 2.9rem;
-    }
-`;
+
 
 export const FieldContainer=styled.div`
     display:grid;
