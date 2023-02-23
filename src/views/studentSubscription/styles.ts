@@ -1,15 +1,19 @@
 import styled from "styled-components";
-interface buttonProps {
-    color: string;
-    backgroundColor: string;
-  }
 
 export const Container=styled.div`
-    background-color: #f3f3f3;
+    height: 100vh;
+    background-color: #f7fcfe;
 `;
 
 export const WrapperContainer=styled.div`
     
+`;
+
+export const Paragraph=styled.p`
+    font-weight: 500;
+    text-align: start;
+    max-width: 40rem;
+    margin: auto;
 `;
 
 export const CardBackground=styled.div`
@@ -17,7 +21,7 @@ export const CardBackground=styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 20rem;
+    height: 25rem;
     background-color:#1ba6e2;
     padding: 1rem 6rem;
     color: #fff;
@@ -55,17 +59,21 @@ export const CenterContent=styled.div`
 `;
 
 export const IconsContainer=styled.div`
+    margin: 2rem;
     display: flex;
     align-items: center;
     >div:first-child{
         div{
-            color:#1ba6e2;
-            background-color: #fff;
-            border-radius: 50%;
+            div{
+                color:#1ba6e2;
+                background-color: #fff;
+                border-radius: 50%;
+            }
         }
     }
     >div{
-        div{
+        >div{
+            div{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -73,22 +81,29 @@ export const IconsContainer=styled.div`
             height: 4rem;
             border-radius: 50%;
             border:1px solid #a1d3f0;
-        }
+            }
         color: #a1d3f0;
         display: flex;
         align-items: center;
         justify-content: center;
     }
+    p{
+        color:#a1d3f0 ;
+        font-weight: 500;
+        text-align: start;
+    }
+}        
 `;
 
 export const FormCard=styled.div`
     background-color: #fff;
+    box-shadow:0 .5rem 1.5rem rgba(0,0,0,0.1);
     position: relative;
     margin:auto;
-    padding: 2rem;
+    padding: 5rem 2rem;
     bottom: 4rem;
-    width: 80%;
-    border-radius: .3rem;
+    width: 70%;
+    border-radius: 1rem;
     div:first-child{
         border-bottom: 1px solid #ccc;
         h2{
@@ -98,56 +113,32 @@ export const FormCard=styled.div`
 
 `;
 
-export const CardsContainer=styled.div`
-    margin: 2rem 0;
-    display: flex;
-    justify-content: space-between;
-`;
-
-export const Card=styled.div`
-    display: flex;
-    justify-content: start;
-    gap: 1rem;
+export const Forms=styled.div`
+    display:flex ;
     align-items: center;
-    padding: 1rem;
-    background-color: ${({theme})=>theme.colors.primary.xblue};
-    width: 25rem;
-    border-radius:.3rem;
-    div{
-        padding: 1.1rem;
-        background-color: #fff;
-        width: 4rem;
-        height: 4rem;
-        text-align: center;
-        border-radius: 50%;
-        svg{ 
-            color:${({theme})=>theme.colors.primary.xblue} ;
-        }
-    }
-    span{
-        color: #fff;
-        font-weight: 500;
-    }
+    justify-content: center;
+    flex-direction: column;
 `;
 
+export const Footer=styled.div`
+    height: 5rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display:flex;
+    justify-content:space-between;
+    `;
 
+export const BackButton=styled.div`
+    width:50%;
+    background-color: #1ba6e2;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+    `;
 
-export const FieldContainer=styled.div`
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(40rem,1fr));
-    gap:1.5rem;
+export const ForewardButton=styled(BackButton)`
+    background-color:#34b5ed;  
 `;
-
-export const Field=styled.div`
-
-`;
-
-export const Button=styled.button`
-    background-color: ${({ backgroundColor }: buttonProps) => backgroundColor};
-    color: ${({color}:buttonProps)=>color};
-    border-radius: .1rem;
-    border: none;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: .2rem;
-`

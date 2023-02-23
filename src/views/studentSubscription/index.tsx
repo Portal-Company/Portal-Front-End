@@ -1,4 +1,4 @@
-import { FaCheck, FaLock, FaPen, FaPhone, FaPhoneAlt } from 'react-icons/fa'
+import { FaCheck, FaFile, FaLock, FaPen, FaPhone, FaPhoneAlt, FaUser } from 'react-icons/fa'
 import Input from '../../components/input'
 import * as S from './styles'
 const StudentSubscription=()=>{
@@ -11,45 +11,61 @@ const StudentSubscription=()=>{
                     <S.IconsContainer>
                         <div>
                             <div>
-                                <FaPhone/>
+                                <div>
+                                    <FaUser/>
+                                </div>
+                                -----------------
                             </div>
-                            -----------------
+                            <p>Pessoal</p>
                         </div>
                         <div>
                             <div>
-                                <FaPhone/>
+                                <div>
+                                    <FaUser/>
+                                </div>
+                                -----------------
                             </div>
-                            -----------------
+                            <p>Pessoal</p>
                         </div>
                         <div>
                             <div>
-                                <FaPhone/>
+                                <div>
+                                    <FaFile/>
+                                </div>
+                                -----------------
                             </div>
-                            -----------------
+                            <p>Pessoal</p>
                         </div>
                         <div>
                             <div>
-                                <FaPhone/>
+                                <div>
+                                    <FaCheck/>
+                                </div>
                             </div>
+                            <p>Pessoal</p> 
                         </div>
                     </S.IconsContainer>
                 </S.CenterContent>
             </S.CardBackground>
             <S.WrapperContainer>
                 <S.FormCard>
-                        
-                        <S.CardsContainer>
-                            
-                        </S.CardsContainer>
-                        <S.FieldContainer>
-                            <S.Field>
-                                <label htmlFor="">Nome:</label>
-                                <Input type='text' placeholder='informe o seu nome'/>
-                            </S.Field>
-                        </S.FieldContainer>
-                        <S.Button color='#fff' backgroundColor='#1C9DEA'>Next</S.Button>
+                    <S.Paragraph>
+                        Para iniciar o processo de abertura de conta, precisamos de validar o seu nº de telemóvel.
+                    </S.Paragraph>
+                    <S.Forms>
+                        <Input placeholder='O seu Nome' type='text'/>
+                        <Input placeholder='O seu Email' type='email'/>
+                    </S.Forms>
                 </S.FormCard>
             </S.WrapperContainer>
+            <S.Footer>
+                <S.BackButton>
+                    Cancelar
+                </S.BackButton>
+                <S.ForewardButton>
+                    Continuar
+                </S.ForewardButton>
+            </S.Footer>
         </S.Container>
     )
 }
