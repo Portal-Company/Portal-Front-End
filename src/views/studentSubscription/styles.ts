@@ -141,4 +141,8 @@ export const BackButton=styled.div`
 
 export const ForewardButton=styled(BackButton)`
     background-color:#34b5ed;  
+    svg{
+        margin-top:.5rem;
+        margin-left:.5rem ;
+    }
 `;

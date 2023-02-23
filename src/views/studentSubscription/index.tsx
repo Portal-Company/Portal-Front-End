@@ -1,4 +1,4 @@
-import { FaCheck, FaFile, FaLock, FaPen, FaPhone, FaPhoneAlt, FaUser } from 'react-icons/fa'
+import { FaCheck, FaFile, FaArrowRight , FaUser } from 'react-icons/fa'
 import Input from '../../components/input'
 import * as S from './styles'
 const StudentSubscription=()=>{
@@ -63,7 +63,10 @@ const StudentSubscription=()=>{
                     Cancelar
                 </S.BackButton>
                 <S.ForewardButton>
-                    Continuar
+                    Continuar 
+                    <span>
+                        <FaArrowRight/>
+                    </span>
                 </S.ForewardButton>
             </S.Footer>
         </S.Container>
