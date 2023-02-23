@@ -6,8 +6,8 @@ import TopHeader from "../top-header";
 import * as S from "./styles";
 
 type LayoutProps = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
