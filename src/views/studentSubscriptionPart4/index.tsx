@@ -1,4 +1,5 @@
 import { FaCheck, FaFile, FaArrowRight , FaUser } from 'react-icons/fa'
+import { HiLocationMarker } from 'react-icons/hi'
 import Input from '../../components/input'
 import * as S from './styles'
 
@@ -10,7 +11,7 @@ const StudentSubscriptionPart4=()=>{
                     <h2>Fazer Inscrição de estudante</h2>
                     <span>Aderir</span>
                     <S.IconsContainer>
-                        <div>
+                    <div>
                             <div>
                                 <div>
                                     <FaUser/>
@@ -31,11 +32,11 @@ const StudentSubscriptionPart4=()=>{
                         <div>
                             <div>
                                 <div>
-                                    <FaFile/>
+                                    <HiLocationMarker/>
                                 </div>
                                 -----------------
                             </div>
-                            <p>Pessoal</p>
+                            <p>Localização</p>
                         </div>
                         <div>
                             <div>

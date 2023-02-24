@@ -1,16 +1,23 @@
+import Link from 'next/link'
+import { useState } from 'react'
 import { FaCheck, FaFile, FaArrowRight , FaUser } from 'react-icons/fa'
+import { HiLocationMarker } from 'react-icons/hi'
 import Input from '../../components/input'
+import CancelModal from '../cancelModal'
 import * as S from './styles'
 
 const StudentSubscriptionPart2=()=>{
+    
+    const [showModal,setShowModal]=useState<boolean>(false)
     return(
         <S.Container>
+            <CancelModal showModal={showModal} setShowModal={setShowModal}/>
              <S.CardBackground>
                 <S.CenterContent>
                     <h2>Fazer Inscrição de estudante</h2>
                     <span>Aderir</span>
                     <S.IconsContainer>
-                        <div>
+                    <div>
                             <div>
                                 <div>
                                     <FaUser/>
@@ -31,11 +38,11 @@ const StudentSubscriptionPart2=()=>{
                         <div>
                             <div>
                                 <div>
-                                    <FaFile/>
+                                    <HiLocationMarker/>
                                 </div>
                                 -----------------
                             </div>
-                            <p>Pessoal</p>
+                            <p>Localização</p>
                         </div>
                         <div>
                             <div>
@@ -62,11 +69,13 @@ const StudentSubscriptionPart2=()=>{
                 </S.FormCard>
             </S.WrapperContainer>
             <S.Footer>
-                <S.BackButton>
+                <S.BackButton onClick={()=>setShowModal(!showModal)}>
                     Cancelar
                 </S.BackButton>
                 <S.ForewardButton>
-                    Continuar 
+                    <Link href={"/inscricao-parte3"}>
+                        Continuar 
+                    </Link> 
                     <span>
                         <FaArrowRight/>
                     </span>

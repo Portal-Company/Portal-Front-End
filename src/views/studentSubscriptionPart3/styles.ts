@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container=styled.div`
-    height: 100vh;
+    height: max-height;
     background-color: #f7fcfe;
 `;
 
@@ -62,7 +62,7 @@ export const IconsContainer=styled.div`
     margin: 2rem;
     display: flex;
     align-items: center;
-    >div:nth-child(4){
+    >div:nth-child(3){
         div{
             div{
                 color:#1ba6e2;
@@ -117,15 +117,52 @@ export const Forms=styled.div`
     display:flex ;
     align-items: center;
     justify-content: center;
-    div{
-        color:#fff;
-        background-color:#1ba6e2 ;
-        font-size: 10rem;
-        width: 20rem;
-        height:20rem;
-        border-radius: 50rem;
-        display: flex;
+    flex-direction: column;
+    >label{
+        width:100%;
+        max-width:40rem;
+        margin: 2rem 0;
+        text-align:start;
+        font-weight: 500;
+    }
+    >div{
+        width:100%;
+        max-width:40rem;
+        display:flex;
         align-items: center;
-        justify-content: center;
-    } 
+        justify-content:space-between;
+    }
+`;
+
+export const Footer=styled.div`
+    height: 5rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display:flex;
+    justify-content:space-between;
+`;
+
+export const BackButton=styled.div`
+    width:50%;
+    background-color: #161d26;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+`;
+
+export const ForewardButton=styled(BackButton)`
+    background-color:#19293e;  
+    svg{
+        margin-top:.5rem;
+        margin-left:.5rem ;
+    }
+`;
+
+export const Field=styled.div`
+    display:flex;
+    align-items: center;
+    justify-content:center;
 `;
