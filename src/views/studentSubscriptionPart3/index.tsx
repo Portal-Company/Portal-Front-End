@@ -1,13 +1,12 @@
 import Link from 'next/link'
 import { useState } from 'react'
-import { FaCheck, FaFile, FaArrowRight , FaUser } from 'react-icons/fa'
-import { HiLocationMarker } from 'react-icons/hi'
+import { FaCheck, FaFile, FaArrowRight , FaUser} from 'react-icons/fa'
+import {HiLocationMarker} from 'react-icons/hi'
 import Input from '../../components/input'
 import CancelModal from '../cancelModal'
 import * as S from './styles'
 
-const StudentSubscription=()=>{
-
+const StudentSubscriptionPart3=()=>{
     const [showModal,setShowModal]=useState<boolean>(false)
     return(
         <S.Container>
@@ -61,23 +60,10 @@ const StudentSubscription=()=>{
                         Para iniciar o processo de abertura de conta, precisamos de validar o seu nº de telemóvel.
                     </S.Paragraph>
                     <S.Forms>
-                        <Input placeholder='O seu Nome' type='text'/>
-                        <Input placeholder='O seu Nº do BI' type='text'/>
-                        <Input placeholder='O seu Contacto' type='text'/>
-                        <Input placeholder='A sua Localização' type='text'/>
-                        <Input placeholder='Data de nascimento' type='date'/>
-                        <label htmlFor="">Genero</label>
-                        <div>
-                            <S.Field>
-                                <input placeholder='' type='radio'/>
-                                <label htmlFor="">Masculino</label>
-                            </S.Field>
-                            <S.Field>
-                                <input placeholder='' type='radio'/>
-                                <label htmlFor="">Femenino</label>
-                            </S.Field>
-                        </div>
-                        <Input placeholder='Parentesco' type='text'/>
+                        <Input placeholder='O sua foto' name="foto" type='file'/>
+                        <Input placeholder='O sua foto' name="pdfBi" type='file'/>
+                        <Input placeholder='O sua foto' name="pdfCertificado" type='file'/>
+                        <Input placeholder='O sua foto' name="pdfDeclaração" type='file'/>
                     </S.Forms>
                 </S.FormCard>
             </S.WrapperContainer>
@@ -86,7 +72,7 @@ const StudentSubscription=()=>{
                     Cancelar
                 </S.BackButton>
                 <S.ForewardButton>
-                    <Link href={"/inscricao-parte2"}>
+                    <Link href={"/inscricao-parte4"}>
                         Continuar 
                     </Link> 
                     <span>
@@ -98,4 +84,4 @@ const StudentSubscription=()=>{
     )
 }
 
-export default StudentSubscription;
+export default StudentSubscriptionPart3;

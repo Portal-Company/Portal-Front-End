@@ -46,7 +46,6 @@ export const ContentLeft = styled.div`
 export const MenuMobile = styled.div`
   display:none;
   color: #fff;
-  
   padding: .5rem;
   font-size: 2.5rem;
   width:3.5rem;
