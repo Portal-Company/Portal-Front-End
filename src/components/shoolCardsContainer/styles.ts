@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   gap: ${({ theme }) => theme.spacings.xmultipleeight};
-
+  flex-wrap: wrap;
   width: 100%;
   height: 35rem;
   padding: 2rem;
