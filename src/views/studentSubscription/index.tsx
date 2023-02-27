@@ -7,9 +7,10 @@ import * as S from './styles'
 import FormStep1 from '../../components/form-step1'
 import FormStep2 from '../../components/form-step2'
 import FormStep3 from '../../components/form-step3'
+import FormStep4 from '../../components/form-step4'
 
 const StudentSubscription=()=>{
-    const steps=[1,2,3];
+    const steps=[1,2,3,4];
     const [step,setStep] = useState<number>(1);
     const [showModal,setShowModal]=useState<boolean>(false)
 
@@ -21,6 +22,8 @@ const StudentSubscription=()=>{
                 return <FormStep2/>;
             case 3:
                 return <FormStep3/>;
+            case 4:
+                return <FormStep4/>;
             default:
                 return <FormStep1/>;
         }
