@@ -55,19 +55,7 @@ const StudentSubscriptionPart2=()=>{
                     </S.IconsContainer>
                 </S.CenterContent>
             </S.CardBackground>
-            <S.WrapperContainer>
-                <S.FormCard>
-                    <S.Paragraph>
-                        Para iniciar o processo de abertura de conta, precisamos de validar o seu nº de telemóvel.
-                    </S.Paragraph>
-                    <S.Forms>
-                        <Input placeholder='O sua foto' name="foto" type='file'/>
-                        <Input placeholder='O sua foto' name="pdfBi" type='file'/>
-                        <Input placeholder='O sua foto' name="pdfCertificado" type='file'/>
-                        <Input placeholder='O sua foto' name="pdfDeclaração" type='file'/>
-                    </S.Forms>
-                </S.FormCard>
-            </S.WrapperContainer>
+            
             <S.Footer>
                 <S.BackButton onClick={()=>setShowModal(!showModal)}>
                     Cancelar
