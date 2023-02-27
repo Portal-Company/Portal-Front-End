@@ -28,8 +28,7 @@ const FormStep1=()=>{
                     <Input placeholder='Parentesco' type='text'/>
                 </S.Forms>
             </S.FormCard>
-        </S.WrapperContainer>
-            
+        </S.WrapperContainer>       
     )
 }
 export default FormStep1

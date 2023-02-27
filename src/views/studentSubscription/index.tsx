@@ -5,11 +5,24 @@ import { HiLocationMarker } from 'react-icons/hi'
 import CancelModal from '../cancelModal'
 import * as S from './styles'
 import FormStep1 from '../../components/form-step1'
+import FormStep2 from '../../components/form-step2'
 
 const StudentSubscription=()=>{
     const steps=[1,2,3];
     const [step,setStep] = useState<number>(1);
     const [showModal,setShowModal]=useState<boolean>(false)
+
+    const getComponentStep=()=>{
+        switch (step) {
+            case 1:
+                return <FormStep1/>;
+            case 2:
+                return <FormStep2/>
+            default:
+                return <FormStep1/>;
+        }
+    }
+
     return(
         <S.Container>
             <CancelModal showModal={showModal} setShowModal={setShowModal}/>
@@ -57,8 +70,10 @@ const StudentSubscription=()=>{
                 </S.CenterContent>
             </S.CardBackground>
             
-            <FormStep1></FormStep1>
-            
+            <div>
+                {getComponentStep()}
+            </div>
+
             <S.Footer>
                 <S.BackButton onClick={()=>setShowModal(!showModal)}>
                     Cancelar
