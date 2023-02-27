@@ -1,20 +1,29 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import * as S from "./styles"
+import {useRouter} from "next/router"
 
 
 type schoolProps = 
     {
-        name: string
-        imgUrl: string
+        id: string;
+        index: number;
+        nome: string
+        fotoUrl: string
     }
 
 type ISchoolCardSearchProps = {
-    data: schoolProps[]
+    data: schoolProps
 }
 
 
-export const SchoolCardSearch = ( {data}: ISchoolCardSearchProps ) => {
+export const SchoolCardSearch = ( { data }: ISchoolCardSearchProps ) => {
+    const router = useRouter()
+
+    console.log(data);
+    
+    
     const [ishovering, setIsHovering] = useState(-1)
     
     function mouseOver(index:number){
@@ -28,17 +37,15 @@ export const SchoolCardSearch = ( {data}: ISchoolCardSearchProps ) => {
     
     return (
         <>  
-        {data.map((school, index) => (
-            <S.SectionCard key={index} onMouseOver={ () => mouseOver(index) } onMouseOut={mouseOut}>
+            <S.SectionCard onClick={()=> router.push(`/SearchSchool/${data.id}`)} key={data.index} onMouseOver={ () => mouseOver(data.index) } onMouseOut={mouseOut}>
             <S.ContainerImage>
-                <Image loader={()=> school.imgUrl} src={school.imgUrl} alt="Makarenko" width={"100%"} height={"100%"}/>
+                <Image loader={()=> data.fotoUrl} src={data?.fotoUrl} alt={data.nome} width={"100%"} height={"100%"}/>
             </S.ContainerImage>
             <S.Title>
-                {school.name}
+                {data.nome}
             </S.Title>
-            {index === ishovering ? ( <S.Button>Ver Perfil</S.Button> ) : null }
+            {data.index === ishovering ? ( <S.Button onClick={()=> router.push(`/SearchSchool/${data.id}`)}>Ver Perfil</S.Button> ) : null }
             </S.SectionCard>        
-        ))}
         </>
     );
 }

@@ -1,36 +1,39 @@
 import Image from "next/image";
+import React from "react";
 import { Footer } from "../../components/footer";
-import { SchoolCardSearch } from "../../components/SchoolCardSeach";
-import { imgUrl, schools } from "./mock";
+import { ISchoolData } from "../../types";
 import * as S from "./styles"
 
+interface Props {
+    school: ISchoolData;
+}
 
-export function SchoolProfileView (){
-    const logo = "https://inscricao.ipilmakarenko.ao/assets/logotipo.2a4eed3f.png"
+export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
+
+    console.log(school);
     return(
         <>
         <S.Container>
             <S.Content>
                 <S.FirstSection>
                     <S.ContainerImage>
-                        <Image layout="responsive" loader={() => imgUrl} src={imgUrl} width={490} height={500} alt="escola"/>
+                        <Image layout="responsive" loader={() => school.fotoUrl} src={school.fotoUrl}  width={490} height={500} alt="escola"/>
                     </S.ContainerImage>
                     <S.ContainerLeft>
                         <S.Title>
-                            Instituto Politécnico Industrial de Luanda
+                            {school?.nome}     
                         </S.Title>
                         <S.SectionDescription>
                             <span>Localização: </span>
-                            <span> Luanda - primeiro de Maio</span>
+                            <span> {school?.Localizacao?.endereco1} / {school.Localizacao.Provincia.nome}</span>
                         </S.SectionDescription>
                         <S.SectionDescription>
-                            <span>Categoria: </span>
-                            <span> Ensino médio Técnico</span>
+                            <span>Categoria: {school?.Categoria?.nome}</span>
                         </S.SectionDescription>
                         <S.ContainerLeftFooter>
                             <section>
                                 <span>Logo: </span>
-                                <Image loader={() => logo} src={logo} width={100} height={100} alt="escola"/>
+                                {school.logo ? <Image loader={() => school.logo} src={school.logo} width={100} height={100} alt="escola" layout="responsive"/> : null} 
                             </section>
                             <section>
                                 <S.ButtonSubscribe>Inscrever-se</S.ButtonSubscribe>
@@ -45,15 +48,12 @@ export function SchoolProfileView (){
                         </S.Title>
                         <S.SectionDescription>
                             <div>
-                                    <span>
-                                        Fundador:
-                                    </span>
-                                    <span>
-                                        Pedro Muteka
+                                    <span style={{marginRight: "0.5rem"}}>
+                                        Fundador: {school.historial.fundador} 
                                     </span>
                             </div>
                             <span>
-                                Ano: 20/02/2020
+                                Ano:  {school.historial.data}
                             </span>
                         </S.SectionDescription>
                         <S.SectionDescription>
@@ -61,51 +61,40 @@ export function SchoolProfileView (){
                         </S.SectionDescription>
                         <S.ContentStory>
                             <S.DescriptionStory>
-                                It is a long established fact that a reader will be distracted
-                                by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
-                                as opposed to using Content here, content here,
-                                making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
-                                and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                {school.historial.descricao}
                             </S.DescriptionStory>
                         </S.ContentStory>
 
 
                     </S.SecondSectionChild1>
                     <S.SecondSectionChild2>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div>
+                            {school.historial.fotoUrl ? <Image loader={() => school.historial.fotoUrl} src={school.historial.fotoUrl} width={100} height={90} alt="escola"  layout="responsive"/> : null} 
+                        </div>
+                        <div>
+                            {school.historial.fotoUrl2 ? <Image loader={() => school.historial.fotoUrl2} src={school.historial.fotoUrl2} width={100} height={90} alt="escola"  layout="responsive"/> : null} 
+                        </div>
+                        <div>
+                            {school.historial.fotoUrl3 ? <Image loader={() => school.historial.fotoUrl3} src={school.historial.fotoUrl3} width={100} height={90} alt="escola" layout="responsive" /> : null} 
+                        </div>
+                        <div>
+                            {school.historial.fotoUrl4 ? <Image loader={() => school.historial.fotoUrl4} src={school.historial.fotoUrl4} width={100} height={90} alt="escola" layout="responsive" /> : null} 
+                        </div>
                     </S.SecondSectionChild2>
                 </S.SecondSection>
                 <S.ThirdSection>
                     <S.Title>
                         Áreas de Formação
                     </S.Title>
-
                     <S.ContainerCard>
-                        <S.Card>
+                        {school.Categoria.AreaDeFormacao.map((area) => (
+                        <S.Card key={area.id}>                  
                             <div>
-
+                                {area ? <Image loader={() => area?.fotoUrl} src={area.fotoUrl} width={100} height={80} alt="escola" layout="responsive" /> : null}
                             </div>
-                            <span>Informatica</span>
+                            <span>{area.nome}</span> 
                         </S.Card>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
+                        ))}
                     </S.ContainerCard>
                 </S.ThirdSection>
                 <S.FourthSection>
@@ -114,31 +103,15 @@ export function SchoolProfileView (){
                     </S.Title>
 
                     <S.ContainerCard>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
+                        {school?.actividade.map((activity) => (
+                            <S.Card key={activity.id}>
+                                <div>
+                                    {activity ? <Image loader={() => activity.fotoUrl} src={activity.fotoUrl} width={100} height={80} alt="escola" layout="responsive" /> : null}
+                                </div>
+                                <span>{activity.nome}</span>
+                            </S.Card>
+                        ))}
                     </S.ContainerCard>
-
-
                 </S.FourthSection>
                 <S.FifthSection>
                     <S.Title>
@@ -146,31 +119,15 @@ export function SchoolProfileView (){
                     </S.Title>
 
                     <S.ContainerCard>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
+                        {school.actividade.map((activity) => (
+                            <S.Card key={activity.id}>
+                                <div>
+                                    {activity ? <Image loader={() => activity.fotoUrl} src={activity.fotoUrl} width={100} height={75} alt="escola" layout="responsive"/> : null}
+                                </div>
+                                <span>{activity.nome}</span>
+                            </S.Card>
+                        ))}
                     </S.ContainerCard>
-
-
                 </S.FifthSection>
                 
             </S.Content>

@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.tertiary.white};
   max-width: 33rem;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-radius: ${({ theme }) => theme.spacings.xxxxxmultipleeight};
   padding: ${({ theme }) => theme.spacings.xxxmultipleeight};
 `;
@@ -15,6 +19,7 @@ export const ImageContainer = styled.div`
 
 export const Title = styled.h3`
   margin-top: ${({ theme }) => theme.spacings.xxxmultipleeight};
+  text-align: center;
 `;
 
 export const Paragraph = styled.p`

@@ -38,6 +38,28 @@ export const SectionCard = styled.div`
 
     }
 
+    @media screen and (max-width: 768px){
+        cursor: pointer;
+
+    &:hover{
+        background: #fcfdff;
+        cursor: pointer;
+        color: #000;
+        opacity: 0.6;
+        transition: all 0.5s ease;
+
+        h2{
+            font-weight: 400;
+        }
+
+        button{
+            opacity: 1;
+        }
+
+    }
+
+    }
+
 
 `
 export const ContainerImage = styled.div`

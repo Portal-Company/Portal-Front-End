@@ -8,8 +8,15 @@ import { Layout } from "../components/layout";
 import React from "react";
 import ShoolCardsContainer from "../components/shoolCardsContainer";
 import { Footer } from "../components/footer";
+import { api } from "../services";
+import { ISchoolData } from "../types";
 
-const Home: NextPage = () => {
+type HomeProps = {
+  data: ISchoolData[]
+}
+
+const Home: NextPage<HomeProps> = ({ data }) => {
+
   return (
     <React.Fragment>
       <Head>
@@ -23,12 +30,24 @@ const Home: NextPage = () => {
         <PossivelSaber />
         <OfertaFormativa />
         <ObjectivoApp />
-        <ShoolCardsContainer />
+        <ShoolCardsContainer data={data} />
         <Footer />
       </React.Fragment>
     </React.Fragment>
   );
 };
+
+export async function getStaticProps() {
+  const response = await api.get("/school/list");
+  const data:ISchoolData[] = response.data;
+
+  return {
+    props: {
+      data
+    }
+  }
+}
+
 
 Object.assign(Home, {
   Layout,
