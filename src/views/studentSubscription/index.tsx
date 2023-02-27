@@ -2,12 +2,13 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { FaCheck, FaFile, FaArrowRight , FaUser } from 'react-icons/fa'
 import { HiLocationMarker } from 'react-icons/hi'
-import Input from '../../components/input'
 import CancelModal from '../cancelModal'
 import * as S from './styles'
+import FormStep1 from '../../components/form-step1'
 
 const StudentSubscription=()=>{
-
+    const steps=[1,2,3];
+    const [step,setStep] = useState<number>(1);
     const [showModal,setShowModal]=useState<boolean>(false)
     return(
         <S.Container>
@@ -55,32 +56,9 @@ const StudentSubscription=()=>{
                     </S.IconsContainer>
                 </S.CenterContent>
             </S.CardBackground>
-            <S.WrapperContainer>
-                <S.FormCard>
-                    <S.Paragraph>
-                        Para iniciar o processo de abertura de conta, precisamos de validar o seu nº de telemóvel.
-                    </S.Paragraph>
-                    <S.Forms>
-                        <Input placeholder='O seu Nome' type='text'/>
-                        <Input placeholder='O seu Nº do BI' type='text'/>
-                        <Input placeholder='O seu Contacto' type='text'/>
-                        <Input placeholder='A sua Localização' type='text'/>
-                        <Input placeholder='Data de nascimento' type='date'/>
-                        <label htmlFor="">Genero</label>
-                        <div>
-                            <S.Field>
-                                <input placeholder='' type='radio'/>
-                                <label htmlFor="">Masculino</label>
-                            </S.Field>
-                            <S.Field>
-                                <input placeholder='' type='radio'/>
-                                <label htmlFor="">Femenino</label>
-                            </S.Field>
-                        </div>
-                        <Input placeholder='Parentesco' type='text'/>
-                    </S.Forms>
-                </S.FormCard>
-            </S.WrapperContainer>
+            
+            <FormStep1></FormStep1>
+            
             <S.Footer>
                 <S.BackButton onClick={()=>setShowModal(!showModal)}>
                     Cancelar
