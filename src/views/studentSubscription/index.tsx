@@ -6,6 +6,7 @@ import CancelModal from '../cancelModal'
 import * as S from './styles'
 import FormStep1 from '../../components/form-step1'
 import FormStep2 from '../../components/form-step2'
+import FormStep3 from '../../components/form-step3'
 
 const StudentSubscription=()=>{
     const steps=[1,2,3];
@@ -17,7 +18,9 @@ const StudentSubscription=()=>{
             case 1:
                 return <FormStep1/>;
             case 2:
-                return <FormStep2/>
+                return <FormStep2/>;
+            case 3:
+                return <FormStep3/>;
             default:
                 return <FormStep1/>;
         }
@@ -69,7 +72,7 @@ const StudentSubscription=()=>{
                     </S.IconsContainer>
                 </S.CenterContent>
             </S.CardBackground>
-            
+
             <div>
                 {getComponentStep()}
             </div>
