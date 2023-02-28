@@ -58,43 +58,6 @@ export const CenterContent=styled.div`
     }
 `;
 
-export const IconsContainer=styled.div`
-    margin: 2rem;
-    display: flex;
-    align-items: center;
-    >div:first-child{
-        div{
-            div{
-                color:#1ba6e2;
-                background-color: #fff;
-                border-radius: 50%;
-            }
-        }
-    }
-    >div{
-        >div{
-            div{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%;
-            border:1px solid #a1d3f0;
-            }
-        color: #a1d3f0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    p{
-        color:#a1d3f0 ;
-        font-weight: 500;
-        text-align: start;
-    }
-}        
-`;
-
 export const FormCard=styled.div`
     background-color: #fff;
     box-shadow:0 .5rem 1.5rem rgba(0,0,0,0.1);

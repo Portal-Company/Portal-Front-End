@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
-import StudentSubscription from "../views/studentSubscription";
+import StudentSubscription from "../../views/studentSubscription";
 
 const StudentSubscriptionPage: NextPage = () => {
   return (
