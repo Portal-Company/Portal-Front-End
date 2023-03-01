@@ -42,7 +42,7 @@ export const ContainerContainer = styled.div`
   overflow: hidden;
   height: 70vh;
   @media screen and  (max-width: 920px) {
-    height: 60vh;
+    height: 55vh;
   }
 `;
 
@@ -100,6 +100,7 @@ export const Content = styled.div`
 
 
   h1 {
+    text-align: center;
     font-weight: 700;
     font-size: 4.5rem;
   }
@@ -109,8 +110,8 @@ export const Content = styled.div`
     color: #bfbfbf;
     margin: 1rem 0 1rem 0;
   }
-  @media screen and  (max-width: 620px) {
-    height: 40vh;
+  @media screen and  (max-width: 820px) {
+    height: 60vh;
     h1{
       font-size: 2.7rem;
     }
@@ -118,5 +119,9 @@ export const Content = styled.div`
       font-size: 1.7rem;
     }
   }
+  @media screen and  (max-width: 620px) {
+    height: 40vh;
+  }
+
 `;
 
