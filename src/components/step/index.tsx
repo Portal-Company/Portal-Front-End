@@ -1,4 +1,4 @@
-import { FaCheck, FaFile, FaUser } from "react-icons/fa"
+import { FaCheck, FaFile, FaUser,FaLine } from "react-icons/fa"
 import { HiLocationMarker } from "react-icons/hi"
 import * as S from './styles'
 import { StepProps } from "./type"
@@ -9,29 +9,26 @@ const Step:React.FC<StepProps>=({step})=>{
             <div>
                 <div>
                     <div>
-                        <FaUser/>
+                        1
                     </div>
-                    -----------------
+                    -------------
                 </div>
-                <p>Pessoal</p>
             </div>
             <div>
                 <div>
                     <div>
-                        <FaFile/>
+                        2
                     </div>
-                    -----------------
+                    -------------
                 </div>
-                <p>Documentos</p>
             </div>
             <div>
                 <div>
                     <div>
-                        <HiLocationMarker/>
+                        3
                     </div>
-                        -----------------
+                        -------------
                 </div>
-                <p>Localização</p>
             </div>
             <div>
                 <div>
@@ -39,7 +36,6 @@ const Step:React.FC<StepProps>=({step})=>{
                         <FaCheck/>
                     </div>
                 </div>
-                <p>Finalizar</p> 
             </div>
         </S.IconsContainer>
     )

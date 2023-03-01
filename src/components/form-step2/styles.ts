@@ -39,7 +39,9 @@ export const FormCard=styled.div`
             padding:1rem 0;
         }
     }
-
+    @media screen and  (max-width: 820px) {
+        width: 99%;
+    }
 `;
 
 export const Forms=styled.div`

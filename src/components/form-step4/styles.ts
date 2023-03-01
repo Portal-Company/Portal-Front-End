@@ -56,7 +56,10 @@ export const FormCard=styled.div`
             padding:1rem 0;
         }
     }
-
+    
+    @media screen and  (max-width: 820px) {
+        width: 99%;
+    }
 `;
 
 export const Forms=styled.div`
@@ -64,14 +67,20 @@ export const Forms=styled.div`
     align-items: center;
     justify-content: center;
     div{
+        margin: 2rem;
         color:#fff;
         background-color:#1ba6e2 ;
         font-size: 10rem;
         width: 20rem;
         height:20rem;
-        border-radius: 50rem;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        
+        @media screen and  (max-width: 820px) {
+            width: 15rem;
+            height: 15rem;
+        }
     } 
 `;
