@@ -16,6 +16,7 @@ export const MainContainer = styled.main`
   width: 100%;
   height: 6.5rem;
   font-family: Comfortaa;
+  position: relative;
 `;
 
 export const Content = styled.div`
@@ -59,6 +60,10 @@ export const MenuMobile = styled.div`
 
 export const MenuBar=styled.div`
   display: none;
+  position: absolute;
+  width: 100%;
+  top: 10rem;
+  z-index: 10000;
   @media screen and  (max-width: 500px) {
     display:block;
   }
@@ -69,12 +74,18 @@ export const MenuBar=styled.div`
   height:${({showMenu}:showMenuProps)=>showMenu?'15rem':'0rem'};
   transition: .3s;
   li{
+    display: none;
+    position: relative;
     color:#fff;
     border-radius:.3rem;
     padding:1rem;
     background-color: #161d30;
     margin: .5rem;
     cursor: pointer;
+   
+  @media screen and  (max-width: 500px) {
+    display:${({showMenu}:showMenuProps)=>showMenu?'block':'none'};
+  }
   }
   li:hover{
     background-color:${({theme})=>theme.colors.primary.xblue};

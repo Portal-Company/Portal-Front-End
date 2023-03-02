@@ -35,5 +35,9 @@ export const IconsContainer=styled.div`
         font-weight: 500;
         text-align: start;
     }
-}        
+}
+    @media screen and  (max-width: 620px) {
+        width: 100%;
+        margin: auto;
+  }        
 `;
