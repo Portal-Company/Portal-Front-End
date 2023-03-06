@@ -8,14 +8,14 @@ import { Layout } from "../components/layout";
 import React from "react";
 import ShoolCardsContainer from "../components/shoolCardsContainer";
 import { Footer } from "../components/footer";
-import { api } from "../services";
+import { getSchools } from "../services";
 import { ISchoolData } from "../types";
 
 type HomeProps = {
   data: ISchoolData[]
 }
 
-const Home: NextPage<HomeProps> = ({ data }) => {
+const Home: NextPage<HomeProps> = ({ data } ) => {
 
   return (
     <React.Fragment>
@@ -38,8 +38,9 @@ const Home: NextPage<HomeProps> = ({ data }) => {
 };
 
 export async function getStaticProps() {
-  const response = await api.get("/school/list");
-  const data:ISchoolData[] = response.data;
+  const response = await getSchools() as ISchoolData[];
+  console.log(response);
+  const data = response;
 
   return {
     props: {

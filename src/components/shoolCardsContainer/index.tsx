@@ -4,12 +4,14 @@ import Slider from "react-slick";
 import { settings } from "./configuration-slick";
 import React, { useEffect } from "react";
 import { ISchoolData } from "../../types";
+import { IFile } from "../../services/type";
 
 interface Props {
   data: ISchoolData[];
 }
 
 const ShoolCardsContainer: React.FC<Props> = ({ data }) => {
+
   console.log(data);
   return (
     <S.Container>

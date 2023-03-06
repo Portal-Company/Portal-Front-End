@@ -6,16 +6,44 @@ interface ISchoolData {
     nif: string;
     fotoUrl: string;
     historial: IHistoral;
+    areaDeFormacao: IAreaDeFormacao[];
     Localizacao: ILocalizacao;
     Categoria: ICategoria;
     Inscricao: [];
     actividade: IActividade[];
+    Organigrama: IOrganigrama;
 }
 
 type ICategoria = {
     id: string;
     nome: string;
-    AreaDeFormacao: [
+}
+
+export type IAreaDeFormacao = {
+    Categoria: {
+        nome: string;
+    };
+    id: string;
+    nome: string;
+    fotoUrl: string;
+    descricao: string;
+    PerfilDeSaida: [
+        {
+            id?: string;
+            nome: string;
+            fotoUrl: string;
+            descricao: string;
+        }
+    ];
+    Curso: ICurso[]
+}
+
+export type ICurso = {
+    id: string
+    nome: string;
+    fotoUrl: string;
+    descricao: string;
+    Disciplina: [
         {
             id: string;
             nome: string;
@@ -24,6 +52,7 @@ type ICategoria = {
         }
     ]
 }
+
 
 type IHistoral = {
     id: string;
@@ -46,13 +75,34 @@ type ILocalizacao = {
     endereco2: string;
 }
 
-type IActividade = {
+export type IActividade = {
+    descricao: string;
     id: string;
     nome: string;
     data: string;
     fotoUrl: string;
     organizador: string;
 }
+
+type IOrganigrama = {
+    id: string;
+    escolaId: string;
+    Departamento: IDepartamento[];
+}
+
+type IDepartamento = {
+    id: string;
+    nome: string;
+    Funcionario: IFuncionario[]
+}
+
+type IFuncionario = {
+    id: string;
+    nome: string;
+    fotoUrl: string;
+}
+
+
 
 
 

@@ -8,7 +8,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   width: 100%;
   align-items: center;
-  height: 35rem;
+  height: auto;
   padding: 2rem;
   gap: 10rem;
 

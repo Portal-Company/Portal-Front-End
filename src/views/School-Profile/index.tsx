@@ -1,14 +1,24 @@
 import Image from "next/image";
 import React from "react";
 import { Footer } from "../../components/footer";
+import { useFetch } from "../../hooks/useFetch";
 import { ISchoolData } from "../../types";
 import * as S from "./styles"
+import useSWR from "swr" 
+import { fetchData } from "./services";
+import { Card } from "../../components/card";
+import { useRouter } from "next/router";
+
 
 interface Props {
     school: ISchoolData;
 }
 
 export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
+
+    const { data, error} = useSWR('/file/', () => fetchData(school))  
+    const router = useRouter()
+    
 
     console.log(school);
     return(
@@ -17,7 +27,7 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
             <S.Content>
                 <S.FirstSection>
                     <S.ContainerImage>
-                        <Image layout="responsive" loader={() => school.fotoUrl} src={school.fotoUrl}  width={490} height={500} alt="escola"/>
+                        {data?.schoolPhoto?.link ? (<Image layout="responsive" loader={() => data.schoolPhoto.link} src={data.schoolPhoto.link}  width={490} height={500} alt="escola"/>) : null}
                     </S.ContainerImage>
                     <S.ContainerLeft>
                         <S.Title>
@@ -33,7 +43,7 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                         <S.ContainerLeftFooter>
                             <section>
                                 <span>Logo: </span>
-                                {school.logo ? <Image loader={() => school.logo} src={school.logo} width={100} height={100} alt="escola" layout="responsive"/> : null} 
+                                {data?.logoPhoto?.link ? (<Image loader={() => data.logoPhoto.link} src={data.logoPhoto.link} width={100} height={100} alt="escola" layout="responsive"/>) : null} 
                             </section>
                             <section>
                                 <S.ButtonSubscribe>Inscrever-se</S.ButtonSubscribe>
@@ -64,21 +74,19 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                                 {school.historial.descricao}
                             </S.DescriptionStory>
                         </S.ContentStory>
-
-
                     </S.SecondSectionChild1>
                     <S.SecondSectionChild2>
                         <div>
-                            {school.historial.fotoUrl ? <Image loader={() => school.historial.fotoUrl} src={school.historial.fotoUrl} width={100} height={90} alt="escola"  layout="responsive"/> : null} 
+                            {data?.historial1?.link ? <Image loader={() => data.historial1.link} src={data.historial1.link} width={100} height={90} alt="escola"  layout="responsive"/> : null} 
                         </div>
                         <div>
-                            {school.historial.fotoUrl2 ? <Image loader={() => school.historial.fotoUrl2} src={school.historial.fotoUrl2} width={100} height={90} alt="escola"  layout="responsive"/> : null} 
+                            {data?.historial2?.link ? <Image loader={() => data.historial2.link} src={data.historial2.link} width={100} height={90} alt="escola"  layout="responsive"/> : null} 
                         </div>
                         <div>
-                            {school.historial.fotoUrl3 ? <Image loader={() => school.historial.fotoUrl3} src={school.historial.fotoUrl3} width={100} height={90} alt="escola" layout="responsive" /> : null} 
+                            {data?.historial3?.link ? <Image loader={() => data.historial3.link} src={data.historial3.link} width={100} height={90} alt="escola" layout="responsive" /> : null} 
                         </div>
                         <div>
-                            {school.historial.fotoUrl4 ? <Image loader={() => school.historial.fotoUrl4} src={school.historial.fotoUrl4} width={100} height={90} alt="escola" layout="responsive" /> : null} 
+                            {data?.historial4?.link ? <Image loader={() => data.historial4.link} src={data.historial4.link} width={100} height={90} alt="escola" layout="responsive" /> : null} 
                         </div>
                     </S.SecondSectionChild2>
                 </S.SecondSection>
@@ -87,13 +95,8 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                         Áreas de Formação
                     </S.Title>
                     <S.ContainerCard>
-                        {school.Categoria.AreaDeFormacao.map((area) => (
-                        <S.Card key={area.id}>                  
-                            <div>
-                                {area ? <Image loader={() => area?.fotoUrl} src={area.fotoUrl} width={100} height={80} alt="escola" layout="responsive" /> : null}
-                            </div>
-                            <span>{area.nome}</span> 
-                        </S.Card>
+                        {school.areaDeFormacao?.map((area) => (
+                            <Card key={area.id} content={area} onClick = {() => router.push(`/SearchSchool/AreaDeFormacao/${area.id}`)} />
                         ))}
                     </S.ContainerCard>
                 </S.ThirdSection>
@@ -101,33 +104,27 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                     <S.Title>
                         Actividades Anuais
                     </S.Title>
-
                     <S.ContainerCard>
                         {school?.actividade.map((activity) => (
-                            <S.Card key={activity.id}>
-                                <div>
-                                    {activity ? <Image loader={() => activity.fotoUrl} src={activity.fotoUrl} width={100} height={80} alt="escola" layout="responsive" /> : null}
-                                </div>
-                                <span>{activity.nome}</span>
-                            </S.Card>
+// onClick = {() => router.push(`/SearchSchool/AreaDeFormacao/${area.id}`)} 
+                            <Card key={activity.id} content={activity}  onClick={() => router.push(`/SearchSchool/Actividades/${activity.id}`)}/>
                         ))}
                     </S.ContainerCard>
                 </S.FourthSection>
                 <S.FifthSection>
-                    <S.Title>
-                        Corpo Directivo
-                    </S.Title>
+                    {school.Organigrama.Departamento.map((data) => (
+                        <>
+                        <S.Title>
+                            {data.nome}
+                        </S.Title>
 
-                    <S.ContainerCard>
-                        {school.actividade.map((activity) => (
-                            <S.Card key={activity.id}>
-                                <div>
-                                    {activity ? <Image loader={() => activity.fotoUrl} src={activity.fotoUrl} width={100} height={75} alt="escola" layout="responsive"/> : null}
-                                </div>
-                                <span>{activity.nome}</span>
-                            </S.Card>
-                        ))}
-                    </S.ContainerCard>
+                        <S.ContainerCard>
+                            {data.Funcionario.map((data) =>(
+                                <Card key={data.id} content={data}/>
+                            ))}
+                        </S.ContainerCard>
+                        </>
+                    ))}
                 </S.FifthSection>
                 
             </S.Content>

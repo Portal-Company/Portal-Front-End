@@ -51,13 +51,13 @@ export function SearchSchoolView ({ data }: any){
                     {
                     search ? (
                         schoolFilterData?.map((school: any) => (
-                            <SchoolCardSearch key={school.id} data = {school}/>
+                            <SchoolCardSearch key={school.id} content = {school}/>
                         )) 
                         
                         )
                     :
                         data?.map((school: any) => (
-                            <SchoolCardSearch key={school.id} data = {school}/>
+                            <SchoolCardSearch key={school.id} content = {school}/>
                         ))
                     }
                 </S.SecondSection>

@@ -6,12 +6,10 @@ export const Container = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: end;
-  @media screen and  (max-width: 1150px) {
-    top:30rem;
-  }
-  @media screen and  (max-width: 760px) {
-    top:65rem;
-  }
+  width: 100%;
+  top: 3rem;
+  height: auto;
+  padding-bottom: 2rem;
 `;
 
 export const FooterInformations = styled.div`
@@ -62,12 +60,11 @@ export const Suport = styled.div`
 
 export const DirectoReserve = styled.div`
   color: #000;
-  margin-top: 2rem;
-  background-color: #dfdfdf;
   display: flex;
+  width: 100%;
+  height: auto;
   justify-content: space-evenly;
   align-items: center;
-  padding: 1rem;
 `;
 
 export const Resources = styled(Suport)``;

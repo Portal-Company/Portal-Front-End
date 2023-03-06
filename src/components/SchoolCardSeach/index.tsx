@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import * as S from "./styles"
 import {useRouter} from "next/router"
+import { useFetch } from "../../hooks/useFetch";
 
 
 type schoolProps = 
@@ -14,13 +15,13 @@ type schoolProps =
     }
 
 type ISchoolCardSearchProps = {
-    data: schoolProps
+    content: schoolProps
 }
 
 
-export const SchoolCardSearch = ( { data }: ISchoolCardSearchProps ) => {
+export const SchoolCardSearch = ( { content }: ISchoolCardSearchProps ) => {
     const router = useRouter()
-
+    const { data } = useFetch(`/file/${content.fotoUrl}`)
     console.log(data);
     
     
@@ -37,14 +38,14 @@ export const SchoolCardSearch = ( { data }: ISchoolCardSearchProps ) => {
     
     return (
         <>  
-            <S.SectionCard onClick={()=> router.push(`/SearchSchool/${data.id}`)} key={data.index} onMouseOver={ () => mouseOver(data.index) } onMouseOut={mouseOut}>
+            <S.SectionCard onClick={()=> router.push(`/SearchSchool/${content.id}`)} key={content.index} onMouseOver={ () => mouseOver(content.index) } onMouseOut={mouseOut}>
             <S.ContainerImage>
-                <Image loader={()=> data.fotoUrl} src={data?.fotoUrl} alt={data.nome} width={"100%"} height={"100%"}/>
+                {data?.link ? (<Image loader={()=> data?.link} src={data?.link} alt={data.link} width={"100%"} height={"100%"}/>) : null}
             </S.ContainerImage>
             <S.Title>
-                {data.nome}
+                {content.nome}
             </S.Title>
-            {data.index === ishovering ? ( <S.Button onClick={()=> router.push(`/SearchSchool/${data.id}`)}>Ver Perfil</S.Button> ) : null }
+            {content.index === ishovering ? ( <S.Button onClick={()=> router.push(`/SearchSchool/${content.id}`)}>Ver Perfil</S.Button> ) : null }
             </S.SectionCard>        
         </>
     );
