@@ -39,7 +39,6 @@ const Home: NextPage<HomeProps> = ({ data } ) => {
 
 export async function getStaticProps() {
   const response = await getSchools() as ISchoolData[];
-  console.log(response);
   const data = response;
 
   return {

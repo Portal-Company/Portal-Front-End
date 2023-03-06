@@ -10,14 +10,7 @@ interface Props {
 }
 
 const ActivityAreaView:React.FC<Props> = ( { actividade }) =>{
-
     const { data } = useFetch(`/file/${actividade.fotoUrl}`)
-    
-    console.log(actividade);
-    
-    console.log(data);
-    
-
     return(
         <>
             <S.Container>

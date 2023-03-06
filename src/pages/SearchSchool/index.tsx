@@ -28,11 +28,10 @@ export async function getStaticProps() {
     const data = response.data;
 
     return {
-      props: {
+    props: {
         data
-      }
     }
-  }
-  
+    }
+}  
 
 export default SearchSchoolPage;

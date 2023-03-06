@@ -11,8 +11,6 @@ interface Props {
 }
 
 const ShoolCardsContainer: React.FC<Props> = ({ data }) => {
-
-  console.log(data);
   return (
     <S.Container>
       {data.map(({ logo, nome, Categoria, id }: ISchoolData) => {

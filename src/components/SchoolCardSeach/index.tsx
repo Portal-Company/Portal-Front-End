@@ -22,9 +22,7 @@ type ISchoolCardSearchProps = {
 export const SchoolCardSearch = ( { content }: ISchoolCardSearchProps ) => {
     const router = useRouter()
     const { data } = useFetch(`/file/${content.fotoUrl}`)
-    console.log(data);
-    
-    
+        
     const [ishovering, setIsHovering] = useState(-1)
     
     function mouseOver(index:number){

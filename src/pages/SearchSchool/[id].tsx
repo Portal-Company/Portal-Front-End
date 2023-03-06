@@ -11,10 +11,7 @@ interface SchoolPageProps {
     school: ISchoolData
 }
 
-const SchoolPage: NextPage<SchoolPageProps> = ({ school }) =>{
-
-    console.log(school);
-    
+const SchoolPage: NextPage<SchoolPageProps> = ({ school }) =>{    
     const router = useRouter()
     return(
         <React.Fragment>

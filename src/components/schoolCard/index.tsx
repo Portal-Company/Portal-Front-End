@@ -7,7 +7,6 @@ import { useFetch } from "../../hooks/useFetch";
 const SchoolCard = ({ image, name, description, id }: SchoolCardProps) => {
 
   const { data, error } = useFetch(`/file/${image}`)
-  
   const router = useRouter()
 
   return (
