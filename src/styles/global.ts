@@ -38,7 +38,7 @@ export default createGlobalStyle`
       right: 0;
       bottom: 0;
       left: 0;
-      padding-bottom: 1.875rem;
+      /* padding-bottom: 1.875rem; */
       font-family: ${theme.font.family};
       background: ${theme.colors.tertiary.xwhite};
       color: ${theme.colors.secondary.xxdark};

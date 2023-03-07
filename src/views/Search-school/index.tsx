@@ -18,18 +18,13 @@ export function SearchSchoolView ({ data }: any){
     const [ search, setSearch ] = useState("")
     const [ schoolFilterData, setSchoolFilterData] = useState<ISchool[]>([])
 
-
-    
-
     async function handleSearc(){
         const data = await api.get(`/school/search`, {
             params:{
                 search,
                 limit: 6,
             }
-        })
-        console.log(data, "pesquisado...");
-        
+        })        
         setSchoolFilterData(data.data)
     }
     

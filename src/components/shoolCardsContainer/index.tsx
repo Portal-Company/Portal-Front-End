@@ -1,10 +1,7 @@
 import * as S from "./styles";
 import SchoolCard from "../schoolCard";
-import Slider from "react-slick";
-import { settings } from "./configuration-slick";
-import React, { useEffect } from "react";
+import React from "react";
 import { ISchoolData } from "../../types";
-import { IFile } from "../../services/type";
 
 interface Props {
   data: ISchoolData[];

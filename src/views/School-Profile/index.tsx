@@ -19,8 +19,6 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
     const { data, error} = useSWR('/file/', () => fetchData(school))  
     const router = useRouter()
     
-
-    console.log(school);
     return(
         <>
         <S.Container>
@@ -106,7 +104,6 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                     </S.Title>
                     <S.ContainerCard>
                         {school?.actividade.map((activity) => (
-// onClick = {() => router.push(`/SearchSchool/AreaDeFormacao/${area.id}`)} 
                             <Card key={activity.id} content={activity}  onClick={() => router.push(`/SearchSchool/Actividades/${activity.id}`)}/>
                         ))}
                     </S.ContainerCard>

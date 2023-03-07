@@ -7,9 +7,7 @@ export const Container = styled.footer`
   flex-direction: column;
   justify-content: end;
   width: 100%;
-  top: 3rem;
   height: auto;
-  padding-bottom: 2rem;
 `;
 
 export const FooterInformations = styled.div`
@@ -25,7 +23,7 @@ export const InfoContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 9rem;
-  padding-top: 4rem;
+  padding: 4rem;
   width: 85%;
   margin: auto;
   color: ${({ theme }) => theme.colors.tertiary.xcinza};
@@ -62,8 +60,9 @@ export const DirectoReserve = styled.div`
   color: #000;
   display: flex;
   width: 100%;
-  height: auto;
   justify-content: space-evenly;
+  position: relative;
+  top: 1.5rem;
   align-items: center;
 `;
 

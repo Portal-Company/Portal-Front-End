@@ -11,7 +11,6 @@ interface Props {
 
 const CourseView:React.FC<Props> = ( { curso }) =>{
     const { data } = useFetch(`/file/${curso.fotoUrl}`)
-    console.log(data);
     return(
         <>
             <S.Container>
@@ -46,5 +45,4 @@ const CourseView:React.FC<Props> = ( { curso }) =>{
     );
 }
 
-// onClick = {() => router.push(`/SearchSchool/AreaDeFormacao/${area.id}`)} 
 export { CourseView }

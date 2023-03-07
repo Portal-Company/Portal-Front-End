@@ -48,7 +48,7 @@ export const Footer = () => {
       </S.FooterInformations>
     </S.Container>
     <S.DirectoReserve>
-        <Image src={logo} width={170} height={30} alt="med" />
+        <Image src={logo} width={170} height={30} alt="med"/>
         <p>Todos os directo reservado</p>
       </S.DirectoReserve>
     </>
