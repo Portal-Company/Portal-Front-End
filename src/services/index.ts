@@ -36,6 +36,16 @@ export const getActivitys = async () => {
     return actividade.data
 }
 
+export const getOutputProfile = async (id: string) => {
+    const outputProfile = await api.get(`/outputProfile/list/${id}`)
+    return outputProfile.data
+}
+
+export const getOutputProfiles = async () => {
+    const outputProfile = await api.get(`/outputProfile/list`)
+    return outputProfile.data
+}
+
 export const getCourse = async (id: string) => {
     const course = await api.get(`/course/list/${id}`)
     return course.data
@@ -44,4 +54,15 @@ export const getCourse = async (id: string) => {
 export const getCourses = async () => {
     const course = await api.get(`/course/list`)
     return course.data
+}
+
+
+export const getSubject = async (id: string) => {
+    const subject = await api.get(`/schoolSubject/list/${id}`)
+    return subject.data
+}
+
+export const getSubjects = async () => {
+    const subject = await api.get(`/schoolSubject/list`)
+    return subject.data
 }

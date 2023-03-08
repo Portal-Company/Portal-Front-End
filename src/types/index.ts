@@ -27,15 +27,16 @@ export type IAreaDeFormacao = {
     nome: string;
     fotoUrl: string;
     descricao: string;
-    PerfilDeSaida: [
-        {
-            id?: string;
-            nome: string;
-            fotoUrl: string;
-            descricao: string;
-        }
-    ];
+    PerfilDeSaida: IPerfilDeSaida[];
     Curso: ICurso[]
+}
+
+export type IPerfilDeSaida = {
+    id: string;
+    nome: string;
+    fotoUrl: string;
+    descricao: string;
+    AreaDeFormacao: IAreaDeFormacao
 }
 
 export type ICurso = {
@@ -43,14 +44,16 @@ export type ICurso = {
     nome: string;
     fotoUrl: string;
     descricao: string;
-    Disciplina: [
-        {
-            id: string;
-            nome: string;
-            fotoUrl: string;
-            descricao: string;
-        }
-    ]
+    Disciplina: IDisciplina[]
+    AreaDeFormacao: IAreaDeFormacao
+}
+
+export type IDisciplina = {
+    id: string;
+    nome: string;
+    fotoUrl: string;
+    descricao: string;
+    Curso: ICurso
 }
 
 

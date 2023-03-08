@@ -49,7 +49,7 @@ const TrainingAreaView:React.FC<Props> = ( { area }) =>{
                         </S.Title>
                         <S.ContainerCard>
                             {area.PerfilDeSaida?.map((profile) => (
-                                <Card key={profile.id} content={profile} />
+                                <Card key={profile.id} content={profile} onClick={() => router.push(`/SearchSchool/PerfilDeSaida/${profile.id}`)}  />
                             ))}
                         </S.ContainerCard>
                     </S.SecondSection>

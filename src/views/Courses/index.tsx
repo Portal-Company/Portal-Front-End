@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 import { Card } from "../../components/card";
 import { useFetch } from "../../hooks/useFetch";
@@ -11,6 +12,7 @@ interface Props {
 
 const CourseView:React.FC<Props> = ( { curso }) =>{
     const { data } = useFetch(`/file/${curso.fotoUrl}`)
+    const router = useRouter()
     return(
         <>
             <S.Container>
@@ -35,7 +37,7 @@ const CourseView:React.FC<Props> = ( { curso }) =>{
                         </S.Title>
                         <S.ContainerCard>
                             {curso.Disciplina?.map((subject) => (
-                                <Card key={subject.id} content={subject}/>
+                                <Card key={subject.id} content={subject} onClick={()=> router.push(`/SearchSchool/Disciplina/${subject.id}`)}/>
                             ))}
                         </S.ContainerCard>
                     </S.SecondSection>

@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const Content = styled.div`
     width: 100%;
     height: auto;
-    background: #fff !important;
+    background: #fff;
     padding-bottom: 4rem;
     padding-top: 5rem;
 
@@ -45,27 +45,25 @@ export const FirstSection = styled.div`
 `
 
 export const ContainerImage = styled.div`
-    min-width: 300px;
-    width: 400px;
+    min-width: 33rem;
+    width: 40rem;
     height: auto;
-    padding-bottom: 2rem;
-    border-radius: 0.8rem;
+    max-height: 40rem;
     position: relative;
 
     @media screen and (max-width: 768px) {
         width: 100%;
-        max-width: 100%;
+        max-width: 40rem;
         height: auto;
-        padding-bottom: 0.5rem;
         min-width: 150px;
     }
 
     img{
-        border-radius: 0.8rem;
+        border-radius: 0.4rem;
         width: 100%;
 
         @media screen and (max-width: 768px) {
-            max-height: 400px !important;
+            max-height: 30rem;
         }
     }
 
@@ -175,10 +173,10 @@ export const SecondSection = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+
     @media screen and (max-width: 768px) {
         padding: 2rem 2rem;
         flex-direction: column;
-
         h2{
             font-size: 1.9rem;
         }
@@ -191,11 +189,13 @@ export const SecondSection = styled.div`
 
 
 export const SecondSectionChild1 = styled.div`
-    width: 40%;
+    width: 100%;
+    max-width: 60rem;
+    padding-top: 2rem;
     height: auto;
 
     @media screen and (max-width: 768px){
-        width: 100% !important;
+        width: 100%;
     }
 
     @media screen and (max-width: 1300px) {
@@ -207,29 +207,44 @@ export const SecondSectionChild2 = styled.div`
     margin-top: 2rem;
     padding-bottom: 2rem;
     justify-content: end;
-    width: 50%;
+    width: 100%;
+    max-width: 50rem;
     height: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 5rem;
+    gap: 4rem;
 
     @media screen and (max-width: 1100px){
         width: 80%;
         height: auto;
         flex-direction: column;
         gap: 2rem;
+    }
 
+    @media screen and (max-width: 768px){
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 2rem;
 
+        div{
+            width: 100%;
+        }
     }
 
     div{
-        width: 45%;
-        min-width: 100px;
+        max-width: 20rem;
+        width: 100%;
+        cursor: pointer;
         height: auto;
         @media screen and (max-width: 768px){
             width: 100%;
-            margin: 0 auto;
+            max-width: 40rem;
             height: auto;
+        }
+
+        img{
+            border-radius: 0.4rem;
         }
     }
 `
@@ -240,7 +255,9 @@ export const DescriptionStory = styled.p`
     font-size: 1.6rem;
 
     @media screen and (max-width: 768px){
-        width: 100%;
+        width: 90%;
+        text-align: justify;
+        font-size: 1.2rem;
     }
 
 `
@@ -273,6 +290,7 @@ export const ThirdSection = styled.div`
     @media screen and (max-width: 1300px) {
         padding: 2rem 4rem;
         flex-direction: column;
+        text-align: center;
     }
 `
 
@@ -287,7 +305,7 @@ export const ContainerCard = styled.div`
     @media screen and (max-width: 768px) {
         flex-direction: column;
         padding: 2rem 1rem;
-
+        align-items: center;
     }
 `
 
@@ -306,6 +324,7 @@ export const Card = styled.div`
     @media screen and (max-width: 768px) {
         width: 100%;
         height: auto;
+
     }
 
     div{
@@ -335,7 +354,7 @@ export const FourthSection = styled.div`
     @media screen and (max-width: 768px) {
         padding: 2rem 2rem;
         flex-direction: column;
-
+        text-align: center;
         h2{
             font-size: 1.9rem;
         }
@@ -358,7 +377,7 @@ export const FifthSection = styled.div`
     @media screen and (max-width: 768px) {
         padding: 2rem 2rem;
         flex-direction: column;
-
+        text-align: center;
         h2{
             font-size: 1.9rem;
         }

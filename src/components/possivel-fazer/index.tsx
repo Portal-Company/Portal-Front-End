@@ -28,10 +28,6 @@ const PossivelSaber: React.FC = () => {
             <CiLocationArrow1 />
             <span>Fazer Inscrição a qualquer escola</span>
           </div>
-          <div>
-            <CiWavePulse1 />
-            <span>Gerenciar e visualizar inscrições (Admin)</span>
-          </div>
         </S.CardText>
       </S.Card>
     </S.Container>

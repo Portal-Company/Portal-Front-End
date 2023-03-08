@@ -2,15 +2,19 @@ import styled from "styled-components";
 
 
 export const Card = styled.div`
-    width: 30rem;
-    height: 25rem;
-    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 30rem;
+    height: 100%;
+    gap: 1rem;
+    max-height: 50rem;
+    border-radius: 0.4rem;
     display: flex;
     border: 1px solid #ddd;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 1rem;
     cursor: pointer;
-
+    text-align: center;
     justify-content: space-between;
 
     @media screen and (max-width: 768px) {
@@ -19,15 +23,17 @@ export const Card = styled.div`
     }
 
     div{
-        margin-top: 1rem;
-        width: 90%;
-        height: 18rem;
+        width: 100%;
         border-radius: 0.5rem;
         position: relative;
         @media screen and (max-width: 768px) {
-            width: 90%;
+            width: 100%;
             padding: 1rem;
-            height: auto;
+        }
+        img{
+            border-radius: 0.4rem 0.4rem 0 0;
+            height: 100%;
+            max-height: 33rem;
         }
     }
 
