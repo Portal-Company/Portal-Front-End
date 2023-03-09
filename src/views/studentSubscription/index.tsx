@@ -3,7 +3,6 @@ import CancelModal from '../cancelModal'
 import * as S from './styles'
 import FormStep1 from '../../components/form-step1'
 import FormStep2 from '../../components/form-step2'
-import FormStep3 from '../../components/form-step3'
 import FormStep4 from '../../components/form-step4'
 import Step from '../../components/step'
 import { FaArrowRight } from 'react-icons/fa'
@@ -19,8 +18,6 @@ const StudentSubscription=()=>{
             case 2:
                 return <FormStep2/>;
             case 3:
-                return <FormStep3/>;
-            case 4:
                 return <FormStep4/>;
             default:
                 return <FormStep1/>;
@@ -46,8 +43,8 @@ const StudentSubscription=()=>{
                 <S.BackButton onClick={()=>setShowModal(!showModal)}>
                     Cancelar
                 </S.BackButton>
-                <S.ForewardButton onClick={()=>{setStep(prevState => prevState+1)}}>
-                        Continuar 
+                <S.ForewardButton>
+                        
                     <span>
                         <FaArrowRight/>
                     </span>
