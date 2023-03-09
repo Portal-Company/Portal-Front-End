@@ -1,3 +1,4 @@
+
 export const settings = {
   dots: true,
   infinite: true,
@@ -7,8 +8,8 @@ export const settings = {
   speed: 2000,
   autoplaySpeed: 1200,
   adaptiveHeight: true,
-  dotsClass: "slick-dots",
-  cssEase: "linear",
+  dotsClass: 'slick-dots',
+  cssEase: 'linear',
   responsive: [
     {
       breakpoint: 800,
@@ -16,8 +17,8 @@ export const settings = {
         slidesToShow: 2,
         slidesToScroll: 3,
         infinite: true,
-        dots: true,
-      },
+        dots: true
+      }
     },
     {
       breakpoint: 280,
@@ -25,8 +26,8 @@ export const settings = {
         slidesToShow: 1,
         slidesToScroll: 3,
         infinite: true,
-        dots: true,
-      },
+        dots: true
+      }
     },
     {
       breakpoint: 360,
@@ -34,8 +35,8 @@ export const settings = {
         slidesToShow: 1,
         slidesToScroll: 3,
         infinite: true,
-        dots: true,
-      },
+        dots: true
+      }
     },
     {
       breakpoint: 375,
@@ -43,8 +44,8 @@ export const settings = {
         slidesToShow: 1,
         slidesToScroll: 3,
         infinite: true,
-        dots: true,
-      },
+        dots: true
+      }
     },
     {
       breakpoint: 414,
@@ -52,8 +53,8 @@ export const settings = {
         slidesToShow: 1,
         slidesToScroll: 3,
         infinite: true,
-        dots: true,
-      },
-    },
-  ],
-};
+        dots: true
+      }
+    }
+  ]
+}

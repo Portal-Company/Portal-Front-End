@@ -22,7 +22,7 @@ export const CardBackground = styled.div`
     justify-content: space-between;
     width: 100%;
     height: 25rem;
-    background-color:#1ba6e2;
+    background-color: #19293e;
     padding: 1rem 6rem;
     color: #fff;
     h2{
@@ -145,7 +145,7 @@ export const Footer = styled.div`
 
 export const BackButton = styled.div`
     width:50%;
-    background-color: #1ba6e2;
+    background-color:  #161d26;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -153,8 +153,9 @@ export const BackButton = styled.div`
     font-weight: 500;
     `;
 
-export const ForewardButton = styled(BackButton)`
-    background-color:#34b5ed;  
+
+export const ForewardButton=styled(BackButton)`
+    background-color: #19293e;  
     svg{
         margin-top:.5rem;
         margin-left:.5rem ;

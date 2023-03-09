@@ -1,12 +1,32 @@
 import { useState } from 'react'
-import { FaCheck, FaFile, FaArrowRight , FaUser } from 'react-icons/fa'
-import Input from '../../components/input'
 import CancelModal from '../cancelModal'
 import * as S from './styles'
+import FormStep1 from '../../components/form-step1'
+import FormStep2 from '../../components/form-step2'
+import FormStep3 from '../../components/form-step3'
+import FormStep4 from '../../components/form-step4'
+import Step from '../../components/step'
+import { FaArrowRight } from 'react-icons/fa'
 
 const StudentSubscription=()=>{
-
+    const [step,setStep] = useState<number>(1);
     const [showModal,setShowModal]=useState<boolean>(false)
+
+    const getComponentStep=()=>{
+        switch (step) {
+            case 1:
+                return <FormStep1/>;
+            case 2:
+                return <FormStep2/>;
+            case 3:
+                return <FormStep3/>;
+            case 4:
+                return <FormStep4/>;
+            default:
+                return <FormStep1/>;
+        }
+    }
+
     return(
         <S.Container>
             <CancelModal showModal={showModal} setShowModal={setShowModal}/>
@@ -14,77 +34,20 @@ const StudentSubscription=()=>{
                 <S.CenterContent>
                     <h2>Fazer Inscrição de estudante</h2>
                     <span>Aderir</span>
-                    <S.IconsContainer>
-                        <div>
-                            <div>
-                                <div>
-                                    <FaUser/>
-                                </div>
-                                -----------------
-                            </div>
-                            <p>Pessoal</p>
-                        </div>
-                        <div>
-                            <div>
-                                <div>
-                                    <FaUser/>
-                                </div>
-                                -----------------
-                            </div>
-                            <p>Pessoal</p>
-                        </div>
-                        <div>
-                            <div>
-                                <div>
-                                    <FaFile/>
-                                </div>
-                                -----------------
-                            </div>
-                            <p>Pessoal</p>
-                        </div>
-                        <div>
-                            <div>
-                                <div>
-                                    <FaCheck/>
-                                </div>
-                            </div>
-                            <p>Pessoal</p> 
-                        </div>
-                    </S.IconsContainer>
+                    <Step step={step}/>
                 </S.CenterContent>
             </S.CardBackground>
-            <S.WrapperContainer>
-                <S.FormCard>
-                    <S.Paragraph>
-                        Para iniciar o processo de abertura de conta, precisamos de validar o seu nº de telemóvel.
-                    </S.Paragraph>
-                    <S.Forms>
-                        <Input placeholder='O seu Nome' type='text'/>
-                        <Input placeholder='O seu Nº do BI' type='text'/>
-                        <Input placeholder='O seu Contacto' type='text'/>
-                        <Input placeholder='A sua Localização' type='text'/>
-                        <Input placeholder='Data de nascimento' type='date'/>
-                        <label htmlFor="">Genero</label>
-                        <div>
-                            <S.Field>
-                                <input placeholder='' type='radio'/>
-                                <label htmlFor="">Masculino</label>
-                            </S.Field>
-                            <S.Field>
-                                <input placeholder='' type='radio'/>
-                                <label htmlFor="">Femenino</label>
-                            </S.Field>
-                        </div>
-                        <Input placeholder='Parentesco' type='text'/>
-                    </S.Forms>
-                </S.FormCard>
-            </S.WrapperContainer>
+
+            <div>
+                {getComponentStep()}
+            </div>
+
             <S.Footer>
                 <S.BackButton onClick={()=>setShowModal(!showModal)}>
                     Cancelar
                 </S.BackButton>
-                <S.ForewardButton>
-                    Continuar 
+                <S.ForewardButton onClick={()=>{setStep(prevState => prevState+1)}}>
+                        Continuar 
                     <span>
                         <FaArrowRight/>
                     </span>

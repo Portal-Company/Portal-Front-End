@@ -7,7 +7,6 @@ export const Container = styled.div`
   flex-direction: column;
   padding-bottom: 2rem;
   flex-wrap: wrap;
-  
 `;
 
 export const Title = styled.h1`
