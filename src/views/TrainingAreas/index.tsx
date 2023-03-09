@@ -11,7 +11,6 @@ interface Props {
 }
 
 const TrainingAreaView:React.FC<Props> = ( { area }) =>{
-    console.log(area);
     const router = useRouter()
     const { data } = useFetch(`/file/${area.fotoUrl}`)    
 
