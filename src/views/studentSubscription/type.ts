@@ -1,17 +1,15 @@
 
 export interface ICandidate {
-    nomeCompleto:string
-    generoId: string;
+    nome:string;
+    sexo: string;
     dataNasc: string;
-    numeroBi: string;
-    contactoId?:string;
-    numeroTelefone:string;
-    email:string ;
-    pdfBi:string;
-    pdfCertificado: string;
-    pdfDeclaracao:string;
-    photoUrl:File | null;
-    descricao:string;
+    contatoId:string;
+    photoUrl:any;
+    tipoIdentificacao:string;
+    codigoDocumento: string;
+    pdfIdentificacao: any;
+    tipoCertificacaoEscolar: string;
+    pdfCertificacaoEscolar:any;
 }
 
 

@@ -12,12 +12,10 @@ export const useValidateData = () => {
             //}
         
             //const contact = await postFetchContact(contactData);
-            
-            const photo = await postFetchPhoto(data.photoUrl);
+            const photo = await postFetchPhoto(data.photoUrl[0]);
             //const bi = await postFetchBiPdf(data.pdfBi);  
             //const certificate = await postFetchCertificatePdf(data.pdfCertificado);
             //const declaration = await postFetchPhoto(data.pdfDeclaracao);  
-            console.log(photo);
 
             //const candidate = await postFetchCandidate(data);
             //if(candidate) toast("candidato cadastrado com sucesso", {autoClose:2000, type:"success"}); 
