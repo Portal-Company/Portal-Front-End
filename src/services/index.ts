@@ -51,6 +51,11 @@ export const getCourse = async (id: string) => {
     return course.data
 }
 
+export const getCoursesSchool = async (escolaId:string) => {
+    const courses = await api.get(`/school/list/${escolaId}/courses`);
+    return courses.data;
+}
+
 export const getCourses = async () => {
     const course = await api.get(`/course/list`)
     return course.data

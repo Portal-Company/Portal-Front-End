@@ -1,13 +1,14 @@
 import * as S from './styles'
 import Input from "../input"
-import Select from '../select'
-import { useValidateData } from '../../views/studentSubscription/hooks/useValidateData'
-import { UseFetchData } from '../../views/studentSubscription/hooks/useFetchData'
-import { useState } from 'react'
 import { api } from '../../services/api'
 import { useFormik } from 'formik';
-import { postFetchContact } from '../../views/studentSubscription/services'
 import { ICandidate, IContact } from '../../views/studentSubscription/type'
+import { useRouter } from 'next/router';
+import useSWR from "swr" 
+import { getCoursesSchool } from '../../services';
+import { toast } from 'react-toastify';
+import { IErrorInterface } from './type';
+
 interface Values {
     nomeCompleto:string;
     sexo:string;
@@ -20,9 +21,18 @@ interface Values {
     photo: any;
     pdfIdentificacao:any;
     pdfCertificacaoEscolar:any;
+    cursoId:string;
 }
 
 const FormStep1=()=>{
+    
+    const {
+        query:{escolaId}
+    }=useRouter();
+
+    const {data:courses,error:coursesError}=useSWR("courses",()=>getCoursesSchool(escolaId));
+    console.log(courses);
+
     const formik = useFormik<Values>({
         initialValues: {
             nomeCompleto:"",
@@ -35,7 +45,8 @@ const FormStep1=()=>{
             codigoDocumento:"", 
             photo: null, 
             pdfIdentificacao:null,
-            pdfCertificacaoEscolar:null
+            pdfCertificacaoEscolar:null,
+            cursoId:"",
         },
         onSubmit: async (values) => {
             const formData = new FormData();
@@ -76,9 +87,29 @@ const FormStep1=()=>{
                 pdfCertificacaoEscolar:certificationResponse.data.id
             }
             console.log(identificationResponse);
-            console.log(candidate)
             const resposeCandidate = await api.post('/candidate/post', candidate);
-            console.log(resposeCandidate);
+            console.log(resposeCandidate.data.id);
+
+            const subscription={
+                escolaId:escolaId,
+                candidatoId:resposeCandidate?.data?.id
+            }
+
+            try{
+                const responseSubscription = await api.post('/enrollment/post',subscription);
+                const intendedCourseData={
+                    inscricaoId:responseSubscription.data.id,
+                    cursoId:values.cursoId
+                } 
+                if(responseSubscription){
+                    const intendendCourseResponse = await api.post('/intendedCourse/post',intendedCourseData);
+                    console.log(intendendCourseResponse);
+                    toast("Cadastro feito com sucesso", {autoClose: 2000, type: "success"})
+                }
+            }catch(err){
+                const error = err as IErrorInterface
+                toast(error.response?.data?.error, {autoClose: 2000, type: "error"})
+            }
         },
     });
 
@@ -142,7 +173,15 @@ const FormStep1=()=>{
                         name="codigoDocumento"
                         onChange={formik.handleChange}
                     />
-                     
+
+                     <S.Select name="cursoId" id="tipoCertificacaoEscolar" onChange={formik.handleChange}>
+                        <option>curso pretendido</option>
+                        {courses?.map((item,index:number)=>(
+                            <option value={item?.id} key={index}>{item?.nome}</option>
+    
+                        ))}
+                    </S.Select>
+
                     <input
                         type="file"
                         name="photo"
