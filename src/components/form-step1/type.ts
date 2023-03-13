@@ -13,3 +13,8 @@ export interface IErrorInterface {
     stack: string;
     response: IResponse
 }
+
+export interface ICourses{
+    id:string;
+    nome:string;
+}

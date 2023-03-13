@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import useSWR from "swr" 
 import { getCoursesSchool } from '../../services';
 import { toast } from 'react-toastify';
-import { IErrorInterface } from './type';
+import { ICourses, IErrorInterface } from './type';
 
 interface Values {
     nomeCompleto:string;
@@ -176,7 +176,7 @@ const FormStep1=()=>{
 
                      <S.Select name="cursoId" id="tipoCertificacaoEscolar" onChange={formik.handleChange}>
                         <option>curso pretendido</option>
-                        {courses?.map((item,index:number)=>(
+                        {courses?.map((item:ICourses,index:number)=>(
                             <option value={item?.id} key={index}>{item?.nome}</option>
     
                         ))}
