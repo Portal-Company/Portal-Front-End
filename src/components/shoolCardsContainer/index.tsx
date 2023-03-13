@@ -17,7 +17,7 @@ const ShoolCardsContainer: React.FC<Props> = ({ data }) => {
             key={id}
             image={logo}
             name={nome}
-            description={Categoria.nome}
+            description={Categoria?.nome}
           />
         );
       })}

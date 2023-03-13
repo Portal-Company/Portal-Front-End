@@ -1,8 +1,8 @@
-import { UseValidadeData } from '../../views/studentSubscription/hooks/useValidateData'
+
 import * as S from './styles'
 import Input from "../input"
 const FormStep2=()=>{
-    const { formik } = UseValidadeData();
+    
     return(
         <S.WrapperContainer>
             <S.FormCard>
@@ -12,10 +12,8 @@ const FormStep2=()=>{
                 <S.Forms>
                     <Input 
                         placeholder='O sua foto' 
-                        name="foto" 
                         type='file'
                         name="photoUrl"
-                        onChange={formik.handleChange}
                     />
                     <Input placeholder='O sua foto' name="pdfBi" type='file'/>
                     <Input placeholder='O sua foto' name="pdfCertificado" type='file'/>
