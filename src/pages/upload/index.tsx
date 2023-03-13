@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
+import axios from 'axios';
 import { NextPage } from 'next';
-import { api } from '../../services/api';
+import { api } from '../../services';
 
 interface Values {
   file: any;

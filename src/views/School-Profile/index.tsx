@@ -1,36 +1,47 @@
 import Image from "next/image";
+import React from "react";
 import { Footer } from "../../components/footer";
-import { SchoolCardSearch } from "../../components/SchoolCardSeach";
-import { imgUrl, schools } from "./mock";
+import { useFetch } from "../../hooks/useFetch";
+import { ISchoolData } from "../../types";
 import * as S from "./styles"
+import useSWR from "swr" 
+import { fetchData } from "./services";
+import { Card } from "../../components/card";
+import { useRouter } from "next/router";
 
 
-export function SchoolProfileView (){
-    const logo = "https://inscricao.ipilmakarenko.ao/assets/logotipo.2a4eed3f.png"
+interface Props {
+    school: ISchoolData;
+}
+
+export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
+
+    const { data, error} = useSWR('/file/', () => fetchData(school))  
+    const router = useRouter()
+    
     return(
         <>
         <S.Container>
             <S.Content>
                 <S.FirstSection>
                     <S.ContainerImage>
-                        <Image layout="responsive" loader={() => imgUrl} src={imgUrl} width={490} height={500} alt="escola"/>
+                        {data?.schoolPhoto?.link ? (<Image layout="responsive" loader={() => data.schoolPhoto.link} src={data.schoolPhoto.link}  width={490} height={500} alt="escola"/>) : null}
                     </S.ContainerImage>
                     <S.ContainerLeft>
                         <S.Title>
-                            Instituto Politécnico Industrial de Luanda
+                            {school?.nome}     
                         </S.Title>
                         <S.SectionDescription>
                             <span>Localização: </span>
-                            <span> Luanda - primeiro de Maio</span>
+                            <span> {school?.Localizacao?.endereco1} / {school.Localizacao.Provincia.nome}</span>
                         </S.SectionDescription>
                         <S.SectionDescription>
-                            <span>Categoria: </span>
-                            <span> Ensino médio Técnico</span>
+                            <span>Categoria: {school?.Categoria?.nome}</span>
                         </S.SectionDescription>
                         <S.ContainerLeftFooter>
                             <section>
                                 <span>Logo: </span>
-                                <Image loader={() => logo} src={logo} width={100} height={100} alt="escola"/>
+                                {data?.logoPhoto?.link ? (<Image loader={() => data.logoPhoto.link} src={data.logoPhoto.link} width={100} height={100} alt="escola" layout="responsive"/>) : null} 
                             </section>
                             <section>
                                 <S.ButtonSubscribe>Inscrever-se</S.ButtonSubscribe>
@@ -45,15 +56,14 @@ export function SchoolProfileView (){
                         </S.Title>
                         <S.SectionDescription>
                             <div>
-                                    <span>
-                                        Fundador:
-                                    </span>
-                                    <span>
-                                        Pedro Muteka
+                                    <span 
+                                        style={{marginRight: "0.5rem"}}
+                                    >
+                                        Fundador: {school.historial.fundador} 
                                     </span>
                             </div>
                             <span>
-                                Ano: 20/02/2020
+                                Ano:  {school.historial.data}
                             </span>
                         </S.SectionDescription>
                         <S.SectionDescription>
@@ -61,116 +71,58 @@ export function SchoolProfileView (){
                         </S.SectionDescription>
                         <S.ContentStory>
                             <S.DescriptionStory>
-                                It is a long established fact that a reader will be distracted
-                                by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
-                                as opposed to using Content here, content here,
-                                making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
-                                and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                {school.historial.descricao}
                             </S.DescriptionStory>
                         </S.ContentStory>
-
-
                     </S.SecondSectionChild1>
                     <S.SecondSectionChild2>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div>
+                            {data?.historial1?.link ? <Image onClick={() => router.push(data.historial1?.link)} loader={() => data.historial1.link} src={data.historial1.link} width={100} height={90} alt="escola"  layout="responsive"/> : null} 
+                        </div>
+                        <div>
+                            {data?.historial2?.link ? <Image onClick={() => router.push(data.historial2?.link)} loader={() => data.historial2.link} src={data.historial2.link} width={100} height={90} alt="escola"  layout="responsive"/> : null} 
+                        </div>
+                        <div>
+                            {data?.historial3?.link ? <Image onClick={() => router.push(data.historial3?.link)} loader={() => data.historial3.link} src={data.historial3.link} width={100} height={90} alt="escola" layout="responsive" /> : null} 
+                        </div>
+                        <div>
+                            {data?.historial4?.link ? <Image onClick={() => router.push(data.historial4?.link)} loader={() => data.historial4.link} src={data.historial4.link} width={100} height={90} alt="escola" layout="responsive" /> : null} 
+                        </div>
                     </S.SecondSectionChild2>
                 </S.SecondSection>
                 <S.ThirdSection>
                     <S.Title>
                         Áreas de Formação
                     </S.Title>
-
                     <S.ContainerCard>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
+                        {school.areaDeFormacao?.map((area) => (
+                            <Card key={area.id} content={area} onClick = {() => router.push(`/SearchSchool/AreaDeFormacao/${area.id}`)} />
+                        ))}
                     </S.ContainerCard>
                 </S.ThirdSection>
                 <S.FourthSection>
                     <S.Title>
                         Actividades Anuais
                     </S.Title>
-
                     <S.ContainerCard>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
+                        {school?.actividade.map((activity) => (
+                            <Card key={activity.id} content={activity}  onClick={() => router.push(`/SearchSchool/Actividades/${activity.id}`)}/>
+                        ))}
                     </S.ContainerCard>
-
-
                 </S.FourthSection>
                 <S.FifthSection>
-                    <S.Title>
-                        Corpo Directivo
-                    </S.Title>
-
-                    <S.ContainerCard>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
-                        <S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card><S.Card>
-                            <div>
-
-                            </div>
-                            <span>Informatica</span>
-                        </S.Card>
-                    </S.ContainerCard>
-
-
+                    {school.Organigrama.Departamento.map((data) => (
+                        <>
+                        <S.Title>
+                            {data.nome}
+                        </S.Title>
+                        <S.ContainerCard>
+                            {data.Funcionario.map((data) =>(
+                                <Card key={data.id} content={data}/>
+                            ))}
+                        </S.ContainerCard>
+                        </>
+                    ))}
                 </S.FifthSection>
                 
             </S.Content>

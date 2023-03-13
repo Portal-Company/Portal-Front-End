@@ -4,6 +4,7 @@ import logoportal from "../../../public/assets/portal.png";
 import { useRouter } from "next/router";
 import {FaBars} from 'react-icons/fa'
 import {useState} from 'react'
+import Link from "next/link";
 
 const Header = () => {
   const router = useRouter();
@@ -25,7 +26,9 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a href="#">Escolas</a>
+                <Link href={"/SearchSchool"}>
+                  Escolas
+                </Link>
               </li>
             </S.Menu>
             <S.MenuMobile onClick={()=>setShowMenu(!showMenu)}>
