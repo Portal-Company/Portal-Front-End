@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
-export const Container=styled.div`
+export const Container = styled.div`
     height: max-height;
     background-color: #f7fcfe;
 `;
 
-export const WrapperContainer=styled.div`
+export const WrapperContainer = styled.div`
     
 `;
 
-export const Paragraph=styled.p`
+export const Paragraph = styled.p`
     font-weight: 500;
     text-align: start;
     max-width: 40rem;
     margin: auto;
 `;
 
-export const CardBackground=styled.div`
+export const CardBackground = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,7 +45,7 @@ export const CardBackground=styled.div`
     }
 `;
 
-export const CenterContent=styled.div`
+export const CenterContent = styled.div`
     color: #fff;
     text-align: center;
     margin: auto;
@@ -58,7 +58,44 @@ export const CenterContent=styled.div`
     }
 `;
 
-export const FormCard=styled.div`
+export const IconsContainer = styled.div`
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    >div:first-child{
+        div{
+            div{
+                color:#1ba6e2;
+                background-color: #fff;
+                border-radius: 50%;
+            }
+        }
+    }
+    >div{
+        >div{
+            div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            border:1px solid #a1d3f0;
+            }
+        color: #a1d3f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    p{
+        color:#a1d3f0 ;
+        font-weight: 500;
+        text-align: start;
+    }
+}        
+`;
+
+export const FormCard = styled.div`
     background-color: #fff;
     box-shadow:0 .5rem 1.5rem rgba(0,0,0,0.1);
     position: relative;
@@ -76,7 +113,7 @@ export const FormCard=styled.div`
 
 `;
 
-export const Forms=styled.div`
+export const Forms = styled.form`
     display:flex ;
     align-items: center;
     justify-content: center;
@@ -97,7 +134,7 @@ export const Forms=styled.div`
     }
 `;
 
-export const Footer=styled.div`
+export const Footer = styled.div`
     height: 5rem;
     width: 100%;
     position: fixed;
@@ -106,7 +143,7 @@ export const Footer=styled.div`
     justify-content:space-between;
     `;
 
-export const BackButton=styled.div`
+export const BackButton = styled.div`
     width:50%;
     background-color:  #161d26;
     display: flex;
@@ -116,6 +153,7 @@ export const BackButton=styled.div`
     font-weight: 500;
     `;
 
+
 export const ForewardButton=styled(BackButton)`
     background-color: #19293e;  
     svg{
@@ -124,7 +162,7 @@ export const ForewardButton=styled(BackButton)`
     }
 `;
 
-export const Field=styled.div`
+export const Field = styled.div`
     display:flex;
     align-items: center;
     justify-content:center;

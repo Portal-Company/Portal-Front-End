@@ -1,7 +1,8 @@
 import { StaticImageData } from "next/image";
 
 export type SchoolCardProps = {
-  image: StaticImageData;
+  id: string;
+  image: string;
   name: string;
   description: string;
 };

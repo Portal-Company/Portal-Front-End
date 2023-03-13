@@ -6,6 +6,7 @@ import * as S from "./styles";
 
 export const Footer = () => {
   return (
+    <>
     <S.Container>
       <S.FooterInformations>
         <S.InfoContainer>
@@ -45,10 +46,11 @@ export const Footer = () => {
           </S.Suport>
         </S.InfoContainer>
       </S.FooterInformations>
-      <S.DirectoReserve>
-        <Image src={logo} width={170} height={30} alt="med" />
+    </S.Container>
+    <S.DirectoReserve>
+        <Image src={logo} width={170} height={30} alt="med"/>
         <p>Todos os directo reservado</p>
       </S.DirectoReserve>
-    </S.Container>
+    </>
   );
 };

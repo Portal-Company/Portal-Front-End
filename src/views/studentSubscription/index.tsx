@@ -30,7 +30,7 @@ const StudentSubscription=()=>{
     return(
         <S.Container>
             <CancelModal showModal={showModal} setShowModal={setShowModal}/>
-             <S.CardBackground>
+            <S.CardBackground>
                 <S.CenterContent>
                     <h2>Fazer Inscrição de estudante</h2>
                     <span>Aderir</span>

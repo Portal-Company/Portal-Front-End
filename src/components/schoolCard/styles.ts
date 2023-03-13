@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.tertiary.white};
   max-width: 33rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-radius: ${({ theme }) => theme.spacings.xxxxxmultipleeight};
   padding: ${({ theme }) => theme.spacings.xxxmultipleeight};
 `;
@@ -15,6 +20,7 @@ export const ImageContainer = styled.div`
 
 export const Title = styled.h3`
   margin-top: ${({ theme }) => theme.spacings.xxxmultipleeight};
+  text-align: center;
 `;
 
 export const Paragraph = styled.p`
@@ -26,7 +32,7 @@ export const Paragraph = styled.p`
 export const Button = styled.button`
   margin-top: ${({ theme }) => theme.spacings.xxxmultipleeight};
   width: 100%;
-  height: 4.8rem;
+  height: 4rem;
   border: none;
   transition: 0.2s;
   border-radius: 0.5rem;

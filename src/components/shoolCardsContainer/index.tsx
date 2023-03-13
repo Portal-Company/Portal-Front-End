@@ -1,24 +1,29 @@
 import * as S from "./styles";
-import { cardMock } from "./cardMock";
 import SchoolCard from "../schoolCard";
-import Slider from "react-slick";
-import { settings } from "./configuration-slick";
+import React from "react";
+import { ISchoolData } from "../../types";
 
-const ShoolCardsContainer = () => {
+interface Props {
+  data: ISchoolData[];
+}
+
+const ShoolCardsContainer: React.FC<Props> = ({ data }) => {
   return (
     <S.Container>
-      {cardMock.map(({ image, name, description }, index) => {
+      {data.map(({ logo, nome, Categoria, id }: ISchoolData) => {
         return (
           <SchoolCard
-            key={index}
-            image={image}
-            name={name}
-            description={description}
+            id = {id}
+            key={id}
+            image={logo}
+            name={nome}
+            description={Categoria.nome}
           />
         );
       })}
     </S.Container>
   );
 };
+
 
 export default ShoolCardsContainer;

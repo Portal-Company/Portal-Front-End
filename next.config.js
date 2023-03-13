@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images:{
-    domains: ["example.com"]
+    domains: ["example.com", "uploads-file-portal-das-escolas.s3.amazonaws.com"]
   }
 }
 
