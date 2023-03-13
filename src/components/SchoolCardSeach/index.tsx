@@ -35,7 +35,13 @@ export const SchoolCardSearch = ( { content }: ISchoolCardSearchProps ) => {
     
     return (
         <>  
-            <S.SectionCard onClick={()=> router.push(`/SearchSchool/${content.id}`)} key={content.index} onMouseOver={ () => mouseOver(content.index) } onMouseOut={mouseOut}>
+            <S.SectionCard 
+                onClick={()=> router.push({
+                    pathname:"/SearchSchool",
+                    query:{id:content.id}
+                })
+            } 
+            key={content.index} onMouseOver={ () => mouseOver(content.index) } onMouseOut={mouseOut}>
             <S.ContainerImage>
                 {data?.link ? (<Image loader={()=> data?.link} src={data?.link} alt={data.link} width={"100%"} height={"100%"}/>) : null}
             </S.ContainerImage>
