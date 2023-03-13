@@ -25,14 +25,6 @@ const Step:React.FC<StepProps>=({step})=>{
             <div>
                 <div>
                     <div>
-                        3
-                    </div>
-                        -------------
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div>
                         <FaCheck/>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WrapperContainer=styled.div`
+export const WrapperContainer=styled.form`
     
 `;
 
@@ -51,10 +51,42 @@ export const Forms=styled.div`
         align-items: center;
         justify-content:space-between;
     }
+    textarea{
+    border:.1px solid #cacaca;
+    margin-top: 2rem;
+    font-size: 1rem;
+    padding: 1.3rem;
+    width: 100%;
+    max-width: 40rem;
+    flex: 1;
+    font-size: 1.5rem;
+    color:#a9a6b3;
+    :focus{
+        border-bottom:.1px solid #1ba6e2;
+        transition: 2s ease-in-out;
+    }
+    }
 `;
 
 export const Field=styled.div`
     display:flex;
     align-items: center;
     justify-content:center;
+`;
+
+export const Select=styled.select`
+    border: none;
+    border-bottom:.1px solid #cacaca;
+    margin-top: 2rem;
+    font-size: 1rem;
+    padding: 1.3rem;
+    width: 100%;
+    max-width: 40rem;
+    flex: 1;
+    font-size: 1.5rem;
+    color:#a9a6b3;
+    :focus{
+        border-bottom:.1px solid #1ba6e2;
+        transition: 2s ease-in-out;
+    }
 `;
