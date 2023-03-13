@@ -8,8 +8,7 @@ import useSWR from "swr"
 import { fetchData } from "./services";
 import { Card } from "../../components/card";
 import { useRouter } from "next/router";
-
-
+import Router from "next/router";
 interface Props {
     school: ISchoolData;
 }
@@ -18,7 +17,18 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
 
     const { data, error} = useSWR('/file/', () => fetchData(school))  
     const router = useRouter()
-    
+ 
+    const{
+        query:{id}
+    }=useRouter();
+
+    const handleRedirect=()=>{
+        Router.push({
+            pathname:'/inscricao',
+            query:{escolaId:id}
+        });
+    }
+
     return(
         <>
         <S.Container>
@@ -33,7 +43,10 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                         </S.Title>
                         <S.SectionDescription>
                             <span>Localização: </span>
-                            <span> {school?.Localizacao?.endereco1} / {school.Localizacao.Provincia.nome}</span>
+                            <span>
+                                {school?.Localizacao?.endereco1}/ 
+                                {school?.Localizacao?.Provincia.nome}
+                            </span>
                         </S.SectionDescription>
                         <S.SectionDescription>
                             <span>Categoria: {school?.Categoria?.nome}</span>
@@ -44,7 +57,7 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                                 {data?.logoPhoto?.link ? (<Image loader={() => data.logoPhoto.link} src={data.logoPhoto.link} width={100} height={100} alt="escola" layout="responsive"/>) : null} 
                             </section>
                             <section>
-                                <S.ButtonSubscribe>Inscrever-se</S.ButtonSubscribe>
+                                <S.ButtonSubscribe onClick={handleRedirect}>Inscrever-se</S.ButtonSubscribe>
                             </section>
                         </S.ContainerLeftFooter>
                     </S.ContainerLeft>
@@ -59,11 +72,11 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                                     <span 
                                         style={{marginRight: "0.5rem"}}
                                     >
-                                        Fundador: {school.historial.fundador} 
+                                        Fundador: {school?.historial?.fundador} 
                                     </span>
                             </div>
                             <span>
-                                Ano:  {school.historial.data}
+                                Ano:  {school?.historial?.data}
                             </span>
                         </S.SectionDescription>
                         <S.SectionDescription>
@@ -71,7 +84,7 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                         </S.SectionDescription>
                         <S.ContentStory>
                             <S.DescriptionStory>
-                                {school.historial.descricao}
+                                {school?.historial?.descricao}
                             </S.DescriptionStory>
                         </S.ContentStory>
                     </S.SecondSectionChild1>
@@ -111,7 +124,7 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                     </S.ContainerCard>
                 </S.FourthSection>
                 <S.FifthSection>
-                    {school.Organigrama.Departamento.map((data) => (
+                    {school?.Organigrama?.Departamento.map((data) => (
                         <>
                         <S.Title>
                             {data.nome}
