@@ -1,6 +1,5 @@
-
-import axios from 'axios'
+import axios from "axios";
 
 export const api = axios.create({
-  baseURL: 'http://127.0.0.1:4444'
-})
+  baseURL: "https://portal-das-escolas-api.onrender.com",
+});
