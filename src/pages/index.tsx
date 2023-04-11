@@ -12,18 +12,20 @@ import { getSchools } from "../services";
 import { ISchoolData } from "../types";
 
 type HomeProps = {
-  data: ISchoolData[]
-}
+  data: ISchoolData[];
+};
 
-const Home: NextPage<HomeProps> = ({ data } ) => {
-
+const Home: NextPage<HomeProps> = ({ data }) => {
   return (
     <React.Fragment>
       <Head>
         <title>Portal Home</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <React.Fragment>
         <Banner />
@@ -31,23 +33,22 @@ const Home: NextPage<HomeProps> = ({ data } ) => {
         <OfertaFormativa />
         <ObjectivoApp />
         <ShoolCardsContainer data={data} />
-        <Footer/>
+        <Footer />
       </React.Fragment>
     </React.Fragment>
   );
 };
 
 export async function getStaticProps() {
-  const response = await getSchools() as ISchoolData[];
+  const response = (await getSchools()) as ISchoolData[];
   const data = response;
 
   return {
     props: {
-      data
-    }
-  }
+      data,
+    },
+  };
 }
-
 
 Object.assign(Home, {
   Layout,
