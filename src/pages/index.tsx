@@ -26,6 +26,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
           href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
       </Head>
       <React.Fragment>
         <Banner />
