@@ -5,6 +5,17 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../styles/global";
 import { theme } from "../styles/theme";
 import Loading from "../components/loading";
+import "../../public/nprogress.css";
+import Router from "next/router";
+import NProgress from "nprogress";
+
+Router.events.on("routeChangeStart", (url) => {
+  console.log(`Loading: ${url}`);
+  NProgress.start();
+});
+
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
 import { useState, useEffect } from "react";
 
