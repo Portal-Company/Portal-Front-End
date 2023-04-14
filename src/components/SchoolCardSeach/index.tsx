@@ -17,10 +17,11 @@ type ISchoolCardSearchProps = {
     content: schoolProps
 }
 
-
 export const SchoolCardSearch = ( { content }: ISchoolCardSearchProps ) => {
     const router = useRouter()
     const { data } = useFetch(`/file/${content.fotoUrl}`)
+
+    console.log(data.link);
         
     const [ishovering, setIsHovering] = useState(-1)
     
@@ -32,12 +33,11 @@ export const SchoolCardSearch = ( { content }: ISchoolCardSearchProps ) => {
         setIsHovering(-1)
     }
 
-    
     return (
         <>  
             <S.SectionCard onClick={()=> router.push(`/SearchSchool/${content.id}`)} key={content.index} onMouseOver={ () => mouseOver(content.index) } onMouseOut={mouseOut}>
             <S.ContainerImage>
-                {data?.link ? (<Image loader={()=> data?.link} src={data?.link} alt={data.link} width={"100%"} height={"100%"}/>) : null}
+                {data?.link ? (<Image loading="lazy" src={data?.link} alt={data.link} width={"100%"} height={"100%"}/>) : null}
             </S.ContainerImage>
             <S.Title>
                 {content.nome}

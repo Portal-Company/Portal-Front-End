@@ -17,6 +17,9 @@ interface Props {
 export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
 
     const { data, error} = useSWR('/file/', () => fetchData(school))  
+    const { data: fotoUrl} = useFetch(`/file/${school?.fotoUrl}`)
+    const { data: logoUrl} = useFetch(`/file/${school?.logo}`)
+
     const router = useRouter()
     
     return(
@@ -25,7 +28,7 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
             <S.Content>
                 <S.FirstSection>
                     <S.ContainerImage>
-                        {data?.schoolPhoto?.link ? (<Image layout="responsive" loader={() => data.schoolPhoto.link} src={data.schoolPhoto.link}  width={490} height={500} alt="escola"/>) : null}
+                        {fotoUrl ? ( <Image src={fotoUrl?.link} alt="escola" width={490} height={500} loading="lazy" />) : null}
                     </S.ContainerImage>
                     <S.ContainerLeft>
                         <S.Title>
@@ -33,7 +36,7 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                         </S.Title>
                         <S.SectionDescription>
                             <span>Localização: </span>
-                            <span> {school?.Localizacao?.endereco1} / {school.Localizacao.Provincia.nome}</span>
+                            <span> {school?.Localizacao?.endereco1} / {school?.Localizacao?.Provincia.nome}</span>
                         </S.SectionDescription>
                         <S.SectionDescription>
                             <span>Categoria: {school?.Categoria?.nome}</span>
@@ -41,7 +44,7 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                         <S.ContainerLeftFooter>
                             <section>
                                 <span>Logo: </span>
-                                {data?.logoPhoto?.link ? (<Image loader={() => data.logoPhoto.link} src={data.logoPhoto.link} width={100} height={100} alt="escola" layout="responsive"/>) : null} 
+                                {logoUrl ? (<Image src={logoUrl?.link} alt="escola" width={490} height={500} loading="lazy" />) : null} 
                             </section>
                             <section>
                                 <S.ButtonSubscribe>Inscrever-se</S.ButtonSubscribe>
@@ -59,11 +62,11 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                                     <span 
                                         style={{marginRight: "0.5rem"}}
                                     >
-                                        Fundador: {school.historial.fundador} 
+                                        Fundador: {school?.historial?.fundador} 
                                     </span>
                             </div>
                             <span>
-                                Ano:  {school.historial.data}
+                                Ano:  {school?.historial?.data}
                             </span>
                         </S.SectionDescription>
                         <S.SectionDescription>
@@ -71,7 +74,7 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
                         </S.SectionDescription>
                         <S.ContentStory>
                             <S.DescriptionStory>
-                                {school.historial.descricao}
+                                {school?.historial?.descricao}
                             </S.DescriptionStory>
                         </S.ContentStory>
                     </S.SecondSectionChild1>
