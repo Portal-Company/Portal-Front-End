@@ -111,6 +111,12 @@ export const ForewardButton=styled(BackButton)`
         margin-top:.5rem;
         margin-left:.5rem ;
     }
+    button{
+        background-color:transparent;
+        color:#fff;
+        width:40%;
+        border:none;
+    }
 `;
 
     

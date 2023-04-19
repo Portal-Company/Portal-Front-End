@@ -8,6 +8,7 @@ import M7 from "../../../public/assets/m7.jpg";
 import { CiGlobe } from "react-icons/ci";
 
 import Button from "../button/button";
+import Link from "next/link";
 const OfertaFormativa: React.FC = () => {
   useEffect(() => {
     Aos.init({ duration: 800 });
@@ -21,13 +22,17 @@ const OfertaFormativa: React.FC = () => {
         <Image src={M6} alt="IMG" width={600} height={400} data-aos="fade-up" />
         <S.CardText data-aos="fade-down">
           <h2>Engenharias e Tecnologias</h2>
-          <Button Icon={<CiGlobe />} textName="Ver Escolas" />
+          <Link href="/SearchSchool">
+            <Button Icon={<CiGlobe />} textName="Ver Escolas" />
+          </Link>
         </S.CardText>
       </S.Card>
       <S.Card>
         <S.CardText data-aos="zoom-in">
           <h2>Ciências Sociais Aplicadas</h2>
-          <Button Icon={<CiGlobe />} textName="Ver Escolas" />
+          <Link href="/SearchSchool">
+            <Button Icon={<CiGlobe />} textName="Ver Escolas" />
+          </Link>
         </S.CardText>
         <Image
           src={M7}

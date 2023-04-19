@@ -144,21 +144,22 @@ const StudentSubscription=()=>{
             </S.FormCard>   
                     )
                 }
-                <button type="submit">Continuar</button> 
-        </S.WrapperContainer>
-            </div>
-
+                 
             <S.Footer>
                 <S.BackButton onClick={()=>setShowModal(!showModal)}>
                     Cancelar
                 </S.BackButton>
-                <S.ForewardButton onClick={()=>{setStep(prevState=> prevState + 1)}}>
-                        
-                    <span>
-                        <FaArrowRight/>
-                    </span>
+                <S.ForewardButton  onClick={()=>{setStep(prevState=> prevState + 1)}}>
+                    <button type={step>1?'submit':'button'}>
+                        <span>
+                            continuar<FaArrowRight/>
+                        </span>
+                    </button>    
                 </S.ForewardButton>
             </S.Footer>
+        </S.WrapperContainer>
+            </div>
+
         </S.Container>
     )
 }

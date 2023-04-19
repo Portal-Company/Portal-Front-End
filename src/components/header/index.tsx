@@ -18,12 +18,9 @@ const Header = () => {
           <S.ContentLeft>
             <S.Menu className="navbar">
               <li>
-                <a
-                  href="#"
-                  className={currentRoute === "/" ? "active" : "non-active"}
-                >
+                <Link href="/" className={currentRoute === "/" ? "active" : "non-active"}>
                   Inicio
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href={"/SearchSchool"}>
@@ -43,15 +40,12 @@ const Header = () => {
       </S.MainContainer>
       <S.MenuBar showMenu={showMenu}>
         <li>
-          <a
-            href="#"
-            className={currentRoute === "/" ? "active" : "non-active"}
-          >
+          <Link href="#" className={currentRoute === "/" ? "active" : "non-active"}>
             Inicio
-          </a>
+          </Link>
         </li>
-        <li><a href="#">Escolas</a></li>
-        <li><a href="#">Inscrever/se</a></li>
+        <li><Link href="/SearchSchool">Escolas</Link></li>
+        <li><Link href="/SearchSchool">Inscrever/se</Link></li>
       </S.MenuBar>
     </S.Wrapper>
   );
