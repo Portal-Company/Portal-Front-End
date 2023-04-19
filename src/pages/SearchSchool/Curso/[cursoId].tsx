@@ -1,4 +1,4 @@
-import { GetStaticPropsContext, NextPage } from "next"
+import { GetStaticPropsContext, NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import { getCourse, getCourses } from "../../../services";
@@ -8,55 +8,57 @@ import { Footer } from "../../../components/footer";
 import { CourseView } from "../../../views/Courses";
 
 interface cursoPageProps {
-    curso: ICurso
+  curso: ICurso;
 }
 
-
-const CursoPage:NextPage<cursoPageProps> = ({ curso }) =>{
-
-    return(
-        <React.Fragment>
-            <Head>
-                <title>Curso</title>
-            </Head>
-            <React.Fragment>
-                <CourseView curso={curso}/>
-            </React.Fragment>
-            <Footer/>
-        </React.Fragment>
-    );
-}
+const CursoPage: NextPage<cursoPageProps> = ({ curso }) => {
+  return (
+    <React.Fragment>
+      <Head>
+        <title>Curso</title>
+      </Head>
+      <React.Fragment>
+        <CourseView curso={curso} />
+      </React.Fragment>
+    </React.Fragment>
+  );
+};
 
 interface Props {
-    curso: ICurso
+  curso: ICurso;
 }
 
-
-export async function getStaticProps(context: GetStaticPropsContext): Promise<{props: Props}>{
-    const id = context.params?.cursoId as string;
-    const curso = await getCourse(id)
-    return {
-        props:{
-            curso,
-        }
-    }
+export async function getStaticProps(
+  context: GetStaticPropsContext
+): Promise<{ props: Props }> {
+  const id = context.params?.cursoId as string;
+  const curso = await getCourse(id);
+  return {
+    props: {
+      curso,
+    },
+  };
 }
 
-export async function getStaticPaths(): Promise<{ paths: { params: { cursoId: string } }[], fallback: false }> {
-    const response = await getCourses()
-    const data = await response as ICurso[]
-    const paths = data.map((curso) => ({
-        params: {
-            cursoId: curso.id.toString()
-        }
-    }));
-    
-    return { paths, fallback: false }
+export async function getStaticPaths(): Promise<{
+  paths: { params: { cursoId: string } }[];
+  fallback: false;
+}> {
+  const response = await getCourses();
+  const data = (await response) as ICurso[];
+  const paths = data.map((curso) => ({
+    params: {
+      cursoId: curso.id.toString(),
+    },
+  }));
+
+  return { paths, fallback: false };
 }
 
 Object.assign(CursoPage, {
-    Layout,
+  Layout,
 });
 
+export default CursoPage;
 
-export default CursoPage
+//Teste

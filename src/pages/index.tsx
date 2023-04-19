@@ -34,7 +34,6 @@ const Home: NextPage<HomeProps> = ({ data }) => {
         <OfertaFormativa />
         <ObjectivoApp />
         <ShoolCardsContainer data={data} />
-        <Footer />
       </React.Fragment>
     </React.Fragment>
   );

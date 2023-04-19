@@ -10,11 +10,10 @@ const StudentSubscriptionPage: NextPage = () => {
         <title>Inscrição</title>
       </Head>
       <React.Fragment>
-        <StudentSubscription/>        
+        <StudentSubscription />
       </React.Fragment>
     </React.Fragment>
   );
 };
-
 
 export default StudentSubscriptionPage;
