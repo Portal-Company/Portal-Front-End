@@ -14,9 +14,17 @@ const PossivelSaber: React.FC = () => {
     Aos.init({ duration: 800 });
   });
   return (
-    <S.Container>
-      <h1>Hello</h1>
-    </S.Container>
+    <S.Wrapper>
+      <S.Container>
+          <h2>Subscreva-se para receber actualizações</h2>
+          <S.InputContainer>
+            <S.Input placeholder="Intruduz o seu email"/>
+            <S.Button>
+              Enviar
+            </S.Button>
+          </S.InputContainer>
+      </S.Container>         
+    </S.Wrapper>
   );
 };
 

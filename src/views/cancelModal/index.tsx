@@ -4,8 +4,7 @@ import { ModalProps } from './types';
 const CancelModal:React.FC<ModalProps>=({
     showModal,
     setShowModal
-})=>{
- 
+})=>{ 
     return(
         <S.Container showModal={showModal}>
             <S.Form>
@@ -23,5 +22,4 @@ const CancelModal:React.FC<ModalProps>=({
         </S.Container>
     )
 }
-
 export default CancelModal;

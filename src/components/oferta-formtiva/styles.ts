@@ -7,7 +7,6 @@ export const Container = styled.div`
   flex-direction: column;
   padding-bottom: 2rem;
   flex-wrap: wrap;
-  
 `;
 
 export const Title = styled.h1`
@@ -15,7 +14,7 @@ export const Title = styled.h1`
   text-align: center;
   font-family: Comfortaa;
   font-weight: 300;
-  padding: 1.8rem;
+  padding: 1.9rem;
 `;
 
 export const Card = styled.div`
@@ -24,7 +23,7 @@ export const Card = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-  h2{
+  h2 {
     margin-top: 3rem;
   }
 `;

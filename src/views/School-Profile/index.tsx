@@ -3,18 +3,31 @@ import React from "react";
 import { Footer } from "../../components/footer";
 import { useFetch } from "../../hooks/useFetch";
 import { ISchoolData } from "../../types";
-import * as S from "./styles"
-import useSWR from "swr" 
+import * as S from "./styles";
+import useSWR from "swr";
 import { fetchData } from "./services";
 import { Card } from "../../components/card";
 import { useRouter } from "next/router";
-
-
+import Router from "next/router";
 interface Props {
-    school: ISchoolData;
+  school: ISchoolData;
 }
 
-export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
+export const SchoolProfileView: React.FC<Props> = ({ school }) => {
+  const { data, error } = useSWR("/file/", () => fetchData(school));
+  const router = useRouter();
+
+  const {
+    query: { id },
+  } = useRouter();
+
+  const handleRedirect = () => {
+    Router.push({
+      pathname: "/inscricao",
+      query: { escolaId: id },
+    });
+  };
+
 
     const { data, error} = useSWR('/file/', () => fetchData(school))  
     const { data: fotoUrl} = useFetch(`/file/${school?.fotoUrl}`)
@@ -133,4 +146,4 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) =>{
         </S.Container>
         </>
     );
-}
+}  

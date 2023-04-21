@@ -1,4 +1,4 @@
-import { GetStaticPropsContext, NextPage } from "next"
+import { GetStaticPropsContext, NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import { getOutputProfile, getOutputProfiles } from "../../../services";
@@ -8,54 +8,57 @@ import { Footer } from "../../../components/footer";
 import { OutputProfileView } from "../../../views/OutputProfile";
 
 interface outPutProfilePageProps {
-    outputProfile: IPerfilDeSaida
+  outputProfile: IPerfilDeSaida;
 }
 
-const OutputProfilePage:NextPage<outPutProfilePageProps> = ({ outputProfile }) =>{
-    
-    return(
-        <React.Fragment>
-            <Head>
-                <title>Perfil de Saída</title>
-            </Head>
-            <React.Fragment>
-                <OutputProfileView outputProfile = {outputProfile}/>
-            </React.Fragment>
-            <Footer/>
-        </React.Fragment>
-    );
-}
+const OutputProfilePage: NextPage<outPutProfilePageProps> = ({
+  outputProfile,
+}) => {
+  return (
+    <React.Fragment>
+      <Head>
+        <title>Perfil de Saída</title>
+      </Head>
+      <React.Fragment>
+        <OutputProfileView outputProfile={outputProfile} />
+      </React.Fragment>
+    </React.Fragment>
+  );
+};
 
 interface Props {
-    outputProfile: IPerfilDeSaida
+  outputProfile: IPerfilDeSaida;
 }
 
-
-export async function getStaticProps(context: GetStaticPropsContext): Promise<{props: Props}>{
-    const id = context.params?.outputProfileId as string;
-    const outputProfile = await getOutputProfile(id)    
-    return {
-        props:{
-            outputProfile,
-        }
-    }
+export async function getStaticProps(
+  context: GetStaticPropsContext
+): Promise<{ props: Props }> {
+  const id = context.params?.outputProfileId as string;
+  const outputProfile = await getOutputProfile(id);
+  return {
+    props: {
+      outputProfile,
+    },
+  };
 }
 
-export async function getStaticPaths(): Promise<{ paths: { params: { outputProfileId: string } }[], fallback: false }> {
-    const response = await getOutputProfiles()
-    const data = await response as IPerfilDeSaida[]    
-    const paths = data.map((outputProfile) => ({
-        params: {
-            outputProfileId: outputProfile.id.toString()
-        }
-    }));
-    
-    return { paths, fallback: false }
+export async function getStaticPaths(): Promise<{
+  paths: { params: { outputProfileId: string } }[];
+  fallback: false;
+}> {
+  const response = await getOutputProfiles();
+  const data = (await response) as IPerfilDeSaida[];
+  const paths = data.map((outputProfile) => ({
+    params: {
+      outputProfileId: outputProfile.id.toString(),
+    },
+  }));
+
+  return { paths, fallback: false };
 }
 
 Object.assign(OutputProfilePage, {
-    Layout,
+  Layout,
 });
 
-
-export default OutputProfilePage
+export default OutputProfilePage;
