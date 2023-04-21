@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://portal-das-escolas-api.onrender.com",
-});
+    baseURL: 'https://portal-das-escolas-api.onrender.com'
+})
 
 export const getSchools = async () => {
   const schools = await api.get("/school/list");
@@ -66,6 +66,7 @@ export const getSubject = async (id: string) => {
 };
 
 export const getSubjects = async () => {
-  const subject = await api.get(`/schoolSubject/list`);
-  return subject.data;
-};
+    const subject = await api.get(`/schoolSubject/list`)
+    return subject.data
+}
+ 
