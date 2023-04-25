@@ -5,6 +5,7 @@ import { IErrorInterface } from "../../../components/form-step1/type";
 import { api, getCoursesSchool } from "../../../services";
 import { ICandidate, IContact, Values } from "../type";
 import useSWR from "swr"
+import Router from "next/router"
 
 export const useSubmit=()=>{
     
@@ -86,6 +87,7 @@ export const useSubmit=()=>{
                 if(responseSubscription){
                     const intendendCourseResponse = await api.post('/intendedCourse/post',intendedCourseData);
                     console.log(intendendCourseResponse);
+                    Router.push({pathname:"/finishResistration"})
                     toast("Cadastro feito com sucesso", {autoClose: 2000, type: "success"})
                 }
             }catch(err){

@@ -16,18 +16,19 @@ const StudentSubscription=()=>{
     
     const {formik,courses}=useSubmit();
     console.log(courses);
-    const getComponentStep=()=>{
-        switch (step) {
-            case 1:
-                return <FormStep1/>;
-            case 2:
-                return <FormStep2/>;
-            case 3:
-                return <FormStep4/>;
-            default:
-                return <FormStep1/>;
-        }
-    }
+    
+    //const getComponentStep=()=>{
+    //    switch (step) {
+    //        case 1:
+    //            return <FormStep1/>;
+    //        case 2:
+    //            return <FormStep2/>;
+    //        case 3:
+    //            return <FormStep4/>;
+    //        default:
+    //            return <FormStep1/>;
+    //    }
+    //}
 
     return(
         <S.Container>
