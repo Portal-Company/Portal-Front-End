@@ -58,9 +58,7 @@ export const Suport = styled.div`
 
 export const DirectoReserve = styled.div`
   color: #000;
-
   width: 100%;
-
   top: 1.5rem;
   display: flex;
   justify-content: space-evenly;
