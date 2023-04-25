@@ -1,8 +1,8 @@
 import { NextPage } from "next";
-import FormStep4 from "../../components/form-step4";
+import ViewFinishResistration from "../../views/ViewFinishResistration";
 
 const FinishResistration : NextPage = () =>{
-    return <FormStep4/>
+    return <ViewFinishResistration/>
 } 
 
 export default FinishResistration;
