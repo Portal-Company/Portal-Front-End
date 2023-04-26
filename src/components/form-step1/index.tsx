@@ -89,7 +89,7 @@ const FormStep1 = () => {
       };
 
       const resposeCandidate = await api.post("/candidate/post", candidate);
-      console.log("Teste", resposeCandidate);
+      //console.log("Teste", resposeCandidate);
 
       const subscription = {
         escolaId: escolaId,
