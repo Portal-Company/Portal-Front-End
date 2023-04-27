@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WrapperContainer=styled.form`
+export const WrapperContainer=styled.div`
     
 `;
 

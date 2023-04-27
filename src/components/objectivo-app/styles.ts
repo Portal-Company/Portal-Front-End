@@ -18,24 +18,36 @@ export const Container = styled.div`
   h2{
     padding: 2rem;
   }
+  @media screen and  (max-width: 500px) {
+    h2{
+      text-align: center;
+      font-size: 1.8rem;
+    }
+  }
 `;
 
 export const InputContainer=styled.div`
   width: 45rem;
   height: 4.5rem;
+  background-color: #fff;
+  padding: 2.6rem .2rem;
+  display: flex;
+  align-items: center;
+  border-radius: .5rem;
 `;
 
 export const Input=styled.input`
-  padding: 1rem;
+  padding: 2.4rem;
   width: 75%;
   border: none;
   height: 100%;
+  background-color: transparent;
 `;
 
 export const Button=styled.button`
   color: #fff;
-  width: 25%;
-  height: 4.9rem;
+  padding: 1.6rem 4rem;
   background-color: ${({theme})=>theme.colors.primary.xblue};
-  padding: 1rem;
+  border: none;
+  border-radius: .5rem;
 `;

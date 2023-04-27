@@ -33,3 +33,18 @@ export interface IContact {
     numeroTelefone: string;
     email: string;
 }
+
+export interface Values {
+    nomeCompleto:string;
+    sexo:string;
+    dataNasc:string;
+    numeroTelefone:string;
+    email:string;
+    tipoIdentificacao:string;
+    tipoCertificacaoEscolar:string;
+    codigoDocumento:string;
+    photo: any;
+    pdfIdentificacao:any;
+    pdfCertificacaoEscolar:any;
+    cursoId:string;
+}

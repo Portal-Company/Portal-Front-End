@@ -41,12 +41,9 @@ const Header = () => {
       </S.MainContainer>
       <S.MenuBar showMenu={showMenu}>
         <li>
-          <a
-            href="#"
-            className={currentRoute === "/" ? "active" : "non-active"}
-          >
+          <Link href="#" className={currentRoute === "/" ? "active" : "non-active"}>
             Inicio
-          </a>
+          </Link>
         </li>
         <li>
           <a href="#">Escolas</a>

@@ -74,7 +74,7 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
                   ) : null}
                 </section>
                 <section>
-                  <S.ButtonSubscribe>Inscrever-se</S.ButtonSubscribe>
+                  <S.ButtonSubscribe onClick={()=>handleRedirect()}>Inscrever-se</S.ButtonSubscribe>
                 </section>
               </S.ContainerLeftFooter>
             </S.ContainerLeft>
