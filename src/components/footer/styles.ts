@@ -58,11 +58,11 @@ export const Suport = styled.div`
 
 export const DirectoReserve = styled.div`
   color: #000;
-  display: flex;
   width: 100%;
-  justify-content: space-evenly;
-  position: relative;
   top: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.9rem;
   align-items: center;
 `;
 

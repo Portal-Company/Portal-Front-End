@@ -1,19 +1,21 @@
-import React from 'react'
-import * as S from './styles'
-import { ButtonProps } from './type'
+import React from "react";
+import * as S from "./styles";
+import { ButtonProps } from "./type";
 
 const Button: React.FC<ButtonProps> = ({
-  type = 'submit',
+  type = "submit",
   Icon,
   onClick,
-  textName
+  textName,
 }) => {
   return (
     <S.Button type={type} onClick={onClick} className="button">
       <span>{Icon}</span>
       {textName}
     </S.Button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
+
+//Clean

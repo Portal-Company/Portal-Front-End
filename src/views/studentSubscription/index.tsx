@@ -30,17 +30,16 @@ const StudentSubscription=()=>{
     //    }
     //}
 
-    return(
-        <S.Container>
-            <CancelModal showModal={showModal} setShowModal={setShowModal}/>
-            <S.CardBackground>
-                <S.CenterContent>
-                    <h2>Fazer Inscrição de estudante</h2>
-                    <span>Aderir</span>
-                    <Step step={step}/>
-                </S.CenterContent>
-            </S.CardBackground>
-
+  return (
+    <S.Container>
+      <CancelModal showModal={showModal} setShowModal={setShowModal} />
+      <S.CardBackground>
+        <S.CenterContent>
+          <h2>Fazer Inscrição de estudante</h2>
+          <span>Aderir</span>
+          <Step step={step} />
+        </S.CenterContent>
+      </S.CardBackground>
             <div>
             <S.WrapperContainer onSubmit={formik.handleSubmit} encType="multipart/form-data">
                 {

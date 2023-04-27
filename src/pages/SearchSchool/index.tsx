@@ -5,33 +5,32 @@ import Head from "next/head";
 import { Layout } from "../../components/layout";
 import { api } from "../../services";
 
-const SearchSchoolPage: NextPage = ({data}: any) => {
-    return (
-        <React.Fragment>
-            <Head>
-                <title>Buscar Escola</title>
-            </Head>
-            <React.Fragment>
-                <SearchSchoolView data={data}/>        
-            </React.Fragment>
-        </React.Fragment>
-    );
-}
-
+const SearchSchoolPage: NextPage = ({ data }: any) => {
+  return (
+    <React.Fragment>
+      <Head>
+        <title>Buscar Escola</title>
+      </Head>
+      <React.Fragment>
+        <SearchSchoolView data={data} />
+      </React.Fragment>
+    </React.Fragment>
+  );
+};
 
 Object.assign(SearchSchoolPage, {
-    Layout,
+  Layout,
 });
 
 export async function getStaticProps() {
-    const response = await api.get("/school/list");
-    const data = response.data;
+  const response = await api.get("/school/list");
+  const data = response.data;
 
-    return {
+  return {
     props: {
-        data
-    }
-    }
-}  
+      data,
+    },
+  };
+}
 
 export default SearchSchoolPage;

@@ -15,9 +15,7 @@ const OfertaFormativa: React.FC = () => {
   });
   return (
     <S.Container>
-      <S.Title>
-        Conheça a nossa Oferta Formativa
-      </S.Title>
+      <S.Title>Conheça a nossa Oferta Formativa</S.Title>
       <S.Card>
         <Image src={M6} alt="IMG" width={600} height={400} data-aos="fade-up" />
         <S.CardText data-aos="fade-down">
