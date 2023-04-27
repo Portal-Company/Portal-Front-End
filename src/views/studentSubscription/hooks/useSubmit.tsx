@@ -92,6 +92,7 @@ export const useSubmit=()=>{
                 }
             }catch(err){
                 const error = err as IErrorInterface
+                Router.push({pathname:"/resistrationError"})
                 toast(error.response?.data?.error, {autoClose: 2000, type: "error"})
             }
         },
