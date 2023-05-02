@@ -34,7 +34,7 @@ export const useStep1 = () => {
             .matches(/^\9[1-9]\d{7}$/, 'Por favor, digite um número de telefone válido de Angola').required("número de telefone é obrigatório"),
             email: yup.string().email("digite um email valido").required("O email é obrigatorio"),
             tipoIdentificacao:yup.string().min(1,"o campo é obrigatório").required(),
-            codigoDocumento:yup.string().min(5,"degite um código de documento válido").required();
+            codigoDocumento:yup.string().min(5,"degite um código de documento válido").required()
           }),
         onSubmit: data => {
             

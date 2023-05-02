@@ -1,7 +1,14 @@
 
 import * as S from './styles'
 import Input from "../input"
-const FormStep2=()=>{
+import { Values, ValuesR } from '../../views/resistrationTest/type'
+
+interface MyComponentProps {
+    handleNextStep: (newData:Values) =>void;
+    data:Values;
+}
+
+const FormStep2:React.FC<MyComponentProps>=({handleNextStep , data:ValuesR})=>{
     
     return(
         <S.WrapperContainer>

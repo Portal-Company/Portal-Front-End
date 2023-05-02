@@ -32,7 +32,7 @@ export const FormCard=styled.div`
     }
 `;
 
-export const Forms=styled.div`
+export const Forms=styled.form`
     display:flex ;
     align-items: center;
     justify-content: center;
