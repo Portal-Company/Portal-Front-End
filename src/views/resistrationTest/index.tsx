@@ -1,7 +1,6 @@
 import {useState} from "react"
 import {Formik,Form,Field} from "formik"
 
-
 const StudentSubscriptionTest = () => {
     const [data,setData]=useState({
         nomeCompleto:"",
@@ -45,7 +44,7 @@ const StudentSubscriptionTest = () => {
 
 interface MyComponentProps {
     next: (newData:any) =>void;
-    prev: (newData:any) =>void;
+    prev?: (newData:any) =>void;
     data:any;
 }
 const StepOne:React.FC<MyComponentProps>= ({
