@@ -226,7 +226,7 @@ export const Select=styled.select`
     }
 `;
 
-export const WrapperContainer=styled.form`
+export const WrapperContainer=styled.div`
     button{
         z-index: 100;
         position: absolute;

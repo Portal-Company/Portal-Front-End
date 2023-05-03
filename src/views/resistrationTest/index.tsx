@@ -7,6 +7,9 @@ import Router, { useRouter } from "next/router";
 import useSWR from "swr"
 import { toast } from "react-toastify";
 import { IErrorInterface } from "../../components/form-step1/type";
+import * as S from "./styles"
+import CancelModal from "../cancelModal";
+import Step from "../../components/step";
 
 const StudentSubscriptionTest = () => {
     const [data,setData]=useState({
@@ -24,7 +27,8 @@ const StudentSubscriptionTest = () => {
         //cursoId:""
     });
 
-    const [currentStep,setCurrentStep] = useState(0)
+    const [currentStep,setCurrentStep] = useState(0);
+    const [showModal,setShowModal]=useState<boolean>(false);
 
     const handleNextStep = (newData:any) =>{
         setData(prev =>({...prev,...newData}))
@@ -43,9 +47,19 @@ const StudentSubscriptionTest = () => {
     console.log("data",data)
 
     return(
-        <>
-            {steps[currentStep]}
-        </>
+        <S.Container>
+            <CancelModal showModal={showModal} setShowModal={setShowModal} />
+            <S.CardBackground>
+                <S.CenterContent>
+                    <h2>Fazer Inscrição de estudante</h2>
+                    <span>Aderir</span>
+                    <Step step={currentStep + 1} />
+                </S.CenterContent>
+            </S.CardBackground>
+            <S.WrapperContainer>
+                {steps[currentStep]}
+            </S.WrapperContainer>
+        </S.Container>
     )
 }
 
