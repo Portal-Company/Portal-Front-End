@@ -6,7 +6,7 @@ import { api, getCoursesSchool } from "../../services";
 import Router, { useRouter } from "next/router";
 import useSWR from "swr"
 import { toast } from "react-toastify";
-import { IErrorInterface } from "../../components/form-step1/type";
+import { ICourses, IErrorInterface } from "../../components/form-step1/type";
 import * as S from "./styles"
 import CancelModal from "../cancelModal";
 import Step from "../../components/step";
@@ -224,9 +224,11 @@ const StepTwo:React.FC<MyComponentProps>= ({
                     <option value="Certificado_de_Habilitaoes">Certificado_de_Habilitaoes</option>    
                 </Field>
                 <Field name="cursoId" id="curso" component="select">
-                    <option>curso pretendido</option>
-                    <option value="Declaracao_com_Notas">Declaracao_com_Notas</option>
-                    <option value="Certificado_de_Habilitaoes">Certificado_de_Habilitaoes</option>
+                <option>curso pretendido</option>
+                    {courses?.map((item:ICourses,index:number)=>(
+                        <option value={item?.id} key={index}>{item?.nome}</option>
+
+                    ))}
                 </Field>
                 <input
                         type="file"
