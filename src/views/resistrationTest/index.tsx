@@ -1,5 +1,12 @@
 import {useState} from "react"
 import {Formik,Form,Field} from "formik"
+import { useFormik,useField } from "formik";
+import { ICandidate, IContact } from "./type";
+import { api, getCoursesSchool } from "../../services";
+import Router, { useRouter } from "next/router";
+import useSWR from "swr"
+import { toast } from "react-toastify";
+import { IErrorInterface } from "../../components/form-step1/type";
 
 const StudentSubscriptionTest = () => {
     const [data,setData]=useState({
@@ -8,13 +15,13 @@ const StudentSubscriptionTest = () => {
         dataNasc:"",
         numeroTelefone:"",
         email:"",
-        tipoIdentificacao:"",
-        tipoCertificacaoEscolar:"",
         codigoDocumento:"", 
-        photo: null, 
-        pdfIdentificacao:null,
-        pdfCertificacaoEscolar:null,
-        cursoId:""
+        tipoIdentificacao:"",
+        //tipoCertificacaoEscolar:"",
+        //photo: null, 
+        //pdfIdentificacao:null,
+        //pdfCertificacaoEscolar:null,
+        //cursoId:""
     });
 
     const [currentStep,setCurrentStep] = useState(0)
@@ -46,6 +53,7 @@ interface MyComponentProps {
     next: (newData:any) =>void;
     prev?: (newData:any) =>void;
     data:any;
+    setData?: (data:any) => void;
 }
 const StepOne:React.FC<MyComponentProps>= ({
     next,
@@ -104,13 +112,97 @@ const StepOne:React.FC<MyComponentProps>= ({
 
 const StepTwo:React.FC<MyComponentProps>= ({
     next,
-    data
+    data,
+    setData
 }) =>{
+
+    const {
+        query:{escolaId}
+    }=useRouter();
+
+    const {data:courses,error:coursesError}=useSWR("courses",()=>getCoursesSchool(escolaId));
+    
+
+    const handleSubmit = async (values:any) =>{
+        console.log(data,values);
+
+        const formData = new FormData();
+        const formData2 = new FormData();
+        const formData3 = new FormData();
+
+        formData.append('file', values.photo[0]);
+        formData2.append('file', values.pdfIdentificacao[0]);
+        formData3.append('file', values.pdfCertificacaoEscolar[0]);
+        
+        const contactData:IContact={
+            numeroTelefone:data.numeroTelefone,
+            email:data.email
+        }
+
+        const [
+            photoResponse,
+            identificationResponse,
+            certificationResponse,
+            constactResponse,
+        ]=await Promise.all([
+            api.post('/file', formData),
+            api.post('/file', formData2),
+            api.post('/file', formData3),
+            api.post('/contact/post',contactData),
+        ]);
+
+        const candidate:ICandidate={
+            nome: data.nomeCompleto,
+            sexo:data.sexo,
+            dataNasc:data.dataNasc,
+            contatoId:constactResponse.data.id,
+            photoUrl:photoResponse.data.id,
+            tipoIdentificacao:data.tipoIdentificacao,
+            codigoDocumento:data.codigoDocumento,
+            pdfIdentificacao: identificationResponse.data.id,
+            tipoCertificacaoEscolar:values.tipoCertificacaoEscolar,
+            pdfCertificacaoEscolar:certificationResponse.data.id
+        }
+        console.log(candidate);
+        const resposeCandidate = await api.post('/candidate/post', candidate);
+        console.log(resposeCandidate.data.id);
+
+        const subscription={
+            escolaId:escolaId,
+            candidatoId:resposeCandidate?.data?.id
+        }
+
+        try{
+            const responseSubscription = await api.post('/enrollment/post',subscription);
+            const intendedCourseData={
+                inscricaoId:responseSubscription.data.id,
+                cursoId:values.cursoId
+            } 
+            if(responseSubscription){
+                const intendendCourseResponse = await api.post('/intendedCourse/post',intendedCourseData);
+                console.log(intendendCourseResponse);
+                Router.push({pathname:"/finishResistration"})
+                toast("Cadastro feito com sucesso", {autoClose: 2000, type: "success"})
+            }
+        }catch(err){
+            const error = err as IErrorInterface
+            Router.push({pathname:"/resistrationError"})
+                toast(error.response?.data?.error, {autoClose: 2000, type: "error"})
+        }         
+    } 
+    
     return(<Formik
-        initialValues={data}
-        onSubmit={next}
-    >
-        {()=>(
+        initialValues={{
+            tipoCertificacaoEscolar:"",
+            cursoId:"",
+            photo:null,
+            pdfIdentificacao:null,
+            pdfCertificacaoEscolar:null
+            }
+        }
+        onSubmit={values=> handleSubmit(values)}
+        >
+        {(formik)=>(
             <Form>
                 <Field name="tipoCertificacaoEscolar" id="tipoCertificacaoEscolar" component="select">
                     <option>tipo de certificação escolar</option>
@@ -122,17 +214,28 @@ const StepTwo:React.FC<MyComponentProps>= ({
                     <option value="Declaracao_com_Notas">Declaracao_com_Notas</option>
                     <option value="Certificado_de_Habilitaoes">Certificado_de_Habilitaoes</option>
                 </Field>
-                <Field
-                    component="input"
-                    as="input"
-                    type="file"
-                    name="photo"
-                />
-                
+                <input
+                        type="file"
+                        name="photo"
+                        onChange={(event) => {
+                           formik.setFieldValue("photo", event.currentTarget.files)}}
+                    />
+                <input
+                        type="file"
+                        name="pdfIdentificacao"
+                        onChange={(event) => {
+                            formik.setFieldValue("pdfIdentificacao", event.currentTarget.files)}}
+                    />
+                    <input
+                        type="file"
+                        name="pdfCertificacaoEscolar"
+                        onChange={(event) => {
+                            formik.setFieldValue("pdfCertificacaoEscolar", event.currentTarget.files)}}
+                    />    
                 <button type="submit">Next</button>
             </Form>
         )}
-    </Formik>)
-}
+    </Formik>)}
+    
 
 export default StudentSubscriptionTest;
