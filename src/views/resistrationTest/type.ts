@@ -52,3 +52,11 @@ export interface Values {
 export interface ValuesR{
     data:Values;
 }
+
+export interface MyComponentProps {
+    next: (newData:any) =>void;
+    prev?: (newData:any) =>void;
+    data:any;
+    setData?: (data:any) => void;
+    setCurrentStep?: (step:number) => void;    
+}

@@ -1,12 +1,71 @@
 import * as S from './styles'
 import Input from "../input"
 import { useSubmit } from '../../views/studentSubscription/hooks/useSubmit';
-import { Values, ValuesR } from '../../views/resistrationTest/type';
-import { Formik } from 'formik';
-interface MyComponentProps {
+import { MyComponentProps, Values, ValuesR } from '../../views/resistrationTest/type';
+import { Formik,Field,Form } from 'formik';
+
+
+export const StepOne:React.FC<MyComponentProps>= ({
+    next,
+    data
+}) =>{
+    const handleSubmit = (values:any) =>{
+        next(values);
+    }
+
+    return(
+        <Formik
+        initialValues={data}
+        onSubmit={handleSubmit} 
+     >
+        {()=>(
+            <Form>
+                
+                <Field type="text" name="nomeCompleto" placeholder="nomeCompleto"/>
+                <Field name="sexo" id="sexo" component="select">
+                    <option>genero</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>    
+                </Field>
+                <Field
+                    placeholder='Data de nascimento' 
+                    type='date'
+                    name="dataNasc"
+                />
+                <Field 
+                    placeholder='O seu numero de telefone' 
+                    type='number'
+                    name="numeroTelefone"
+                />
+                <Field 
+                    placeholder='O seu email' 
+                    type='email'
+                    name="email"
+                />
+                <Field name="tipoIdentificacao" id="tipoIdentificacao" component="select">
+                    <option>Tipo de indetificação</option>
+                    <option value="Bilhete_de_Identidade">Bilhete_de_Identidade</option>
+                    <option value="Cedula_Pessoal">Cedula_Pessoal</option>
+                    <option value="Passaporte_Ordinario">Passaporte_Ordinario</option>    
+                </Field>
+                <Field 
+                    placeholder='Código do documento' 
+                    type='text'
+                    name="codigoDocumento"
+                />
+                <button type="submit">Next</button>
+            </Form>
+        )}
+    </Formik>)
+}
+
+
+/*interface MyComponentProps {
     handleNextStep: (newData:Values) =>void;
     data:Values;
 }
+
+
 
 const FormStep1:React.FC<MyComponentProps>=({handleNextStep , data})=>{
     
@@ -81,3 +140,4 @@ const FormStep1:React.FC<MyComponentProps>=({handleNextStep , data})=>{
         )
 }
 export default FormStep1;
+*/
