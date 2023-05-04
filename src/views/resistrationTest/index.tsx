@@ -1,6 +1,5 @@
 import {useState} from "react"
 import {Formik,Form,Field} from "formik"
-import { useFormik,useField } from "formik";
 import { ICandidate, IContact } from "./type";
 import { api, getCoursesSchool } from "../../services";
 import Router, { useRouter } from "next/router";
@@ -10,7 +9,7 @@ import { ICourses, IErrorInterface } from "../../components/form-step1/type";
 import * as S from "./styles"
 import CancelModal from "../cancelModal";
 import Step from "../../components/step";
-import { postFetchContact } from "./services";
+import FormStep3 from "../../components/form-step4";
 
 const StudentSubscriptionTest = () => {
     const [data,setData]=useState({
@@ -21,11 +20,6 @@ const StudentSubscriptionTest = () => {
         email:"",
         codigoDocumento:"", 
         tipoIdentificacao:"",
-        //tipoCertificacaoEscolar:"",
-        //photo: null, 
-        //pdfIdentificacao:null,
-        //pdfCertificacaoEscolar:null,
-        //cursoId:""
     });
 
     const [currentStep,setCurrentStep] = useState(0);
@@ -43,9 +37,9 @@ const StudentSubscriptionTest = () => {
 
     const steps=[
         <StepOne next={handleNextStep} data={data} key={1}/>,
-        <StepTwo next={handleNextStep} prev={handlePrevStep} data={data} key={2}/>
+        <StepTwo next={handleNextStep} prev={handlePrevStep} setCurrentStep={setCurrentStep} data={data} key={2}/>,
+        <FormStep3 key={3}/>
     ]
-    console.log("data",data)
 
     return(
         <S.Container>
@@ -69,6 +63,7 @@ interface MyComponentProps {
     prev?: (newData:any) =>void;
     data:any;
     setData?: (data:any) => void;
+    setCurrentStep?: (step:number) => void;    
 }
 const StepOne:React.FC<MyComponentProps>= ({
     next,
@@ -198,7 +193,7 @@ const StepTwo:React.FC<MyComponentProps>= ({
             if(responseSubscription){
                 const intendendCourseResponse = await api.post('/intendedCourse/post',intendedCourseData);
                 console.log(intendendCourseResponse);
-                Router.push({pathname:"/finishResistration"})
+                next(data);
                 toast("Cadastro feito com sucesso", {autoClose: 2000, type: "success"})
             }
         }catch(err){
