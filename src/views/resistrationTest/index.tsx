@@ -10,6 +10,7 @@ import { ICourses, IErrorInterface } from "../../components/form-step1/type";
 import * as S from "./styles"
 import CancelModal from "../cancelModal";
 import Step from "../../components/step";
+import { postFetchContact } from "./services";
 
 const StudentSubscriptionTest = () => {
     const [data,setData]=useState({
@@ -149,21 +150,23 @@ const StepTwo:React.FC<MyComponentProps>= ({
         formData3.append('file', values.pdfCertificacaoEscolar[0]);
         
         const contactData:IContact={
-            numeroTelefone:data.numeroTelefone,
+            numeroTelefone:data.numeroTelefone.toString(),
             email:data.email
         }
 
+        console.log(contactData);
         const [
             photoResponse,
             identificationResponse,
             certificationResponse,
-            constactResponse,
+            constactResponse
         ]=await Promise.all([
             api.post('/file', formData),
             api.post('/file', formData2),
             api.post('/file', formData3),
-            api.post('/contact/post',contactData),
+            api.post('/contact/post', contactData)
         ]);
+        console.log(constactResponse);
 
         const candidate:ICandidate={
             nome: data.nomeCompleto,
@@ -227,31 +230,29 @@ const StepTwo:React.FC<MyComponentProps>= ({
                 <option>curso pretendido</option>
                     {courses?.map((item:ICourses,index:number)=>(
                         <option value={item?.id} key={index}>{item?.nome}</option>
-
                     ))}
                 </Field>
                 <input
-                        type="file"
-                        name="photo"
-                        onChange={(event) => {
-                           formik.setFieldValue("photo", event.currentTarget.files)}}
+                    type="file"
+                    name="photo"
+                    onChange={(event) => {
+                        formik.setFieldValue("photo", event.currentTarget.files)}}
                     />
                 <input
-                        type="file"
-                        name="pdfIdentificacao"
-                        onChange={(event) => {
-                            formik.setFieldValue("pdfIdentificacao", event.currentTarget.files)}}
-                    />
-                    <input
-                        type="file"
-                        name="pdfCertificacaoEscolar"
-                        onChange={(event) => {
-                            formik.setFieldValue("pdfCertificacaoEscolar", event.currentTarget.files)}}
-                    />    
+                    type="file"
+                    name="pdfIdentificacao"
+                    onChange={(event) => {
+                    formik.setFieldValue("pdfIdentificacao", event.currentTarget.files)}}
+                />
+                <input
+                    type="file"
+                    name="pdfCertificacaoEscolar"
+                    onChange={(event) => {
+                    formik.setFieldValue("pdfCertificacaoEscolar", event.currentTarget.files)}}
+                />    
                 <button type="submit">Next</button>
             </Form>
         )}
     </Formik>)}
     
-
 export default StudentSubscriptionTest;
