@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
-export const WrapperContainer = styled.div``;
-
-export const Paragraph = styled.p`
-  font-weight: 500;
-  text-align: start;
-  max-width: 40rem;
-  margin: auto;
-  background-color: red;
+export const Paragraph=styled.p`
+    font-weight: 500;
+    text-align: start;
+    max-width: 45rem;
+    margin: auto;
 `;
 
 export const FormCard = styled.div`
@@ -30,61 +27,50 @@ export const FormCard = styled.div`
   }
 `;
 
-export const Forms = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  > label {
-    width: 100%;
-    max-width: 40rem;
-    margin: 2rem 0;
-    text-align: start;
-    font-weight: 500;
-  }
-  > div {
-    width: 100%;
-    max-width: 40rem;
-    display: flex;
+export const FormContainer=styled.div`
+    display:flex ;
     align-items: center;
-    justify-content: space-between;
-  }
-  textarea {
-    border: 0.1px solid #cacaca;
-    margin-top: 2rem;
-    font-size: 1rem;
-    padding: 1.3rem;
-    width: 100%;
-    max-width: 40rem;
-    flex: 1;
-    font-size: 1.5rem;
-    color: #a9a6b3;
-    :focus {
-      border-bottom: 0.1px solid #1ba6e2;
-      transition: 2s ease-in-out;
+    justify-content: center;
+    flex-direction: column;
+    input,select{
+        border: none;
+        border-bottom:.1px solid #cacaca;
+        margin-top: 2rem;
+        font-size: 1rem;
+        padding: 1.3rem;
+        width: 100%;
+        max-width: 45rem;
+        flex: 1;
+        font-size: 1.2rem;
+        ::placeholder{
+            font-weight: bolder;
+            color:#a9a6b3;
+        }
+        :focus{
+            border-bottom:.1px solid #1ba6e2;
+            transition: 2s ease-in-out;
+        }
     }
-  }
-`;
-
-export const Field = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const Select = styled.select`
-  border: none;
-  border-bottom: 0.1px solid #cacaca;
-  margin-top: 2rem;
-  font-size: 1rem;
-  padding: 1.3rem;
-  width: 100%;
-  max-width: 40rem;
-  flex: 1;
-  font-size: 1.5rem;
-  color: #a9a6b3;
-  :focus {
-    border-bottom: 0.1px solid #1ba6e2;
-    transition: 2s ease-in-out;
+    select{
+        font-size: 1.5rem;
+        color:#a9a6b3;        
+    }
+    button{
+        margin: 3rem 0;
+        border: none;
+        position: static;
+        width: 20rem;
+        border-radius: 4rem;
+        background: ${({ theme }) => theme.colors.primary.xblue};
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: ${({ theme }) => theme.font.sizes.small};
+        color: #fff;
+        :hover{
+            border-color: ${({ theme }) => theme.colors.primary.xblue};
+            border-color: var(--cui-input-focus-border-color, ${({ theme }) => theme.colors.primary.xblue});
+            box-shadow: 0 0 0 0.25rem rgb(20 31 255 / 25%);
+        }
+    }
   }
 `;
