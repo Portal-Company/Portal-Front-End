@@ -138,7 +138,7 @@ export const StepTwo:React.FC<MyComponentProps>= ({
                             onChange={(event) => {
                             formik.setFieldValue("pdfCertificacaoEscolar", event.currentTarget.files)}}
                         />    
-                        <button type="submit">Next</button>
+                        <button type="submit">Cadastrar</button>
                     </S.FormContainer>
                 </S.FormCard>
             </Form>

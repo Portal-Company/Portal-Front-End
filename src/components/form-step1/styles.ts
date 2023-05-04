@@ -56,4 +56,21 @@ export const FormContainer=styled.div`
         font-size: 1.5rem;
         color:#a9a6b3;        
     }
+    button{
+        margin: 3rem 0;
+        border: none;
+        position: static;
+        width: 20rem;
+        border-radius: 4rem;
+        background: ${({ theme }) => theme.colors.primary.xblue};
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: ${({ theme }) => theme.font.sizes.small};
+        color: #fff;
+        :hover{
+            border-color: ${({ theme }) => theme.colors.primary.xblue};
+            border-color: var(--cui-input-focus-border-color, ${({ theme }) => theme.colors.primary.xblue});
+            box-shadow: 0 0 0 0.25rem rgb(20 31 255 / 25%);
+        }
+    }
 `;

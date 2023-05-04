@@ -55,7 +55,7 @@ export const StepOne:React.FC<MyComponentProps>= ({
                             type='text'
                             name="codigoDocumento"
                         />
-                        <button type="submit">Next</button>
+                        <button type="submit">Continuar</button>
                     </S.FormContainer>
                 </S.FormCard>
             </Form>
