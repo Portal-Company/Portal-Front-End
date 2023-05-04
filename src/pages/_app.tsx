@@ -8,9 +8,9 @@ import Loading from "../components/loading";
 import "../../public/nprogress.css";
 import Router from "next/router";
 import NProgress from "nprogress";
+import 'react-toastify/dist/ReactToastify.css';
 
 Router.events.on("routeChangeStart", (url) => {
-  console.log(`Loading: ${url}`);
   NProgress.start();
 });
 
@@ -18,6 +18,7 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 import { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 
 type NextPageWithLayout = NextPage & {
   Layout?: ComponentType;
@@ -53,6 +54,7 @@ function MyApp({ Component, pageProps, err }: AppPropsWithLayout) {
       ) : (
         <ComponentLayout>
           <Component {...pageProps} err={err} />
+          <ToastContainer/>
         </ComponentLayout>
       )}
       <GlobalStyles />
