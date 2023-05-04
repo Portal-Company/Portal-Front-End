@@ -1,6 +1,5 @@
 
 import * as S from './styles'
-import Input from "../input"
 import { ICandidate, IContact, MyComponentProps, Values, ValuesR } from '../../views/resistrationTest/type'
 import { useRouter } from 'next/router';
 import { api, getCoursesSchool } from '../../services';
@@ -145,32 +144,3 @@ export const StepTwo:React.FC<MyComponentProps>= ({
         )}
     </Formik>)}
     
-
-/*interface MyComponentProps {
-    handleNextStep: (newData:Values) =>void;
-    data:Values;
-}
-
-const FormStep2:React.FC<MyComponentProps>=({handleNextStep , data:ValuesR})=>{
-    
-    return(
-        <S.WrapperContainer>
-            <S.FormCard>
-                <S.Paragraph>
-                    Para iniciar o processo de abertura de conta, precisamos de validar o seu nº de telemóvel.
-                </S.Paragraph>
-                <S.Forms>
-                    <Input 
-                        placeholder='O sua foto' 
-                        type='file'
-                        name="photoUrl"
-                    />
-                    <Input placeholder='O sua foto' name="pdfBi" type='file'/>
-                    <Input placeholder='O sua foto' name="pdfCertificado" type='file'/>
-                    <Input placeholder='O sua foto' name="pdfDeclaração" type='file'/>
-                </S.Forms>
-            </S.FormCard>
-        </S.WrapperContainer>       
-    )
-}
-export default FormStep2*/
