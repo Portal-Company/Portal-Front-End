@@ -104,36 +104,43 @@ export const StepTwo:React.FC<MyComponentProps>= ({
         >
         {(formik)=>(
             <Form>
-                <Field name="tipoCertificacaoEscolar" id="tipoCertificacaoEscolar" component="select">
-                    <option>tipo de certificação escolar</option>
-                    <option value="Declaracao_com_Notas">Declaracao_com_Notas</option>
-                    <option value="Certificado_de_Habilitaoes">Certificado_de_Habilitaoes</option>    
-                </Field>
-                <Field name="cursoId" id="curso" component="select">
-                <option>curso pretendido</option>
-                    {courses?.map((item:ICourses,index:number)=>(
-                        <option value={item?.id} key={index}>{item?.nome}</option>
-                    ))}
-                </Field>
-                <input
-                    type="file"
-                    name="photo"
-                    onChange={(event) => {
-                        formik.setFieldValue("photo", event.currentTarget.files)}}
-                    />
-                <input
-                    type="file"
-                    name="pdfIdentificacao"
-                    onChange={(event) => {
-                    formik.setFieldValue("pdfIdentificacao", event.currentTarget.files)}}
-                />
-                <input
-                    type="file"
-                    name="pdfCertificacaoEscolar"
-                    onChange={(event) => {
-                    formik.setFieldValue("pdfCertificacaoEscolar", event.currentTarget.files)}}
-                />    
-                <button type="submit">Next</button>
+                <S.FormCard>
+                    <S.Paragraph>
+                        Para iniciar o processo de abertura de conta, precisamos de validar o seu nº de telemóvel.
+                    </S.Paragraph>
+                    <S.FormContainer>
+                        <Field name="tipoCertificacaoEscolar" id="tipoCertificacaoEscolar" component="select">
+                            <option>tipo de certificação escolar</option>
+                            <option value="Declaracao_com_Notas">Declaracao_com_Notas</option>
+                            <option value="Certificado_de_Habilitaoes">Certificado_de_Habilitaoes</option>    
+                        </Field>
+                        <Field name="cursoId" id="curso" component="select">
+                        <option>curso pretendido</option>
+                            {courses?.map((item:ICourses,index:number)=>(
+                                <option value={item?.id} key={index}>{item?.nome}</option>
+                            ))}
+                        </Field>
+                        <input
+                            type="file"
+                            name="photo"
+                            onChange={(event) => {
+                                formik.setFieldValue("photo", event.currentTarget.files)}}
+                            />
+                        <input
+                            type="file"
+                            name="pdfIdentificacao"
+                            onChange={(event) => {
+                            formik.setFieldValue("pdfIdentificacao", event.currentTarget.files)}}
+                        />
+                        <input
+                            type="file"
+                            name="pdfCertificacaoEscolar"
+                            onChange={(event) => {
+                            formik.setFieldValue("pdfCertificacaoEscolar", event.currentTarget.files)}}
+                        />    
+                        <button type="submit">Next</button>
+                    </S.FormContainer>
+                </S.FormCard>
             </Form>
         )}
     </Formik>)}
