@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
-import StudentSubscription from "../../views/studentSubscription";
+import StudentSubscriptionTest from "../../views/studentSubscription";
 
 const StudentSubscriptionPage: NextPage = () => {
   return (
@@ -10,7 +10,7 @@ const StudentSubscriptionPage: NextPage = () => {
         <title>Inscrição</title>
       </Head>
       <React.Fragment>
-        <StudentSubscription />
+        <StudentSubscriptionTest />
       </React.Fragment>
     </React.Fragment>
   );

@@ -1,5 +1,4 @@
-import { FaCheck, FaFile, FaUser, FaLine } from "react-icons/fa";
-import { HiLocationMarker } from "react-icons/hi";
+import { FaCheck} from "react-icons/fa";
 import * as S from "./styles";
 import { StepProps } from "./type";
 
