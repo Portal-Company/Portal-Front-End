@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { MyComponentProps, Values, ValuesR } from '../../views/resistrationTest/type';
+import { MyComponentProps, Values, ValuesR } from '../../views/studentSubscription/type';
 import { Formik,Field,Form } from 'formik';
 
 
