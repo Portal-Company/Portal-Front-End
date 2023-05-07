@@ -6,6 +6,7 @@ import useSWR from "swr"
 import { toast } from "react-toastify";
 import { ICourses, IErrorInterface } from '../form-step1/type';
 import { Field, Form, Formik } from 'formik';
+import * as yup from "yup";
 
 export const StepTwo:React.FC<MyComponentProps>= ({
     next,
@@ -98,6 +99,14 @@ export const StepTwo:React.FC<MyComponentProps>= ({
             pdfCertificacaoEscolar:null
             }
         }
+        validationSchema={
+            yup.object({
+                tipoCertificacaoEscolar: yup.string().min(1,"preencha o campo").required("campo obrigatório"),
+                cursoId: yup.string().min(1,"selecione o campo").required("campo é obrigatório"),
+                photo: yup.string().min(1,"selecione o campo").required("campo obrigatório"),
+                pdfIdentificacao: yup.string().min(1, "seleccione o campo").required("campo obrigatório"),
+                pdfCertificacaoEscolar: yup.string().min(1,"seleccione o campo").required("campo obrigatorio")
+            })}
         onSubmit={values=> handleSubmit(values)}
         >
         {(formik)=>(
@@ -112,30 +121,60 @@ export const StepTwo:React.FC<MyComponentProps>= ({
                             <option value="Declaracao_com_Notas">Declaracao_com_Notas</option>
                             <option value="Certificado_de_Habilitaoes">Certificado_de_Habilitaoes</option>    
                         </Field>
+                        {formik.touched.tipoCertificacaoEscolar && formik.errors.tipoCertificacaoEscolar ? (
+                            <S.ErrorMessage>
+                                {formik.errors.tipoCertificacaoEscolar}
+                            </S.ErrorMessage>
+                        ): null}
+
                         <Field name="cursoId" id="curso" component="select">
                         <option>curso pretendido</option>
                             {courses?.map((item:ICourses,index:number)=>(
                                 <option value={item?.id} key={index}>{item?.nome}</option>
                             ))}
                         </Field>
+                        {formik.touched.cursoId && formik.errors.cursoId ? (
+                            <S.ErrorMessage>
+                                {formik.errors.cursoId}
+                            </S.ErrorMessage>
+                        ): null}
+
                         <input
                             type="file"
                             name="photo"
                             onChange={(event) => {
                                 formik.setFieldValue("photo", event.currentTarget.files)}}
-                            />
+                        />
+                        {formik.touched.photo && formik.errors.photo ? (
+                            <S.ErrorMessage>
+                                {formik.errors.photo}
+                            </S.ErrorMessage>
+                        ): null}
+
                         <input
                             type="file"
                             name="pdfIdentificacao"
                             onChange={(event) => {
                             formik.setFieldValue("pdfIdentificacao", event.currentTarget.files)}}
                         />
+                        {formik.touched.pdfIdentificacao && formik.errors.pdfIdentificacao ? (
+                            <S.ErrorMessage>
+                                {formik.errors.pdfIdentificacao}
+                            </S.ErrorMessage>
+                        ): null}
+
                         <input
                             type="file"
                             name="pdfCertificacaoEscolar"
                             onChange={(event) => {
                             formik.setFieldValue("pdfCertificacaoEscolar", event.currentTarget.files)}}
                         />    
+                        {formik.touched.pdfCertificacaoEscolar && formik.errors.pdfCertificacaoEscolar ? (
+                            <S.ErrorMessage>
+                                {formik.errors.pdfCertificacaoEscolar}
+                            </S.ErrorMessage>
+                        ): null}
+
                         <button type="submit">Cadastrar</button>
                     </S.FormContainer>
                 </S.FormCard>
