@@ -13,7 +13,15 @@ export const StepOne:React.FC<MyComponentProps>= ({
 
     return(
         <Formik
-        initialValues={data}
+        initialValues={{
+            nomeCompleto:"",
+            sexo:"",
+            dataNasc:"",
+            numeroTelefone:"",
+            email:"",
+            codigoDocumento:"", 
+            tipoIdentificacao:"",
+        }}
         validationSchema={
             yup.object({
                 nomeCompleto: yup.string().min(8,"o nome completo deve ter pelo menos 8 caracteres").required("o nome completo é obrigatório"),

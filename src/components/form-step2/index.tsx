@@ -81,8 +81,8 @@ export const StepTwo:React.FC<MyComponentProps>= ({
             if(responseSubscription){
                 const intendendCourseResponse = await api.post('/intendedCourse/post',intendedCourseData);
                 console.log(intendendCourseResponse);
-                next(data);
                 toast("Cadastro feito com sucesso", {autoClose: 2000, type: "success"})
+                next(data);
             }
         }catch(err){
             const error = err as IErrorInterface
