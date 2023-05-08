@@ -140,6 +140,7 @@ export const StepTwo:React.FC<MyComponentProps>= ({
                         ): null}
 
                         <input
+                            accept="image/*"
                             type="file"
                             name="photo"
                             onChange={(event) => {
@@ -152,6 +153,7 @@ export const StepTwo:React.FC<MyComponentProps>= ({
                         ): null}
 
                         <input
+                            accept="application/pdf"
                             type="file"
                             name="pdfIdentificacao"
                             onChange={(event) => {
@@ -164,6 +166,7 @@ export const StepTwo:React.FC<MyComponentProps>= ({
                         ): null}
 
                         <input
+                            accept="application/pdf"
                             type="file"
                             name="pdfCertificacaoEscolar"
                             onChange={(event) => {
