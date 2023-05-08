@@ -1,5 +1,4 @@
 import * as S from "./styles";
-import Link from "next/link";
 import estudantes from "../../../public/assets/students.png";
 import M1 from "../../../public/assets/m1.jpg";
 import M2 from "../../../public/assets/m2.jpg";
@@ -18,7 +17,7 @@ const Banner = () => {
             <span>Criando o futuro apenas com um click</span>
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
-                <Link href={"/SearchSchool"}>Procurar Escolas</Link>
+                Procurar Escolas
               </S.Button>
             </S.ButtonsContainer>
           </S.Content>
@@ -36,7 +35,7 @@ const Banner = () => {
             <span>Criando o futuro apenas com um click</span>
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
-                <Link href={"/SearchSchool"}>Inscrever-se</Link>
+                Inscrever-se
               </S.Button>
             </S.ButtonsContainer>
           </S.Content>
@@ -54,7 +53,7 @@ const Banner = () => {
             <span>Comece aqui</span>
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
-                <Link href={"/SearchSchool"}>Inscrever-se</Link>
+                Inscrever-se
               </S.Button>
             </S.ButtonsContainer>
           </S.Content>
@@ -92,7 +91,7 @@ const Banner = () => {
             <span>Criando o futuro apenas com um click</span>
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
-                <Link href={"/SearchSchool"}>Inscrever-se</Link>
+                Inscrever-se
               </S.Button>
             </S.ButtonsContainer>
           </S.Content>
