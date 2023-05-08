@@ -17,7 +17,7 @@ const Banner = () => {
             <span>Criando o futuro apenas com um click</span>
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
-                Inscrever-se
+                Procurar Escolas
               </S.Button>
             </S.ButtonsContainer>
           </S.Content>
