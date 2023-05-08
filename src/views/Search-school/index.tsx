@@ -4,6 +4,7 @@ import { SchoolCardSearch } from "../../components/SchoolCardSeach";
 import { api } from "../../services";
 import { schools } from "./mock";
 import { RxTriangleDown } from "react-icons/rx";
+import { CiSearch } from "react-icons/ci";
 import * as S from "./styles";
 
 type ISchool = [
@@ -43,14 +44,17 @@ export function SearchSchoolView({ data }: any) {
               </select>
               <RxTriangleDown />
             </div>
-            <input
-              type="search"
-              name=""
-              value={search}
-              id=""
-              placeholder="pesquisar..."
-              onChange={(e) => setSearch(e?.target.value)}
-            />
+            <section>
+              <input
+                type="search"
+                name=""
+                value={search}
+                id=""
+                placeholder="Pesquisar..."
+                onChange={(e) => setSearch(e?.target.value)}
+              />
+              <CiSearch />
+            </section>
           </S.FirstSection>
           <S.SecondSection>
             {search

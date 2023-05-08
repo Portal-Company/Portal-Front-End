@@ -29,11 +29,7 @@ export const FirstSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
   > div {
     position: relative;
     display: flex;
@@ -83,16 +79,37 @@ export const FirstSection = styled.div`
       transition: 0.25s all ease;
     }
   }
-  > input {
-    padding: 1rem 1rem;
-    width: 30rem;
-    outline: none;
-    border: 1px solid #ddd;
-    color: #001;
-    border-radius: 0.3rem;
+  > section {
+    background-color: #fff;
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    border-radius: 1rem;
+    //box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 
-    @media screen and (max-width: 768px) {
-      order: 1;
+    :hover {
+      > input {
+        width: 30rem;
+      }
+    }
+
+    > input {
+      width: 0;
+      outline: none;
+      border: none;
+      font-weight: 500;
+      font-size: 1.8rem;
+      transition: 0.8s;
+      background: transparent;
+      font-family: Comfortaa;
+
+      @media screen and (max-width: 768px) {
+        order: 1;
+      }
+    }
+
+    svg {
+      font-size: 2rem;
     }
   }
 `;
