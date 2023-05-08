@@ -30,8 +30,15 @@ export const Menu = styled.div`
   margin: 5%;
 
   li {
-    margin: 0 3rem;
+    padding: 0.9rem 3rem;
     font-size: 1.7rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+
+    :hover {
+      color: #fff;
+      background-color: #090b0f;
+    }
   }
   @media screen and (max-width: 500px) {
     display: none;
