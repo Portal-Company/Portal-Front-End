@@ -8,13 +8,7 @@ import { StepTwo } from "../../components/form-step2";
 
 const StudentSubscription = () => {
     const [data,setData]=useState({
-        nomeCompleto:"",
-        sexo:"",
-        dataNasc:"",
-        numeroTelefone:"",
-        email:"",
-        codigoDocumento:"", 
-        tipoIdentificacao:"",
+        
     });
 
     const [currentStep,setCurrentStep] = useState(0);

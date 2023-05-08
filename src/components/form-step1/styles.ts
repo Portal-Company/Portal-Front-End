@@ -72,5 +72,13 @@ export const FormContainer=styled.div`
             box-shadow: 0 0 0 0.25rem rgb(20 31 255 / 25%);
         }
     }
-  }
 `;
+
+export const ErrorMessage = styled.label`
+  color: #c70606;
+  position: relative;
+  margin-left: 0.2rem;
+  top: 0.3rem;
+  font-weight: 400;
+  font-size: ${({ theme }) => theme.font.sizes.midle};
+`
