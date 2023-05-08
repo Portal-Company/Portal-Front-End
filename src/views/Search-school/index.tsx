@@ -3,7 +3,6 @@ import { Footer } from "../../components/footer";
 import { SchoolCardSearch } from "../../components/SchoolCardSeach";
 import { api } from "../../services";
 import { schools } from "./mock";
-import { RxTriangleDown } from "react-icons/rx";
 import * as S from "./styles";
 
 type ISchool = [
@@ -35,14 +34,11 @@ export function SearchSchoolView({ data }: any) {
       <S.Container>
         <S.Content>
           <S.FirstSection>
-            <div>
-              <select name="" id="">
-                <option label="Filtrar por" value={undefined} />
-                <option value="">Provincia</option>
-                <option value="">Municipio</option>
-              </select>
-              <RxTriangleDown />
-            </div>
+            <select name="" id="">
+              <option label="Filtrar por" value={undefined} />
+              <option value="">provincia</option>
+              <option value="">Municipio</option>
+            </select>
             <input
               type="search"
               name=""

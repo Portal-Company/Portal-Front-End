@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-interface showMenuProps {
-  showMenu: boolean;
+interface showMenuProps{
+  showMenu:boolean
 }
 
-export const Wrapper = styled.div``;
+export const Wrapper=styled.div`
+
+`;
 
 export const MainContainer = styled.main`
   background-color: #161d26;
@@ -33,58 +35,59 @@ export const Menu = styled.div`
     margin: 0 3rem;
     font-size: 1.7rem;
   }
-  @media screen and (max-width: 500px) {
-    display: none;
+  @media screen and  (max-width: 500px) {
+    display:none;
   }
 `;
 
-export const ContentLeft = styled.div``;
+export const ContentLeft = styled.div`
+ 
+`;
 
 export const MenuMobile = styled.div`
-  display: none;
+  display:none;
   color: #fff;
-  padding: 0.5rem;
+  padding: .5rem;
   font-size: 2.5rem;
-  width: 3.5rem;
-  cursor: pointer;
-  @media screen and (max-width: 500px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width:3.5rem;
+  cursor:pointer;
+  @media screen and  (max-width: 500px) {
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
 `;
 
-export const MenuBar = styled.div`
+export const MenuBar=styled.div`
   display: none;
   position: absolute;
   width: 100%;
   top: 10rem;
   z-index: 10000;
-  @media screen and (max-width: 500px) {
-    display: block;
+  @media screen and  (max-width: 500px) {
+    display:block;
   }
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
-  padding: ${({ showMenu }: showMenuProps) => (showMenu ? "1rem" : "0rem")};
-  background-color: #161d26;
-  height: ${({ showMenu }: showMenuProps) => (showMenu ? "15rem" : "0rem")};
-  transition: 0.3s;
-  li {
+  border-top:1px solid #333;
+  border-bottom:1px solid #333;
+  padding:${({showMenu}:showMenuProps)=>showMenu?'1rem':'0rem'};
+  background-color:#161d26;
+  height:${({showMenu}:showMenuProps)=>showMenu?'15rem':'0rem'};
+  transition: .3s;
+  li{
     display: none;
     position: relative;
-    color: #fff;
-    border-radius: 0.3rem;
-    padding: 1rem;
+    color:#fff;
+    border-radius:.3rem;
+    padding:1rem;
     background-color: #161d30;
-    margin: 0.5rem;
+    margin: .5rem;
     cursor: pointer;
-
-    @media screen and (max-width: 500px) {
-      display: ${({ showMenu }: showMenuProps) =>
-        showMenu ? "block" : "none"};
-    }
+   
+  @media screen and  (max-width: 500px) {
+    display:${({showMenu}:showMenuProps)=>showMenu?'block':'none'};
   }
-  li:hover {
-    background-color: ${({ theme }) => theme.colors.primary.xblue};
+  }
+  li:hover{
+    background-color:${({theme})=>theme.colors.primary.xblue};
   }
 `;

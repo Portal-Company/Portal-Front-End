@@ -42,7 +42,7 @@ export const ContainerContainer = styled.div`
   overflow: hidden;
   height: 100vh;
   @media screen and (max-width: 920px) {
-    height: 29vh;
+    height: 32vh;
   }
 `;
 
@@ -102,7 +102,6 @@ export const Content = styled.div`
     text-align: center;
     font-weight: 700;
     font-size: 4.5rem;
-    position: relative;
   }
 
   span {

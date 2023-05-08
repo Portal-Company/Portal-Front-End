@@ -13,17 +13,6 @@ export const Title = styled.h1`
   font-family: Comfortaa;
   font-weight: 300;
   padding: 1.8rem;
-
-  &:before {
-    content: "";
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    mix-blend-mode: hue;
-    background-color: red;
-    top: 50%;
-    left: calc(-24px / 3);
-  }
 `;
 
 export const Card = styled.div`
