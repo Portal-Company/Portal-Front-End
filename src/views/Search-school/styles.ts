@@ -120,7 +120,7 @@ export const SecondSection = styled.div`
   height: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 3rem;
   flex-wrap: wrap;
 
