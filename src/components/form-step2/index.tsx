@@ -87,7 +87,7 @@ export const StepTwo:React.FC<MyComponentProps>= ({
         }catch(err){
             const error = err as IErrorInterface
             toast(error.response?.data?.error, {autoClose: 2000, type: "error"})
-        }         
+        }          
     } 
     
     return(<Formik
@@ -139,41 +139,62 @@ export const StepTwo:React.FC<MyComponentProps>= ({
                             </S.ErrorMessage>
                         ): null}
 
-                        <input
-                            type="file"
-                            name="photo"
-                            onChange={(event) => {
-                                formik.setFieldValue("photo", event.currentTarget.files)}}
-                        />
-                        {formik.touched.photo && formik.errors.photo ? (
-                            <S.ErrorMessage>
-                                {formik.errors.photo}
-                            </S.ErrorMessage>
-                        ): null}
+                        <div>
+                            <div className='label'>
+                                <label htmlFor="photo">selecione a imagem...</label>
+                            </div>
+                            <input
+                                id='photo'
+                                accept="image/*"
+                                type="file"
+                                name="photo"
+                                onChange={(event) => {
+                                    formik.setFieldValue("photo", event.currentTarget.files)}}
+                            />
+                            {formik.touched.photo && formik.errors.photo ? (
+                                <S.ErrorMessage>
+                                    {formik.errors.photo}
+                                </S.ErrorMessage>
+                            ): null}
+                        </div>
 
-                        <input
-                            type="file"
-                            name="pdfIdentificacao"
-                            onChange={(event) => {
-                            formik.setFieldValue("pdfIdentificacao", event.currentTarget.files)}}
-                        />
-                        {formik.touched.pdfIdentificacao && formik.errors.pdfIdentificacao ? (
-                            <S.ErrorMessage>
-                                {formik.errors.pdfIdentificacao}
-                            </S.ErrorMessage>
-                        ): null}
+                        <div>
+                            <div className='label'>
+                                <label htmlFor="pdfIdentificacao">selecione a pdf da identificação...</label>
+                            </div>
+                            <input
+                                id='pdfIdentificacao'
+                                accept="application/pdf"
+                                type="file"
+                                name="pdfIdentificacao"
+                                onChange={(event) => {
+                                formik.setFieldValue("pdfIdentificacao", event.currentTarget.files)}}
+                            />
+                            {formik.touched.pdfIdentificacao && formik.errors.pdfIdentificacao ? (
+                                <S.ErrorMessage>
+                                    {formik.errors.pdfIdentificacao}
+                                </S.ErrorMessage>
+                            ): null}
+                        </div>
 
-                        <input
-                            type="file"
-                            name="pdfCertificacaoEscolar"
-                            onChange={(event) => {
-                            formik.setFieldValue("pdfCertificacaoEscolar", event.currentTarget.files)}}
-                        />    
-                        {formik.touched.pdfCertificacaoEscolar && formik.errors.pdfCertificacaoEscolar ? (
-                            <S.ErrorMessage>
-                                {formik.errors.pdfCertificacaoEscolar}
-                            </S.ErrorMessage>
-                        ): null}
+                        <div>
+                            <div className='label'>
+                                <label htmlFor="pdfCertificacaoEscolar">selecione o pdf da certificação escolar...</label>
+                            </div>
+                            <input
+                                id='pdfCertificacaoEscolar'
+                                accept="application/pdf"
+                                type="file"
+                                name="pdfCertificacaoEscolar"
+                                onChange={(event) => {
+                                formik.setFieldValue("pdfCertificacaoEscolar", event.currentTarget.files)}}
+                            />    
+                            {formik.touched.pdfCertificacaoEscolar && formik.errors.pdfCertificacaoEscolar ? (
+                                <S.ErrorMessage>
+                                    {formik.errors.pdfCertificacaoEscolar}
+                                </S.ErrorMessage>
+                            ): null}
+                        </div>
 
                         <button type="submit">Cadastrar</button>
                     </S.FormContainer>

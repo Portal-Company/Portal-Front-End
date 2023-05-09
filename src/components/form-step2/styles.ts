@@ -33,6 +33,18 @@ export const FormContainer=styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    .label{
+        border-bottom:.1px solid #cacaca;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        padding: 1.3rem;
+        width: 100vw;
+        max-width: 45rem;
+        color:#a9a6b3;
+        label{
+            cursor: pointer;
+        }
+    }
     input,select{
         border: none;
         border-bottom:.1px solid #cacaca;
@@ -51,6 +63,9 @@ export const FormContainer=styled.div`
             border-bottom:.1px solid #1ba6e2;
             transition: 2s ease-in-out;
         }
+    }
+    input[type="file"] { 
+        display: none; 
     }
     select{
         font-size: 1.5rem;
