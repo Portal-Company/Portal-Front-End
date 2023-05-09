@@ -8,6 +8,9 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and  (max-width: 500px) {
+    height: 20rem;
+  }
 `;
 
 export const Container = styled.div`
@@ -34,6 +37,9 @@ export const InputContainer=styled.div`
   display: flex;
   align-items: center;
   border-radius: .5rem;
+  @media screen and  (max-width: 500px) {
+    max-width:33rem;
+  }
 `;
 
 export const Input=styled.input`
