@@ -20,10 +20,11 @@ export const StepTwo:React.FC<MyComponentProps>= ({
 
     const {data:courses,error:coursesError}=useSWR("courses",()=>getCoursesSchool(escolaId));
     
-
+    
     const handleSubmit = async (values:any) =>{
         console.log(data,values);
-
+        try{
+        
         const formData = new FormData();
         const formData2 = new FormData();
         const formData3 = new FormData();
@@ -72,7 +73,6 @@ export const StepTwo:React.FC<MyComponentProps>= ({
             candidatoId:resposeCandidate?.data?.id
         }
 
-        try{
             const responseSubscription = await api.post('/enrollment/post',subscription);
             const intendedCourseData={
                 inscricaoId:responseSubscription.data.id,
@@ -86,7 +86,8 @@ export const StepTwo:React.FC<MyComponentProps>= ({
             }
         }catch(err){
             const error = err as IErrorInterface
-            toast(error.response?.data?.error, {autoClose: 2000, type: "error"})
+            console.log(error.response);
+            toast(error.response?.data.message, {autoClose: 2000, type: "error"})
         }          
     } 
     

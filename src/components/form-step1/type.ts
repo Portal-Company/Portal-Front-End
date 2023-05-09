@@ -2,7 +2,7 @@ export interface IResponse {
     status: number;
     statusText: string;
     data: {
-        error: string;
+        message: string;
         status: number;
     }
 }
