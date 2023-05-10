@@ -9,7 +9,7 @@ export const Container = styled.div`
   width: 100%;
   height: auto;
   gap: 10rem;
-  background-color: #e0e0e0;
+
   /* .slick-slide {
       padding-bottom: 5rem;
     } */

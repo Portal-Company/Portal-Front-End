@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import Link from "next/link";
-import estudantes from "../../../public/assets/students.png";
+
 import M1 from "../../../public/assets/m1.jpg";
 import M2 from "../../../public/assets/m2.jpg";
 import M3 from "../../../public/assets/m5.jpg";

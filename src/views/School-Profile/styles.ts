@@ -1,394 +1,221 @@
 import styled from "styled-components";
 
+interface BannerFundo {
+  backgroundCapa: any;
+}
+
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
+  background-color: #f3f3f3;
+`;
 
-    footer{
-        flex: 1;
-        justify-content: end;
-    }
-`
+export const Opacity = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 1rem 6rem;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.7);
+`;
 
-export const Content = styled.div`
-    width: 100%;
-    height: auto;
-    background: #fff;
-    padding-bottom: 4rem;
-    padding-top: 5rem;
+export const CardBackground = styled.div`
+  background-image: url(${({ backgroundCapa }: BannerFundo) => backgroundCapa});
 
-    @media screen and (max-width: 768px) {
-        padding-bottom : 20rem;
-    }
-`
+  width: 100%;
+  height: 31rem;
 
-export const FirstSection = styled.div`
-    width: 100%;
-    height: auto;
-    display: flex;
-    padding: 0.5rem 15rem;
-    gap: 5rem;
+  //background-color: ${({ theme }) => theme.colors.primary.xblue};
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    @media screen and (max-width: 768px) {
-        padding: 2rem 2rem;
-        flex-direction: column;
-    }
-
-    @media screen and (max-width: 1000px) {
-        padding: 2rem 4rem;
-    }
-    @media screen and (max-width: 1300px) {
-        padding: 2rem 4rem;
-    }
-`
-
-export const ContainerImage = styled.div`
-    min-width: 33rem;
-    width: 40rem;
-    height: auto;
-    max-height: 40rem;
-    position: relative;
-
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        max-width: 40rem;
-        height: auto;
-        min-width: 150px;
-    }
-
-    img{
-        border-radius: 0.4rem;
-        width: 100%;
-
-        @media screen and (max-width: 768px) {
-            max-height: 30rem;
-        }
-    }
-
-`
-
-export const ContainerLeft = styled.div`
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    h2{
-        margin-top: 1rem;
-
-        @media screen and (max-width: 768px) {
-            font-size: 2rem;
-        }
-    }
-
-`
-
-export const Title = styled.h2`
-    color: #535252;
-    font-size: 2.5rem;
-    font-weight: 400;
-`
-
-export const SectionDescription = styled.div`
-    display: flex;
-    padding-top: 2rem;
-    font-size: 1.8rem;
-    color: #535252;
-    gap: 0.5rem;
-
-    @media screen and (max-width: 768px) {
-        font-size: 1.6rem;
-        flex-direction: column;
-
-        div{
-            display: flex;
-            gap: 0.5rem;
-        }
-    }
-    
-`
-
-export const ContainerLeftFooter = styled.div`
-    padding-top: 3rem;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-
-
-    @media screen and (max-width: 768px){
-        flex-direction: column;
-    }
-
-    section:nth-child(1){
-        display: flex;
-        flex-direction: column;
-        width: 10rem;
-        gap: 1rem;
-        max-width: 300px;
-
-        img{
-            border-radius: 50%;
-
-            @media screen and (max-width: 768px){
-                width: 200px;
-            }
-        }
-    }
-
-    section:nth-child(2){
-        display: flex;
-        align-items: flex-end;
-        @media screen and (max-width: 768px){
-            justify-content: start;
-            margin-top: 2rem;
-
-        }
-    }
-`
+  position: relative;
+  color: #fff;
+  h2 {
+    font-size: 3rem;
+    margin-top: -5rem;
+  }
+  p {
+    font-size: 1.7rem;
+    color: #333;
+  }
+`;
 
 export const ButtonSubscribe = styled.button`
-    width: 15rem;
-    padding: 1.5rem 1rem;
-    background-color: #1C9DEA;
-    border: none;
-    outline: none;
-    border-radius: 0.5rem;
-    color: #fff;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: -5rem;
+  border: 0;
+  font-weight: 800;
+  background-color: ${({ theme }) => theme.colors.primary.xblue};
+  padding: 0 5rem;
+  border-radius: 0.25rem;
+  font-family: Comfortaa;
+  height: 4.4rem;
+  transition: filter 0.2s;
+  &:hover {
+    filter: brightness(0.9);
+  }
+`;
 
-    @media screen and (max-width: 768px) {
-        width: 95%;
-        margin: 0 auto;
-    }
+export const MainContainer = styled.div`
+  position: relative;
+  margin: auto;
+  padding: 2rem;
+  bottom: 7rem;
+  width: 80%;
+`;
 
-    &:hover{
-        filter: brightness(0.8);
-        font-weight: 400;
-    }
-`
+export const Title = styled.h2`
+  color: #535252;
+  font-size: 2.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+`;
 
-export const SecondSection = styled.div`
-    width: 100%;
-    height: auto;
-    padding: 5rem 15rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+export const SectionDescription = styled.div`
+  display: flex;
+  padding-top: 2rem;
+  font-size: 1.3rem;
+  color: #535252;
+  gap: 0.5rem;
 
-    @media screen and (max-width: 768px) {
-        padding: 2rem 2rem;
-        flex-direction: column;
-        h2{
-            font-size: 1.9rem;
-        }
-    }
-    @media screen and (max-width: 1300px) {
-        padding: 2rem 4rem;
-        flex-direction: column;
-    }
-`
-
-
-export const SecondSectionChild1 = styled.div`
-    width: 100%;
-    max-width: 60rem;
-    padding-top: 2rem;
-    height: auto;
-
-    @media screen and (max-width: 768px){
-        width: 100%;
-    }
-
-    @media screen and (max-width: 1300px) {
-        width: 100%;
-    }
-`
-
-export const SecondSectionChild2 = styled.div`
-    margin-top: 2rem;
-    padding-bottom: 2rem;
-    justify-content: end;
-    width: 100%;
-    max-width: 50rem;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4rem;
-
-    @media screen and (max-width: 1100px){
-        width: 80%;
-        height: auto;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    @media screen and (max-width: 768px){
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-        gap: 2rem;
-
-        div{
-            width: 100%;
-        }
-    }
-
-    div{
-        max-width: 20rem;
-        width: 100%;
-        cursor: pointer;
-        height: auto;
-        @media screen and (max-width: 768px){
-            width: 100%;
-            max-width: 40rem;
-            height: auto;
-        }
-
-        img{
-            border-radius: 0.4rem;
-        }
-    }
-`
-
-export const DescriptionStory = styled.p`
-    text-align: justify;
-    text-indent: 1.5rem;
+  @media screen and (max-width: 768px) {
     font-size: 1.6rem;
+    flex-direction: column;
 
-    @media screen and (max-width: 768px){
-        width: 90%;
-        text-align: justify;
-        font-size: 1.2rem;
+    div {
+      display: flex;
+      gap: 0.5rem;
     }
+  }
+`;
 
-`
+export const MenuContainer = styled.div`
+  border-radius: 0.5rem;
+  height: 12rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+`;
 
-export const ContentStory = styled.div`
-    width: 100%;
-    height: auto;
-    margin-top: 2rem;
-    color: #535252;
+export const UserSide = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
 
-    @media screen and (max-width: 768px){
-        width: 100%;
-    }
-`
+export const Nav = styled.ul`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  a {
+    padding: 1rem 2rem;
+    color: ${({ theme }) => theme.colors.primary.xblue};
+    border-radius: 3rem;
+  }
+  a.active,
+  a:hover {
+    color: #fff;
+    background-color: ${({ theme }) => theme.colors.primary.xblue};
+  }
+`;
 
-export const ThirdSection = styled.div`
-    width: 100%;
-    height: auto;
-    padding: 2rem 15rem; 
-    @media screen and (max-width: 768px) {
-        padding: 2rem 2rem;
-        flex-direction: column;
-        h2{
-            font-size: 1.9rem;
-        }
-    }
-    @media screen and (max-width: 1000px) {
-        padding: 2rem 4rem;
-    }
-    @media screen and (max-width: 1300px) {
-        padding: 2rem 4rem;
-        flex-direction: column;
-        text-align: center;
-    }
-`
+export const SchoolName = styled.div`
+  display: flex;
+  flex-direction: column;
+  line-height: 0.005rem;
+  h2 {
+    font-weight: 500;
+  }
+  span {
+    color: #999;
+  }
+`;
 
 export const ContainerCard = styled.div`
-    width: 100%;
-    height: auto;
-    gap: 2rem;
-    display: flex;
-    padding-top: 4rem;
-    justify-content: space-between;
+  width: 100%;
+  height: auto;
+  gap: 3rem;
+  display: flex;
 
-    @media screen and (max-width: 768px) {
-        flex-direction: column;
-        padding: 2rem 1rem;
-        align-items: center;
-    }
-`
+  justify-content: space-around;
 
-export const Card = styled.div`
-    width: 30rem;
-    height: 25rem;
-    border-radius: 0.5rem;
-    display: flex;
-    border: 1px solid #ddd;
+  @media screen and (max-width: 768px) {
     flex-direction: column;
+    padding: 2rem 1rem;
     align-items: center;
-    cursor: pointer;
+  }
+`;
 
-    justify-content: space-between;
-
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        height: auto;
-
+export const LittleCard = styled.div`
+  margin-top: 2rem;
+  background-color: #fff;
+  height: 20rem;
+  width: 50%;
+  padding: 2rem 2rem;
+  div:first-child {
+    h2 {
+      color: #333;
     }
 
-    div{
-        margin-top: 1rem;
-        width: 90%;
-        height: 18rem;
-        border-radius: 0.5rem;
-        position: relative;
-        @media screen and (max-width: 768px) {
-            width: 90%;
-            padding: 1rem;
-            height: auto;
-        }
-    }
+    padding: 1.5rem;
+    border-bottom: 1px solid #ccc;
+  }
 
-    span{
-        text-align: center;
-        padding-bottom: 0.5rem;
-    }
+  &:first-child {
+    margin-right: 3rem;
+  }
+`;
 
-`
+export const Wrapper = styled.div`
+  position: sticky;
+  //display: grid;
+  //grid-template-columns: 1fr 2fr 1fr;
+  //gap: 1.5rem;
+  width: 100%;
+`;
 
-export const FourthSection = styled.div`
-    width: 100%;
-    height: auto;
-    padding: 2rem 15rem; 
-    @media screen and (max-width: 768px) {
-        padding: 2rem 2rem;
-        flex-direction: column;
-        text-align: center;
-        h2{
-            font-size: 1.9rem;
-        }
-    }
+export const LeftSide = styled.div`
+  display: flex;
+  justify-content: space-around;
 
-    @media screen and (max-width: 1000px) {
-        padding: 2rem 4rem;
-    }
-    @media screen and (max-width: 1300px) {
-        padding: 2rem 4rem;
-        flex-direction: column;
-    }
-`
+  width: 100%;
+`;
 
-export const FifthSection = styled.div`
-    width: 100%;
-    height: auto;
-    padding: 2rem 15rem; 
+export const CenterSide = styled.div``;
 
-    @media screen and (max-width: 768px) {
-        padding: 2rem 2rem;
-        flex-direction: column;
-        text-align: center;
-        h2{
-            font-size: 1.9rem;
-        }
-    }
+export const Item = styled.div`
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 1rem;
+  span {
+    color: ${({ theme }) => theme.colors.primary.xblue};
+  }
+`;
 
-    @media screen and (max-width: 1000px) {
-        padding: 2rem 4rem;
-    }
-    @media screen and (max-width: 1300px) {
-        padding: 2rem 4rem;
-        flex-direction: column;
-    }
+export const Publication = styled.div``;
 
-`
+export const UserInfo = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+export const Avatar = styled.div``;
+
+export const RightSide = styled.div``;
+
+export const Noticia = styled.div`
+  display: flex;
+  align-items: center;
+  color: #6d6d6d;
+  margin-top: 1rem;
+  span {
+    padding: 1rem;
+    font-size: 2rem;
+  }
+  a {
+    color: ${({ theme }) => theme.colors.primary.xblue};
+  }
+`;
