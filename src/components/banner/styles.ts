@@ -40,9 +40,11 @@ export const ContainerContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
+
   height: 100vh;
   @media screen and (max-width: 920px) {
     height: 29vh;
+
   }
 `;
 
@@ -113,6 +115,7 @@ export const Content = styled.div`
   @media screen and (max-width: 620px) {
     height: 100%;
     h1 {
+
       font-size: 2.7rem;
     }
     span {
