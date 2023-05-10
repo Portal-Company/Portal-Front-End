@@ -10,7 +10,7 @@ export const Container = styled.div`
   height: auto;
   gap: 10rem;
 
-    /* .slick-slide {
+  /* .slick-slide {
       padding-bottom: 5rem;
     } */
 `;
