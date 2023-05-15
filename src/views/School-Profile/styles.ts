@@ -169,6 +169,39 @@ export const LittleCard = styled.div`
   }
 `;
 
+export const AreaFormacao = styled.div`
+  margin-top: 2rem;
+  background-color: #fff;
+  height: 50rem;
+  width: 100%;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div:first-child {
+    h2 {
+      color: #333;
+    }
+
+    padding: 1rem;
+  }
+
+  &:first-child {
+    margin-right: 3rem;
+  }
+`;
+
+export const CardAreaFormacao = styled.div`
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3rem;
+
+  width: 100%;
+`;
+
 export const Historial = styled.div`
   margin-top: 2rem;
   background-color: #fff;
