@@ -38,7 +38,7 @@ const EmptyLayout = ({ children }: EmptyLayoutProps) => <>{children}</>;
 function MyApp({ Component, pageProps, err }: AppPropsWithLayout) {
   const ComponentLayout = Component.Layout ? Component.Layout : React.Fragment;
 
-  const [loadingPortal, setLoadingPortal] = useState(false);
+  const [loadingPortal, setLoadingPortal] = useState<boolean>(false);
 
   useEffect(() => {
     setLoadingPortal(true);
