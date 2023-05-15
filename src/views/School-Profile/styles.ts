@@ -169,6 +169,35 @@ export const LittleCard = styled.div`
   }
 `;
 
+export const Historial = styled.div`
+  margin-top: 2rem;
+  background-color: #fff;
+  height: 33rem;
+  width: 100%;
+  padding: 2rem 2rem;
+  line-height: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  div:first-child {
+    margin-bottom: 1rem;
+
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+`;
+
 export const Wrapper = styled.div`
   position: sticky;
   //display: grid;
