@@ -63,13 +63,28 @@ export const MainContainer = styled.div`
   padding: 2rem;
   bottom: 7rem;
   width: 80%;
+
+  @media screen and (max-width: 768px) {
+    width: 95%;
+  }
 `;
 
 export const Title = styled.h2`
   color: #535252;
   font-size: 2.1rem;
   margin-bottom: 0.5rem;
+
   font-weight: 800;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.9rem;
+    font-weight: 900;
+  }
+
+  @media screen and (max-width: 668px) {
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
 `;
 
 export const SectionDescription = styled.div`
@@ -80,13 +95,7 @@ export const SectionDescription = styled.div`
   gap: 0.5rem;
 
   @media screen and (max-width: 768px) {
-    font-size: 1.6rem;
-    flex-direction: column;
-
-    div {
-      display: flex;
-      gap: 0.5rem;
-    }
+    font-size: 1rem;
   }
 `;
 
@@ -98,6 +107,11 @@ export const MenuContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+
+  @media screen and (max-width: 1400px) {
+    height: 18rem;
+    flex-direction: column;
+  }
 `;
 
 export const UserSide = styled.div`
@@ -109,16 +123,40 @@ export const UserSide = styled.div`
 export const Nav = styled.ul`
   display: flex;
   align-items: center;
+
   gap: 1rem;
+
+  li {
+    text-align: center;
+
+    display: flex;
+  }
   a {
     padding: 1rem 2rem;
     color: ${({ theme }) => theme.colors.primary.xblue};
     border-radius: 3rem;
+
+    @media screen and (max-width: 768px) {
+      padding: 1rem 1.5rem;
+    }
   }
   a.active,
   a:hover {
     color: #fff;
     background-color: ${({ theme }) => theme.colors.primary.xblue};
+  }
+
+  @media screen and (max-width: 1400px) {
+    margin-top: 2rem;
+
+    width: 100%;
+    justify-content: center;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    li {
+      line-height: 1.3rem;
+    }
   }
 `;
 
@@ -172,7 +210,7 @@ export const LittleCard = styled.div`
 export const AreaFormacao = styled.div`
   margin-top: 2rem;
   background-color: #fff;
-  height: 50rem;
+
   width: 100%;
   padding: 2rem 2rem;
   display: flex;
@@ -185,10 +223,6 @@ export const AreaFormacao = styled.div`
     }
 
     padding: 1rem;
-  }
-
-  &:first-child {
-    margin-right: 3rem;
   }
 `;
 
@@ -232,10 +266,6 @@ export const Historial = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  position: sticky;
-  //display: grid;
-  //grid-template-columns: 1fr 2fr 1fr;
-  //gap: 1.5rem;
   width: 100%;
 `;
 
