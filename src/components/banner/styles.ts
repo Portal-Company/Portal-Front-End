@@ -43,8 +43,23 @@ export const ContainerContainer = styled.div`
 
   height: 100vh;
   @media screen and (max-width: 920px) {
-    height: 29vh;
+    height: 69vh;
+  }
 
+  @media screen and (max-width: 800px) {
+    height: 60vh;
+  }
+
+  @media screen and (max-width: 700px) {
+    height: 58vh;
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 50vh;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 44vh;
   }
 `;
 
@@ -96,6 +111,7 @@ export const Content = styled.div`
   align-items: center;
   width: 20%;
   height: 100%;
+
   flex-direction: column;
   color: #fff;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -115,7 +131,6 @@ export const Content = styled.div`
   @media screen and (max-width: 620px) {
     height: 100%;
     h1 {
-
       font-size: 2.7rem;
     }
     span {
