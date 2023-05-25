@@ -1,7 +1,7 @@
-import { useFormik } from 'formik';
-import axios from 'axios';
-import { NextPage } from 'next';
-import { api } from '../../services';
+import { useFormik } from "formik";
+import axios from "axios";
+import { NextPage } from "next";
+import { api } from "../../services";
 
 interface Values {
   file: any;
@@ -11,11 +11,10 @@ const MyForm: NextPage = () => {
   const formik = useFormik<Values>({
     initialValues: { file: null },
     onSubmit: async (values) => {
-      
       const formData = new FormData();
-      formData.append('file', values.file[0]);
+      formData.append("file", values.file[0]);
 
-      const response = await api.post('/file', formData);
+      const response = await api.post("/file", formData);
       console.log(response);
     },
   });
@@ -26,7 +25,7 @@ const MyForm: NextPage = () => {
         type="file"
         name="file"
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-          formik.setFieldValue('file', event.currentTarget.files);
+          formik.setFieldValue("file", event.currentTarget.files);
         }}
       />
       <button type="submit">Enviar arquivo</button>
@@ -34,4 +33,4 @@ const MyForm: NextPage = () => {
   );
 };
 
-export default MyForm
+export default MyForm;
