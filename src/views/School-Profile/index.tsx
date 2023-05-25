@@ -1,19 +1,14 @@
 import Image from "next/image";
-import * as S from "./styles";
-import avatar from "../../../public/assets/ipil2.jpg";
-import { FaEnvelope } from "react-icons/fa";
-import ilustration from "../../../public/assets/m4.jpg";
-
+import React from "react";
+import { Footer } from "../../components/footer";
 import { useFetch } from "../../hooks/useFetch";
 import { ISchoolData } from "../../types";
+import * as S from "./styles";
 import useSWR from "swr";
 import { fetchData } from "./services";
 import { Card } from "../../components/card";
 import { useRouter } from "next/router";
 import Router from "next/router";
-import { useState } from "react";
-import logo from "../../../public/assets/med.png";
-
 interface Props {
   school: ISchoolData;
 }
@@ -30,28 +25,6 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
     });
   };
 
-  const [showPerfil, setShowPerfil] = useState<boolean>(true);
-  const [showHistorial, setShowHistorial] = useState<boolean>(false);
-  const [showActividadesAnuais, setActividadesAnuais] =
-    useState<boolean>(false);
-
-  const ClickHistorial = () => {
-    setShowPerfil(false);
-    setActividadesAnuais(false);
-    setShowHistorial(true);
-  };
-
-  const ClickPerfil = () => {
-    setShowPerfil(true);
-    setShowHistorial(false);
-    setActividadesAnuais(false);
-  };
-
-  const ClickActividadesAnuais = () => {
-    setActividadesAnuais(!showActividadesAnuais);
-    setShowHistorial(false);
-  };
-
   // const { data, error} = useSWR('/file/', () => fetchData(school))
   const { data: fotoUrl } = useFetch(`/file/${school?.fotoUrl}`);
   const { data: logoUrl } = useFetch(`/file/${school?.logo}`);
@@ -59,32 +32,22 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
   const router = useRouter();
 
   return (
-    <S.Container>
-      <S.CardBackground backgroundCapa={fotoUrl?.link}>
-        <S.Opacity>
-          <div>
-            <h2>MED</h2>
-          </div>
-          <S.ButtonSubscribe onClick={() => handleRedirect()}>
-            Inscrever-se
-          </S.ButtonSubscribe>
-        </S.Opacity>
-      </S.CardBackground>
-      <S.MainContainer>
-        <S.MenuContainer>
-          <S.UserSide>
-            <div>
-              {logoUrl ? (
+    <>
+      <S.Container>
+        <S.Content>
+          <S.FirstSection>
+            <S.ContainerImage>
+              {fotoUrl ? (
                 <Image
-                  src={logoUrl?.link}
+                  src={fotoUrl?.link}
                   alt="escola"
-                  width={82}
-                  height={80}
+                  width={490}
+                  height={500}
                   loading="lazy"
                 />
               ) : null}
-            </div>
-            <S.SchoolName>
+            </S.ContainerImage>
+            <S.ContainerLeft>
               <S.Title>{school?.nome}</S.Title>
               <S.SectionDescription>
                 <span>Localização: </span>
@@ -97,93 +60,90 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
               <S.SectionDescription>
                 <span>Categoria: {school?.Categoria?.nome}</span>
               </S.SectionDescription>
-            </S.SchoolName>
-          </S.UserSide>
-          <S.Nav>
-            <li>
-              <a onClick={() => ClickPerfil()} className="active">
-                Perfil
-              </a>
-            </li>
-            <li>
-              <a onClick={() => ClickHistorial()}>Historial</a>
-            </li>
-            <li>
-              <a onClick={() => ClickActividadesAnuais()}>Actividades Anuais</a>
-            </li>
-            <li>
-              <a href="">Vídeos</a>
-            </li>
-          </S.Nav>
-        </S.MenuContainer>
-
-        {showPerfil ? (
-          <S.Wrapper>
-            <S.LeftSide>
-              <S.AreaFormacao>
-                <div className="Title">
-                  <h2>Áreas de Formação</h2>
-                </div>
-                <S.CardAreaFormacao>
-                  {school.areaDeFormacao?.map((area) => (
-                    <Card
-                      key={area.id}
-                      content={area}
-                      onClick={() =>
-                        router.push(`/SearchSchool/AreaDeFormacao/${area.id}`)
-                      }
-                    />
-                  ))}
-                </S.CardAreaFormacao>
-              </S.AreaFormacao>
-            </S.LeftSide>
-          </S.Wrapper>
-        ) : null}
-
-        {showHistorial ? (
-          <S.Wrapper>
-            <S.LeftSide>
-              <S.Historial>
-                <div>
-                  <h2>Historial</h2>
-                </div>
+              <S.ContainerLeftFooter>
                 <section>
-                  <span>Fundador: {school?.historial?.fundador}</span>
-                  <span>Data: {school?.historial?.data}</span>
+                  <span>Logo: </span>
+                  {logoUrl ? (
+                    <Image
+                      src={logoUrl?.link}
+                      alt="escola"
+                      width={490}
+                      height={500}
+                      loading="lazy"
+                    />
+                  ) : null}
                 </section>
-                <S.Noticia>
-                  <p>{school?.historial?.descricao}</p>
-                </S.Noticia>
-              </S.Historial>
-            </S.LeftSide>
-          </S.Wrapper>
-        ) : null}
-
-        {showActividadesAnuais ? (
-          <S.Wrapper>
-            <S.LeftSide>
-              <S.LittleCard>
+                <section>
+                  <S.ButtonSubscribe onClick={() => handleRedirect()}>
+                    Inscrever-se
+                  </S.ButtonSubscribe>
+                </section>
+              </S.ContainerLeftFooter>
+            </S.ContainerLeft>
+          </S.FirstSection>
+          <S.SecondSection>
+            <S.SecondSectionChild1>
+              <S.Title>Historial</S.Title>
+              <S.SectionDescription>
                 <div>
-                  <h2>Em desenvlvimento...</h2>
+                  <span style={{ marginRight: "0.5rem" }}>
+                    Fundador: {school?.historial?.fundador}
+                  </span>
                 </div>
-
-                <S.Noticia>
-                  <p>Em desenvolvimento...</p>
-                </S.Noticia>
-              </S.LittleCard>
-              <S.LittleCard>
-                <div>
-                  <h2>Em desenvolvimento...</h2>
-                </div>
-
-                <S.Noticia>
-                  <p>Em desenvolvimento...</p>
-                </S.Noticia>
-              </S.LittleCard>
-            </S.LeftSide>
-          </S.Wrapper>
-        ) : null}
-      </S.MainContainer>
-    </S.Container>
+                <span>Ano: {school?.historial?.data}</span>
+              </S.SectionDescription>
+              <S.SectionDescription>
+                <span>Breve História: </span>
+              </S.SectionDescription>
+              <S.ContentStory>
+                <S.DescriptionStory>
+                  {school?.historial?.descricao}
+                </S.DescriptionStory>
+              </S.ContentStory>
+            </S.SecondSectionChild1>
+          </S.SecondSection>
+          <S.ThirdSection>
+            <S.Title>Áreas de Formação</S.Title>
+            <S.ContainerCard>
+              {school.areaDeFormacao?.map((area) => (
+                <Card
+                  key={area.id}
+                  content={area}
+                  onClick={() =>
+                    router.push(`/SearchSchool/AreaDeFormacao/${area.id}`)
+                  }
+                />
+              ))}
+            </S.ContainerCard>
+          </S.ThirdSection>
+          <S.FourthSection>
+            <S.Title>Actividades Anuais</S.Title>
+            <S.ContainerCard>
+              {school?.actividade.map((activity) => (
+                <Card
+                  key={activity.id}
+                  content={activity}
+                  onClick={() =>
+                    router.push(`/SearchSchool/Actividades/${activity.id}`)
+                  }
+                />
+              ))}
+            </S.ContainerCard>
+          </S.FourthSection>
+          <S.FifthSection>
+            {school.Organigrama.Departamento.map((data) => (
+              <>
+                <S.Title>{data.nome}</S.Title>
+                <S.ContainerCard>
+                  {data.Funcionario.map((data) => (
+                    <Card key={data.id} content={data} />
+                  ))}
+                </S.ContainerCard>
+              </>
+            ))}
+          </S.FifthSection>
+        </S.Content>
+      </S.Container>
+    </>
   );
 };
