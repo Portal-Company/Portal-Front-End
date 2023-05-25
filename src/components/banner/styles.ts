@@ -40,16 +40,33 @@ export const ContainerContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
-  height: 70vh;
-  @media screen and  (max-width: 920px) {
-    height: 70vh;
+
+  height: 100vh;
+  @media screen and (max-width: 920px) {
+    height: 69vh;
+  }
+
+  @media screen and (max-width: 800px) {
+    height: 60vh;
+  }
+
+  @media screen and (max-width: 700px) {
+    height: 58vh;
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 50vh;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 44vh;
   }
 `;
 
 export const ContainerMain = styled.div`
   position: relative;
   width: 500%;
-  height: 80%;
+  height: 100%;
   left: 0px;
   margin: 0;
   animation: 30s ${slider} infinite;
@@ -78,10 +95,10 @@ export const Button = styled.button`
   background-color: ${({ backgroundColor }: buttonProps) => backgroundColor};
   color: ${({ color }: buttonProps) => color};
   z-index: 100;
-  @media screen and  (max-width: 620px) {
+  @media screen and (max-width: 620px) {
     width: 15rem;
     height: 4rem;
-    border-radius: .6rem;
+    border-radius: 0.6rem;
   }
 `;
 
@@ -93,31 +110,31 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   width: 20%;
-  height: 80vh;
+  height: 100%;
+
   flex-direction: column;
   color: #fff;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-
 
   h1 {
     text-align: center;
     font-weight: 700;
     font-size: 4.5rem;
+    position: relative;
   }
-  
+
   span {
     font-size: 2rem;
     color: #bfbfbf;
     margin: 1rem 0 1rem 0;
   }
-  @media screen and  (max-width: 820px) {
-    height: 70vh;
-    h1{
+  @media screen and (max-width: 620px) {
+    height: 100%;
+    h1 {
       font-size: 2.7rem;
     }
-    span{
+    span {
       font-size: 1.7rem;
     }
   }
 `;
-
