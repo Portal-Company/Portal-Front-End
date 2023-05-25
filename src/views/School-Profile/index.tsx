@@ -74,7 +74,9 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
                   ) : null}
                 </section>
                 <section>
-                  <S.ButtonSubscribe onClick={()=>handleRedirect()}>Inscrever-se</S.ButtonSubscribe>
+                  <S.ButtonSubscribe onClick={() => handleRedirect()}>
+                    Inscrever-se
+                  </S.ButtonSubscribe>
                 </section>
               </S.ContainerLeftFooter>
             </S.ContainerLeft>
@@ -99,20 +101,6 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
                 </S.DescriptionStory>
               </S.ContentStory>
             </S.SecondSectionChild1>
-            <S.SecondSectionChild2>
-              {/* <div>
-                            {data?.historial1?.link ? <Image onClick={() => router.push(data.historial1?.link)} loader={() => data.historial1.link} src={data.historial1.link} width={100} height={90} alt="escola"  layout="responsive"/> : null} 
-                        </div>
-                        <div>
-                            {data?.historial2?.link ? <Image onClick={() => router.push(data.historial2?.link)} loader={() => data.historial2.link} src={data.historial2.link} width={100} height={90} alt="escola"  layout="responsive"/> : null} 
-                        </div>
-                        <div> 
-                            {data?.historial3?.link ? <Image onClick={() => router.push(data.historial3?.link)} loader={() => data.historial3.link} src={data.historial3.link} width={100} height={90} alt="escola" layout="responsive" /> : null} 
-                        </div>
-                        <div>
-                            {data?.historial4?.link ? <Image onClick={() => router.push(data.historial4?.link)} loader={() => data.historial4.link} src={data.historial4.link} width={100} height={90} alt="escola" layout="responsive" /> : null} 
-                        </div> */}
-            </S.SecondSectionChild2>
           </S.SecondSection>
           <S.ThirdSection>
             <S.Title>Áreas de Formação</S.Title>
