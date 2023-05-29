@@ -11,7 +11,7 @@ import { fetchData } from "./services";
 import { Card } from "../../components/card";
 import { useRouter } from "next/router";
 import Router from "next/router";
-
+import { useState } from "react";
 import logo from "../../../public/assets/med.png";
 
 interface Props {
@@ -28,6 +28,28 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
       pathname: "/inscricao",
       query: { escolaId: id },
     });
+  };
+
+  const [showPerfil, setShowPerfil] = useState<boolean>(true);
+  const [showHistorial, setShowHistorial] = useState<boolean>(false);
+  const [showActividadesAnuais, setActividadesAnuais] =
+    useState<boolean>(false);
+
+  const ClickHistorial = () => {
+    setShowPerfil(false);
+    setActividadesAnuais(false);
+    setShowHistorial(true);
+  };
+
+  const ClickPerfil = () => {
+    setShowPerfil(true);
+    setShowHistorial(false);
+    setActividadesAnuais(false);
+  };
+
+  const ClickActividadesAnuais = () => {
+    setActividadesAnuais(!showActividadesAnuais);
+    setShowHistorial(false);
   };
 
   // const { data, error} = useSWR('/file/', () => fetchData(school))
@@ -79,65 +101,88 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
           </S.UserSide>
           <S.Nav>
             <li>
-              <a href="" className="active">
+              <a onClick={() => ClickPerfil()} className="active">
                 Perfil
               </a>
             </li>
             <li>
-              <a href="">Historial</a>
+              <a onClick={() => ClickHistorial()}>Historial</a>
             </li>
             <li>
-              <a href="">Actividades Anuais</a>
+              <a onClick={() => ClickActividadesAnuais()}>Actividades Anuais</a>
             </li>
             <li>
               <a href="">Vídeos</a>
             </li>
           </S.Nav>
         </S.MenuContainer>
-        <S.Wrapper>
-          <S.LeftSide>
-            <S.LittleCard>
-              <div>
-                <h2>Áreas de Formação</h2>
-              </div>
-              <S.Noticia>
-                <span>
-                  <FaEnvelope />
-                </span>
-                <p>
-                  there is a meetup in your city on fryday at 19:00.{" "}
-                  <a href="">see details</a>
-                </p>
-              </S.Noticia>
-              <S.Noticia>
-                <span>
-                  <FaEnvelope />
-                </span>
-                <p>20% off coupon on selected items at pharmaprix</p>
-              </S.Noticia>
-            </S.LittleCard>
-            <S.LittleCard>
-              <div>
-                <h2>Áreas de Formação</h2>
-              </div>
-              <S.Noticia>
-                <span>
-                  <FaEnvelope />
-                </span>
-                <p>
-                  there is a meetup in your city on fryday at 19:00.{" "}
-                  <a href="">see details</a>
-                </p>
-              </S.Noticia>
-              <S.Noticia>
-                <span>
-                  <FaEnvelope />
-                </span>
-                <p>20% off coupon on selected items at pharmaprix</p>
-              </S.Noticia>
-            </S.LittleCard>
-          </S.LeftSide>
-        </S.Wrapper>
+
+        {showPerfil ? (
+          <S.Wrapper>
+            <S.LeftSide>
+              <S.AreaFormacao>
+                <div className="Title">
+                  <h2>Áreas de Formação</h2>
+                </div>
+                <S.CardAreaFormacao>
+                  {school.areaDeFormacao?.map((area) => (
+                    <Card
+                      key={area.id}
+                      content={area}
+                      onClick={() =>
+                        router.push(`/SearchSchool/AreaDeFormacao/${area.id}`)
+                      }
+                    />
+                  ))}
+                </S.CardAreaFormacao>
+              </S.AreaFormacao>
+            </S.LeftSide>
+          </S.Wrapper>
+        ) : null}
+
+        {showHistorial ? (
+          <S.Wrapper>
+            <S.LeftSide>
+              <S.Historial>
+                <div>
+                  <h2>Historial</h2>
+                </div>
+                <section>
+                  <span>Fundador: {school?.historial?.fundador}</span>
+                  <span>Data: {school?.historial?.data}</span>
+                </section>
+                <S.Noticia>
+                  <p>{school?.historial?.descricao}</p>
+                </S.Noticia>
+              </S.Historial>
+            </S.LeftSide>
+          </S.Wrapper>
+        ) : null}
+
+        {showActividadesAnuais ? (
+          <S.Wrapper>
+            <S.LeftSide>
+              <S.LittleCard>
+                <div>
+                  <h2>Em desenvlvimento...</h2>
+                </div>
+
+                <S.Noticia>
+                  <p>Em desenvolvimento...</p>
+                </S.Noticia>
+              </S.LittleCard>
+              <S.LittleCard>
+                <div>
+                  <h2>Em desenvolvimento...</h2>
+                </div>
+
+                <S.Noticia>
+                  <p>Em desenvolvimento...</p>
+                </S.Noticia>
+              </S.LittleCard>
+            </S.LeftSide>
+          </S.Wrapper>
+        ) : null}
       </S.MainContainer>
     </S.Container>
   );

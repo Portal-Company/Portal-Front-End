@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import portalLogo from "../../../public/assets/portal2.png";
 
 import { Triangle, ThreeDots } from "react-loader-spinner";
 import * as S from "./styles";
@@ -16,7 +15,7 @@ const loading: React.FC = () => {
         visible={true}
       />
 
-      <Image src={portalLogo} width={290} height={90} alt="logo" />
+      <Image src="/assets/portal2.png" width={290} height={90} alt="logo" />
     </S.Container>
   );
 };
