@@ -1,11 +1,6 @@
 import * as S from "./styles";
 import Link from "next/link";
 
-import M1 from "../../../public/assets/m1.jpg";
-import M2 from "../../../public/assets/m2.jpg";
-import M3 from "../../../public/assets/m5.jpg";
-
-import M4 from "../../../public/assets/m4.jpg";
 import Image from "next/image";
 
 const Banner = () => {
@@ -23,7 +18,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src={M4}
+            src="/assets/m4.jpg"
             alt="m1"
             layout="responsive"
             height={540}
@@ -41,7 +36,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src={M1}
+            src="/assets/m1.jpg"
             alt="m1"
             layout="responsive"
             height={540}
@@ -59,7 +54,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src={M2}
+            src="/assets/m2.jpg"
             alt="m1"
             layout="responsive"
             height={540}
@@ -78,7 +73,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src={M3}
+            src="/assets/m3.jpg"
             alt="m1"
             layout="responsive"
             height={540}
@@ -97,7 +92,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src={M1}
+            src="/assets/m1.jpg"
             alt="m1"
             layout="responsive"
             height={540}

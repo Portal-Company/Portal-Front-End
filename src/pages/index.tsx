@@ -21,11 +21,11 @@ const Home: NextPage<HomeProps> = ({ data }) => {
         <title>Portal Home</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="stylesheet" href="nprogress.css" />
         <link
           href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
       </Head>
       <React.Fragment>
         <Banner />

@@ -5,7 +5,6 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../styles/global";
 import { theme } from "../styles/theme";
 import Loading from "../components/loading";
-import "../../public/nprogress.css";
 import Router from "next/router";
 import NProgress from "nprogress";
 import "react-toastify/dist/ReactToastify.css";
@@ -38,7 +37,7 @@ const EmptyLayout = ({ children }: EmptyLayoutProps) => <>{children}</>;
 function MyApp({ Component, pageProps, err }: AppPropsWithLayout) {
   const ComponentLayout = Component.Layout ? Component.Layout : React.Fragment;
 
-  const [loadingPortal, setLoadingPortal] = useState(false);
+  const [loadingPortal, setLoadingPortal] = useState<boolean>(false);
 
   useEffect(() => {
     setLoadingPortal(true);
@@ -53,7 +52,7 @@ function MyApp({ Component, pageProps, err }: AppPropsWithLayout) {
         <Loading />
       ) : (
         <ComponentLayout>
-          <Component {...pageProps} err={err} />
+          <Component {...pageProps} />
           <ToastContainer />
         </ComponentLayout>
       )}

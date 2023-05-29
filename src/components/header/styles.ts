@@ -70,8 +70,7 @@ export const MenuBar = styled.div`
   @media screen and (max-width: 500px) {
     display: block;
   }
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
+
   padding: ${({ showMenu }: showMenuProps) => (showMenu ? "1rem" : "0rem")};
   background-color: #161d26;
   height: ${({ showMenu }: showMenuProps) => (showMenu ? "15rem" : "0rem")};
