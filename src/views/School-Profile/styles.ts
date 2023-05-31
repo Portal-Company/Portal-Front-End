@@ -120,6 +120,27 @@ export const UserSide = styled.div`
   gap: 1rem;
 `;
 
+interface Links {
+  isActive: boolean;
+}
+
+export const LinkItem = styled.a<Links>`
+  padding: 1rem 2rem;
+  color: ${({ isActive }) => (isActive ? "#fff" : "#1C9DEA")};
+  border-radius: 3rem;
+
+  background: ${({ isActive }) => (isActive ? "#1C9DEA" : "transparent")};
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem 1.5rem;
+  }
+
+  :hover {
+    color: #fff;
+    background-color: ${({ theme }) => theme.colors.primary.xblue};
+  }
+`;
+
 export const Nav = styled.ul`
   display: flex;
   align-items: center;
@@ -130,20 +151,6 @@ export const Nav = styled.ul`
     text-align: center;
 
     display: flex;
-  }
-  a {
-    padding: 1rem 2rem;
-    color: ${({ theme }) => theme.colors.primary.xblue};
-    border-radius: 3rem;
-
-    @media screen and (max-width: 768px) {
-      padding: 1rem 1.5rem;
-    }
-  }
-  a.active,
-  a:hover {
-    color: #fff;
-    background-color: ${({ theme }) => theme.colors.primary.xblue};
   }
 
   @media screen and (max-width: 1400px) {
@@ -169,6 +176,73 @@ export const SchoolName = styled.div`
   }
   span {
     color: #999;
+  }
+`;
+
+export const TitleFeedBack = styled.div`
+  margin-top: 2rem;
+`;
+
+export const FormularioFeedBack = styled.form`
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    width: 80%;
+    padding: 0 1.5rem;
+    height: 5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #d7d7d7;
+    background: #e7e9ee;
+    font-weight: 400;
+    font-size: 1.4rem;
+
+    outline: 0;
+
+    &::placeholder {
+      color: var(--text-body);
+      font-family: Comfortaa;
+    }
+
+    & + input {
+      margin-top: 1rem;
+    }
+  }
+
+  textarea {
+    width: 80%;
+    padding: 2rem;
+    height: 10rem;
+    border-radius: 0.25rem;
+    border: 1px solid #d7d7d7;
+    background: #e7e9ee;
+    font-weight: 400;
+    font-size: 1.4rem;
+    outline: 0;
+    font-family: Comfortaa;
+    margin-top: 1rem;
+    &::placeholder {
+      color: var(--text-body);
+      font-family: Comfortaa;
+    }
+  }
+
+  button {
+    transition: border-color 0.2s;
+    border: none;
+    background-color: #1c9deb;
+    padding: 1.2rem 7rem;
+    color: #fff;
+    font-family: Comfortaa;
+    margin-top: 1.5rem;
+    transition: 0.3s;
+    &:hover {
+      background-color: #2676a5;
+    }
   }
 `;
 
@@ -262,6 +336,28 @@ export const Historial = styled.div`
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
+  }
+`;
+
+export const FeedBack = styled.div`
+  margin-top: 2rem;
+  background-color: #fff;
+  height: 40rem;
+  width: 100%;
+  padding: 2rem 2rem;
+  line-height: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  div:first-child {
+    margin-bottom: 1rem;
+
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
   }
 `;
 

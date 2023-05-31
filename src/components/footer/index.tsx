@@ -9,10 +9,10 @@ export const Footer = () => {
         <S.FooterInformations>
           <S.InfoContainer>
             <S.PortalSocialMedia>
-              <Image src="/assets/med.png" width={290} height={90} alt="logo" />
+              <Image src="/assets/med.png" width={290} height={50} alt="logo" />
               <p>
-                lets manage your finance and business stock in detail lets
-                manage your finance a business stock in detail
+                MED busca promover ensino de qualidade para nosso país. Com o
+                lançamento do Plano de Desenvolvimento da Educação
               </p>
               <div>
                 <FaFacebook />

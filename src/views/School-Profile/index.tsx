@@ -34,22 +34,40 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
   const [showHistorial, setShowHistorial] = useState<boolean>(false);
   const [showActividadesAnuais, setActividadesAnuais] =
     useState<boolean>(false);
+  const [showFeedBack, setShowFeedBack] = useState<boolean>(false);
+
+  const [type, setType] = useState("Perfil");
 
   const ClickHistorial = () => {
+    setShowHistorial(true);
     setShowPerfil(false);
     setActividadesAnuais(false);
-    setShowHistorial(true);
+    setShowFeedBack(false);
+    setType("Historial");
+  };
+
+  const ClickFeedBack = () => {
+    setShowFeedBack(true);
+    setShowPerfil(false);
+    setActividadesAnuais(false);
+    setShowHistorial(false);
+    setType("Feedback");
   };
 
   const ClickPerfil = () => {
     setShowPerfil(true);
     setShowHistorial(false);
     setActividadesAnuais(false);
+    setShowFeedBack(false);
+    setType("Perfil");
   };
 
   const ClickActividadesAnuais = () => {
-    setActividadesAnuais(!showActividadesAnuais);
+    setActividadesAnuais(true);
     setShowHistorial(false);
+    setShowFeedBack(false);
+    setShowPerfil(false);
+    setType("Actividades");
   };
 
   // const { data, error} = useSWR('/file/', () => fetchData(school))
@@ -101,18 +119,36 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
           </S.UserSide>
           <S.Nav>
             <li>
-              <a onClick={() => ClickPerfil()} className="active">
+              <S.LinkItem
+                onClick={() => ClickPerfil()}
+                isActive={type === "Perfil"}
+              >
                 Perfil
-              </a>
+              </S.LinkItem>
             </li>
             <li>
-              <a onClick={() => ClickHistorial()}>Historial</a>
+              <S.LinkItem
+                onClick={() => ClickHistorial()}
+                isActive={type === "Historial"}
+              >
+                Historial
+              </S.LinkItem>
             </li>
             <li>
-              <a onClick={() => ClickActividadesAnuais()}>Actividades Anuais</a>
+              <S.LinkItem
+                onClick={() => ClickActividadesAnuais()}
+                isActive={type === "Actividades"}
+              >
+                Actividades Anuais
+              </S.LinkItem>
             </li>
             <li>
-              <a href="">Vídeos</a>
+              <S.LinkItem
+                onClick={() => ClickFeedBack()}
+                isActive={type === "Feedback"}
+              >
+                Feedback
+              </S.LinkItem>
             </li>
           </S.Nav>
         </S.MenuContainer>
@@ -180,6 +216,24 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
                   <p>Em desenvolvimento...</p>
                 </S.Noticia>
               </S.LittleCard>
+            </S.LeftSide>
+          </S.Wrapper>
+        ) : null}
+
+        {showFeedBack ? (
+          <S.Wrapper>
+            <S.LeftSide>
+              <S.FeedBack>
+                <S.TitleFeedBack>
+                  <h2>FeedBack</h2>
+                </S.TitleFeedBack>
+                <S.FormularioFeedBack>
+                  <input type="text" placeholder="Nome Completo" />
+                  <input type="gmail" placeholder=" E-mail" />
+                  <textarea placeholder="Descrição"></textarea>
+                  <button type="submit">Enviar</button>
+                </S.FormularioFeedBack>
+              </S.FeedBack>
             </S.LeftSide>
           </S.Wrapper>
         ) : null}
