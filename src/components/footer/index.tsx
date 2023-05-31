@@ -29,18 +29,18 @@ export const Footer = () => {
               <a href="">Politica de cookies</a>
             </S.GateMed>
             <S.Resources>
-              <h2>Recursos</h2>
-              <a href="">Fale Conosco</a>
-              <a href="">Ajuda</a>
-              <a href="">Feedback</a>
-              <a href="">Politica de cookies</a>
+              <h2>Social</h2>
+              <a href="">Facebook</a>
+              <a href="">Linkedin</a>
+              <a href="">Twitter</a>
+              <a href="">Whatsapp</a>
             </S.Resources>
             <S.Suport>
-              <h2>Suport</h2>
-              <a href="">Fale Conosco</a>
-              <a href="">Ajuda</a>
-              <a href="">Feedback</a>
-              <a href="">Politica de cookies</a>
+              <h2>Resources</h2>
+              <a href="">Blog</a>
+              <a href="">NewsLetter</a>
+              <a href="">Eventos</a>
+              <a href="">suporte</a>
             </S.Suport>
           </S.InfoContainer>
         </S.FooterInformations>
