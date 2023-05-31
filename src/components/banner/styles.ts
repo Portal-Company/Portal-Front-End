@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import M1 from "../../../public/assets/m1.jpg";
 
 interface buttonProps {
   color: string;
@@ -40,8 +39,7 @@ export const ContainerContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
-
-  height: 100vh;
+  height: 80vh;
   @media screen and (max-width: 920px) {
     height: 69vh;
   }

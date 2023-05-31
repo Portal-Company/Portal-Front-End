@@ -20,23 +20,34 @@ export const Title = styled.h1`
 export const Card = styled.div`
   margin-top: 10rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 4rem;
   flex-wrap: wrap;
   width: 100%;
   h2 {
     margin-top: 3rem;
+  }
+  img {
+    border-radius: 1rem;
   }
 `;
 
 export const CardText = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
+  align-items: start;
+  justify-content: start;
+  max-width: 50rem;
   h2 {
     margin-bottom: 5rem;
     font-size: 2.7rem;
     font-family: Comfortaa;
+  }
+  p {
+    color: #999;
+    margin-bottom: 5rem;
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 1.5;
   }
 `;
