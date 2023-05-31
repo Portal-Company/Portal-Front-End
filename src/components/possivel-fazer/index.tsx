@@ -12,7 +12,9 @@ const PossivelSaber: React.FC = () => {
       <S.Card>
         <S.ImgContainer>
           <S.Border></S.Border>
-          <Image src={Img} alt="IMG" width={400} height={400} />
+          <div className="img">
+            <Image src={Img} alt="IMG" width={400} height={400} />
+          </div>
         </S.ImgContainer>
         <S.CardText>
           <div>
