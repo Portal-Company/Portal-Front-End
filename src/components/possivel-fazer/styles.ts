@@ -34,13 +34,30 @@ export const Card = styled.div`
   flex-wrap: wrap;
 `;
 
+export const ImgContainer = styled.div`
+  position: relative;
+  img {
+    border-radius: 1rem;
+  }
+`;
+
+export const Border = styled.div`
+  width: 400px;
+  height: 400px;
+  border: 2px solid yellow;
+  position: absolute;
+  left: 3rem;
+  top: 3rem;
+  border-radius: 1rem;
+`;
+
 export const CardText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 3rem 7rem;
-
+  max-width: 50rem;
   div {
     margin: 1.3rem 0;
     display: flex;

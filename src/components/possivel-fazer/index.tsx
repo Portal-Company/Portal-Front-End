@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import * as S from "./styles";
 import Image from "next/image";
-
-import Img from "../../../public/assets/img.png";
+import Img from "../../../public/assets/young-beautiful-woman.jpg";
 
 import { CiSearch, CiLocationArrow1, CiWavePulse1 } from "react-icons/ci";
 
@@ -11,8 +10,14 @@ const PossivelSaber: React.FC = () => {
     <S.Container>
       <S.Title>O que é possível fazer no portal?</S.Title>
       <S.Card>
-        <Image src={Img} alt="IMG" width={600} height={400} />
+        <S.ImgContainer>
+          <S.Border></S.Border>
+          <Image src={Img} alt="IMG" width={400} height={400} />
+        </S.ImgContainer>
         <S.CardText>
+          <div>
+            <h2>Expand your opportunities for your formation</h2>
+          </div>
           <div>
             <CiSearch />
             <span>Pesquisar e ver perfil de escola</span>
