@@ -16,15 +16,43 @@ const PossivelSaber: React.FC = () => {
         </S.ImgContainer>
         <S.CardText>
           <div>
-            <h2>Expand your opportunities for your formation</h2>
+            <h2>Possibilidades e funcionalidades do portal :</h2>
           </div>
           <div>
-            <CiSearch />
-            <span>Pesquisar e ver perfil de escola</span>
+            <div className="icon">
+              <CiSearch />
+            </div>
+            <div>
+              <h3>Pequisar escolas</h3>
+              <span>
+                O portal das escolas permite que você pesquise por qualquer
+                escola que esteja cadastrada no sistema.
+              </span>
+            </div>
           </div>
           <div>
-            <CiLocationArrow1 />
-            <span>Fazer Inscrição a qualquer escola</span>
+            <div className="icon">
+              <CiWavePulse1 />
+            </div>
+            <div>
+              <h3>Ver perfil de escolas</h3>
+              <span>
+                O portal das escolas permite que você o perfil de qualquer
+                escola cadastrada no sistema.
+              </span>
+            </div>
+          </div>
+          <div>
+            <div className="icon">
+              <CiLocationArrow1 />
+            </div>
+            <div>
+              <h3>Fazer Inscrição</h3>
+              <span>
+                O portal das escolas permite que você inscreva-se em qualquer
+                escola cadastrada no sistema.
+              </span>
+            </div>
           </div>
         </S.CardText>
       </S.Card>
