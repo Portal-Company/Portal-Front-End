@@ -34,28 +34,63 @@ export const Card = styled.div`
   flex-wrap: wrap;
 `;
 
+export const ImgContainer = styled.div`
+  position: relative;
+  img {
+    border-radius: 1rem;
+  }
+`;
+
+export const Border = styled.div`
+  width: 400px;
+  height: 400px;
+  border: 2px solid yellow;
+  position: absolute;
+  left: 3rem;
+  top: 3rem;
+  border-radius: 1rem;
+`;
+
 export const CardText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 3rem 7rem;
-
+  margin-left: 9rem;
+  max-width: 45rem;
   div {
-    margin: 1.3rem 0;
+    margin: 1rem 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-family: Comfortaa;
     width: 100%;
-    > svg {
-      font-size: 2.9rem;
-      margin: 1rem;
-      color: ${({ theme }) => theme.colors.primary.xblue};
+    .icon {
+      width: max-content;
+      border-radius: 50%;
+      background-color: #eee;
+      margin-right: 3rem;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+      svg {
+        font-size: 2rem;
+        margin: 1rem;
+      }
     }
-
-    span {
-      font-size: 2.1rem;
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      span {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+        color: #999;
+      }
     }
+  }
+  @media screen and (max-width: 950px) {
+    margin-top: 5rem;
+  }
+  @media screen and (max-width: 500px) {
+    margin: 5rem 0;
   }
 `;
