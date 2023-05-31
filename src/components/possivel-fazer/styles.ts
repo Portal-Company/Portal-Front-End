@@ -36,8 +36,13 @@ export const Card = styled.div`
 
 export const ImgContainer = styled.div`
   position: relative;
-  img {
+  .img {
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
     border-radius: 1rem;
+    height: 400px;
+    img {
+      border-radius: 1rem;
+    }
   }
 `;
 
