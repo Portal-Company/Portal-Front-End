@@ -74,7 +74,7 @@ const TrainingAreaView: React.FC<Props> = ({ area, school }) => {
             </S.SchoolName>
           </S.UserSide>
           <S.Nav>
-            <h1>Área de {area.nome}</h1>
+            <h1>Curso de {area.nome}</h1>
           </S.Nav>
         </S.MenuContainer>
         <S.Wrapper>
