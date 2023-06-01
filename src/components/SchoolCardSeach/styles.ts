@@ -19,20 +19,6 @@ export const SectionCard = styled.div`
     width: 90%;
     min-width: 250px;
   }
-
-  &:hover {
-    cursor: pointer;
-    filter: brightness(1);
-    transition: all 0.5s ease;
-
-    h2 {
-      font-weight: 400;
-    }
-
-    button {
-      opacity: 1;
-    }
-  }
 `;
 export const ContainerImage = styled.div`
   display: flex;

@@ -147,6 +147,20 @@ export const Nav = styled.ul`
 
   gap: 1rem;
 
+  h1 {
+    @media screen and (max-width: 1400px) {
+      margin-right: 0;
+    }
+    color: #161d26;
+    margin-right: 6rem;
+    font-weight: 100;
+    background-color: #161d26;
+    padding: 2rem 5rem;
+    margin-top: -6rem;
+    font-size: 1.8rem;
+    color: #fff;
+  }
+
   li {
     text-align: center;
 
@@ -281,19 +295,44 @@ export const LittleCard = styled.div`
   }
 `;
 
+export const PageTable = styled.div`
+  width: 99%;
+  display: flex;
+  justify-content: flex-end;
+  display: flex;
+  margin-top: 3rem;
+
+  p {
+    cursor: pointer;
+    border: solid;
+    //background-color: #1c9deb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #999;
+    width: 3rem;
+  }
+  p:first-child {
+    color: #fff;
+    border: none;
+    background-color: #1c9deb;
+  }
+`;
+
 export const AreaFormacao = styled.div`
   margin-top: 2rem;
   background-color: #fff;
-
+  //height: 50vh;
   width: 100%;
   padding: 2rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
   div:first-child {
     h2 {
       color: #333;
+      border-bottom: 1px solid #999;
+      padding: 1rem 0;
     }
 
     padding: 1rem;
@@ -303,7 +342,7 @@ export const AreaFormacao = styled.div`
 export const CardAreaFormacao = styled.div`
   display: flex;
 
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   margin-top: 3rem;
 
