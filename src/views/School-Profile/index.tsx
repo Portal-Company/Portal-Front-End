@@ -1,9 +1,5 @@
 import Image from "next/image";
 import * as S from "./styles";
-import avatar from "../../../public/assets/ipil2.jpg";
-import { FaEnvelope } from "react-icons/fa";
-import ilustration from "../../../public/assets/m4.jpg";
-
 import { useFetch } from "../../hooks/useFetch";
 import { ISchoolData } from "../../types";
 import useSWR from "swr";
@@ -171,6 +167,11 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
                     />
                   ))}
                 </S.CardAreaFormacao>
+                <S.PageTable>
+                  <p>1</p>
+                  <p>2</p>
+                  <p>3</p>
+                </S.PageTable>
               </S.AreaFormacao>
             </S.LeftSide>
           </S.Wrapper>
