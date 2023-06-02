@@ -32,6 +32,7 @@ export const Card = styled.div`
   justify-content: center;
   width: 100%;
   flex-wrap: wrap;
+  gap: 2rem;
 `;
 
 export const ImgContainer = styled.div`
@@ -87,8 +88,9 @@ export const CardText = styled.div`
       align-items: start;
       span {
         margin: 1rem 0;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         color: #999;
+        text-align: justify;
       }
     }
   }

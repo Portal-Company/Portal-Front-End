@@ -67,6 +67,7 @@ export const StepOne:React.FC<MyComponentProps>= ({
                             placeholder='Data de nascimento' 
                             type='date'
                             name="dataNasc"
+                            min="2007-01-01"
                         />
                         {formik.touched.dataNasc && formik.errors.dataNasc ? (
                             <S.ErrorMessage>

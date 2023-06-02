@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  margin-top: 5rem;
+  margin-top: 10rem;
   text-align: center;
   font-family: Comfortaa;
   font-weight: 300;
@@ -18,7 +18,7 @@ export const Title = styled.h1`
 `;
 
 export const Card = styled.div`
-  margin-top: 10rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
   gap: 4rem;
@@ -47,7 +47,7 @@ export const CardText = styled.div`
     color: #999;
     margin-bottom: 5rem;
     text-align: justify;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     line-height: 1.5;
   }
 `;
