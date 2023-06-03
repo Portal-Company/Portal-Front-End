@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 `;
 
 export const Title = styled.h1`
@@ -32,17 +33,12 @@ export const Card = styled.div`
   justify-content: center;
   width: 100%;
   flex-wrap: wrap;
+  gap: 2rem;
 `;
 
 export const ImgContainer = styled.div`
-  position: relative;
-  .img {
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+  img {
     border-radius: 1rem;
-    height: 400px;
-    img {
-      border-radius: 1rem;
-    }
   }
 `;
 
@@ -87,8 +83,9 @@ export const CardText = styled.div`
       align-items: start;
       span {
         margin: 1rem 0;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         color: #999;
+        text-align: justify;
       }
     }
   }
