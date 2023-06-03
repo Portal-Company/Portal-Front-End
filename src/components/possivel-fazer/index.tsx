@@ -11,9 +11,8 @@ const PossivelSaber: React.FC = () => {
       <S.Title>O que é possível fazer no portal?</S.Title>
       <S.Card>
         <S.ImgContainer>
-          <S.Border></S.Border>
           <div className="img">
-            <Image src={Img} alt="IMG" width={400} height={400} />
+            <Image src={Img} alt="IMG" width={500} height={400} />
           </div>
         </S.ImgContainer>
         <S.CardText>

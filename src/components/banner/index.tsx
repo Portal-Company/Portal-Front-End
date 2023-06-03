@@ -13,7 +13,7 @@ const Banner = () => {
             <span>Criando o futuro apenas com um click</span>
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
-                <Link href={"/SearchSchool"}>Procurar Escolas</Link>
+                <Link href={"/SearchSchool"}>Inscrever-se</Link>
               </S.Button>
             </S.ButtonsContainer>
           </S.Content>
@@ -21,7 +21,7 @@ const Banner = () => {
             src="/assets/m4.jpg"
             alt="m1"
             layout="responsive"
-            height={540}
+            height={500}
             width={1009}
           />
         </S.Container>
@@ -39,7 +39,7 @@ const Banner = () => {
             src="/assets/m1.jpg"
             alt="m1"
             layout="responsive"
-            height={540}
+            height={500}
             width={1009}
           />
         </S.Container>
@@ -57,7 +57,7 @@ const Banner = () => {
             src="/assets/m2.jpg"
             alt="m1"
             layout="responsive"
-            height={540}
+            height={500}
             width={1009}
           />
         </S.Container>
@@ -76,7 +76,7 @@ const Banner = () => {
             src="/assets/m3.jpg"
             alt="m1"
             layout="responsive"
-            height={540}
+            height={500}
             width={1009}
           />
         </S.Container>
@@ -95,7 +95,7 @@ const Banner = () => {
             src="/assets/m1.jpg"
             alt="m1"
             layout="responsive"
-            height={540}
+            height={500}
             width={1009}
           />
         </S.Container>

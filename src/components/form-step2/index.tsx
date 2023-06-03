@@ -148,8 +148,8 @@ export const StepTwo: React.FC<MyComponentProps> = ({
         <Form>
           <S.FormCard>
             <S.Paragraph>
-              Para iniciar o processo de abertura de conta, precisamos de
-              validar o seu nº de telemóvel.
+              Para iniciar o processo de inscrição , precisamos de validar os
+              seus dados pessoais.
             </S.Paragraph>
             <S.FormContainer>
               <Field
