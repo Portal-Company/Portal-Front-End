@@ -16,6 +16,11 @@ export const Opacity = styled.div`
   align-items: center;
   justify-content: space-between;
   background: rgba(0, 0, 0, 0.7);
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const CardBackground = styled.div`
@@ -77,7 +82,7 @@ export const Title = styled.h2`
   font-weight: 800;
 
   @media screen and (max-width: 768px) {
-    font-size: 1.9rem;
+    line-height: 2rem;
     font-weight: 900;
   }
 
@@ -95,7 +100,7 @@ export const SectionDescription = styled.div`
   gap: 0.5rem;
 
   @media screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -132,7 +137,7 @@ export const LinkItem = styled.a<Links>`
   background: ${({ isActive }) => (isActive ? "#1C9DEA" : "transparent")};
 
   @media screen and (max-width: 768px) {
-    padding: 1rem 1.5rem;
+    padding: 1rem;
   }
 
   :hover {
@@ -150,6 +155,12 @@ export const Nav = styled.ul`
   h1 {
     @media screen and (max-width: 1400px) {
       margin-right: 0;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      margin-top: 0;
+      margin-bottom: -2rem;
     }
     color: #161d26;
     margin-right: 6rem;
@@ -174,7 +185,8 @@ export const Nav = styled.ul`
     justify-content: center;
   }
   @media screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
+
     li {
       line-height: 1.3rem;
     }
@@ -333,6 +345,11 @@ export const AreaFormacao = styled.div`
       color: #333;
       border-bottom: 1px solid #999;
       padding: 1rem 0;
+
+      @media screen and (max-width: 768px) {
+        font-size: 1.8rem;
+        text-align: center;
+      }
     }
 
     padding: 1rem;
@@ -345,8 +362,12 @@ export const CardAreaFormacao = styled.div`
   justify-content: flex-end;
   align-items: center;
   margin-top: 3rem;
-
+  flex-wrap: wrap;
   width: 100%;
+
+  @media screen and (max-width: 568px) {
+    justify-content: center;
+  }
 `;
 
 export const Historial = styled.div`

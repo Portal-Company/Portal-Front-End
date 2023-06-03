@@ -16,8 +16,6 @@ interface areaPageProps {
 }
 
 const AreaDeFormacaoPage: NextPage<areaPageProps> = ({ area, school }) => {
-  console.log(area);
-  console.log(school);
   return (
     <React.Fragment>
       <Head>

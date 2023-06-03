@@ -1,53 +1,41 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #fff;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 2rem;
-  flex-wrap: wrap;
+  padding: 2rem;
+  background-color: #f3f3f3;
 `;
 
-export const Title = styled.h1`
-  margin-top: 5rem;
+export const Title = styled.h2`
   text-align: center;
-  font-family: Comfortaa;
-  font-weight: 300;
-  padding: 1.9rem;
+  margin-bottom: 2rem;
 `;
 
 export const Card = styled.div`
-  margin-top: 10rem;
   display: flex;
-  justify-content: center;
-  gap: 4rem;
-  flex-wrap: wrap;
-  width: 100%;
-  h2 {
-    margin-top: 3rem;
-  }
-  img {
-    border-radius: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
   }
 `;
 
 export const CardText = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  max-width: 50rem;
-  h2 {
-    margin-bottom: 5rem;
-    font-size: 2.7rem;
-    font-family: Comfortaa;
+  flex: 1;
+  padding: 2rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem 0;
   }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
   p {
-    color: #999;
-    margin-bottom: 5rem;
-    text-align: justify;
     font-size: 1.2rem;
-    line-height: 1.5;
+    margin-bottom: 2rem;
   }
 `;

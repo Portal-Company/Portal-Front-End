@@ -199,24 +199,11 @@ export const SchoolProfileView: React.FC<Props> = ({ school }) => {
         {showActividadesAnuais ? (
           <S.Wrapper>
             <S.LeftSide>
-              <S.LittleCard>
-                <div>
-                  <h2>Em desenvlvimento...</h2>
-                </div>
-
-                <S.Noticia>
-                  <p>Em desenvolvimento...</p>
-                </S.Noticia>
-              </S.LittleCard>
-              <S.LittleCard>
+              <S.Historial>
                 <div>
                   <h2>Em desenvolvimento...</h2>
                 </div>
-
-                <S.Noticia>
-                  <p>Em desenvolvimento...</p>
-                </S.Noticia>
-              </S.LittleCard>
+              </S.Historial>
             </S.LeftSide>
           </S.Wrapper>
         ) : null}
