@@ -53,11 +53,11 @@ export const ContainerContainer = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    height: 50vh;
+    height: 45vh;
   }
 
   @media screen and (max-width: 500px) {
-    height: 44vh;
+    height: 40vh;
   }
 `;
 
