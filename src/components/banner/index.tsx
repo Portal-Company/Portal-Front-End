@@ -10,7 +10,7 @@ const Banner = () => {
         <S.Container>
           <S.Content>
             <h1>Seu sonho começa aqui</h1>
-            <span>Criando o futuro apenas com um click</span>
+            <span>Transformando vidas por meio da educação</span>
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
                 <Link href={"/SearchSchool"}>Inscrever-se</Link>
@@ -18,7 +18,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src="/assets/m4.jpg"
+            src="https://i.ibb.co/pxyP2bD/m4.jpg"
             alt="m1"
             layout="responsive"
             height={500}
@@ -28,7 +28,7 @@ const Banner = () => {
         <S.Container>
           <S.Content>
             <h1>Inscreva-se na melhor escola de Angola</h1>
-            <span>Criando o futuro apenas com um click</span>
+            <span>Preparando mentes brilhantes para um futuro promissor.</span>
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
                 <Link href={"/SearchSchool"}>Inscrever-se</Link>
@@ -36,7 +36,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src="/assets/m1.jpg"
+            src="https://i.ibb.co/4RhgCgL/m1.jpg"
             alt="m1"
             layout="responsive"
             height={500}
@@ -54,7 +54,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src="/assets/m2.jpg"
+            src="https://i.ibb.co/YyQg3WS/m2.jpg"
             alt="m1"
             layout="responsive"
             height={500}
@@ -65,7 +65,7 @@ const Banner = () => {
         <S.Container>
           <S.Content>
             <h1>Inscreva-se na melhor escola de Angola</h1>
-            <span>Criando o futuro apenas com um click</span>
+            <span>Um lugar onde a aprendizagem ganha vida</span>
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
                 Inscrever-se
@@ -73,7 +73,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src="/assets/m3.jpg"
+            src="https://i.ibb.co/dcLN1G7/m3.jpg"
             alt="m1"
             layout="responsive"
             height={500}
@@ -84,7 +84,7 @@ const Banner = () => {
         <S.Container>
           <S.Content>
             <h1>Inscreva-se na melhor escola de Angola</h1>
-            <span>Criando o futuro apenas com um click</span>
+            <span>Criando um futuro brilhante juntos</span>
             <S.ButtonsContainer>
               <S.Button color="#fff" backgroundColor="#1C9DEA">
                 <Link href={"/SearchSchool"}>Inscrever-se</Link>
@@ -92,7 +92,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src="/assets/m1.jpg"
+            src="https://i.ibb.co/4RhgCgL/m1.jpg"
             alt="m1"
             layout="responsive"
             height={500}

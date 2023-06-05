@@ -2,13 +2,10 @@ import Image from "next/image";
 import * as S from "./styles";
 import { useFetch } from "../../hooks/useFetch";
 import { ISchoolData } from "../../types";
-import useSWR from "swr";
-import { fetchData } from "./services";
 import { Card } from "../../components/card";
 import { useRouter } from "next/router";
 import Router from "next/router";
 import { useState } from "react";
-import logo from "../../../public/assets/med.png";
 
 interface Props {
   school: ISchoolData;
