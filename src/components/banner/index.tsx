@@ -18,7 +18,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src="/assets/m4.jpg"
+            src="https://i.ibb.co/pxyP2bD/m4.jpg"
             alt="m1"
             layout="responsive"
             height={500}
@@ -36,7 +36,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src="/assets/m1.jpg"
+            src="https://i.ibb.co/4RhgCgL/m1.jpg"
             alt="m1"
             layout="responsive"
             height={500}
@@ -54,7 +54,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src="/assets/m2.jpg"
+            src="https://i.ibb.co/YyQg3WS/m2.jpg"
             alt="m1"
             layout="responsive"
             height={500}
@@ -73,7 +73,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src="/assets/m3.jpg"
+            src="https://i.ibb.co/dcLN1G7/m3.jpg"
             alt="m1"
             layout="responsive"
             height={500}
@@ -92,7 +92,7 @@ const Banner = () => {
             </S.ButtonsContainer>
           </S.Content>
           <Image
-            src="/assets/m1.jpg"
+            src="https://i.ibb.co/4RhgCgL/m1.jpg"
             alt="m1"
             layout="responsive"
             height={500}
