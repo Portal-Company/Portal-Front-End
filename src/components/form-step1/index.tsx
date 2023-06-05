@@ -62,8 +62,8 @@ export const StepOne: React.FC<MyComponentProps> = ({ next, data }) => {
         <Form>
           <S.FormCard>
             <S.Paragraph>
-              Para iniciar o processo de inscrição , precisamos de
-              validar os seus dados pessoais.
+              Para iniciar o processo de inscrição , precisamos de validar os
+              seus dados pessoais.
             </S.Paragraph>
             <S.FormContainer>
               <Field
@@ -88,7 +88,7 @@ export const StepOne: React.FC<MyComponentProps> = ({ next, data }) => {
                 placeholder="Data de nascimento"
                 type="date"
                 name="dataNasc"
-                min="2007-01-01"
+                min="2007-04-01"
               />
               {formik.touched.dataNasc && formik.errors.dataNasc ? (
                 <S.ErrorMessage>{formik.errors.dataNasc}</S.ErrorMessage>
