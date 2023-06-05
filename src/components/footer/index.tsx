@@ -9,7 +9,12 @@ export const Footer = () => {
         <S.FooterInformations>
           <S.InfoContainer>
             <S.PortalSocialMedia>
-              <Image src="/assets/med.png" width={290} height={50} alt="logo" />
+              <Image
+                src="https://i.ibb.co/R2T7Y84/med.png"
+                width={290}
+                height={50}
+                alt="logo"
+              />
               <p>
                 MED busca promover ensino de qualidade para nosso país. Com o
                 lançamento do Plano de Desenvolvimento da Educação
@@ -46,7 +51,12 @@ export const Footer = () => {
         </S.FooterInformations>
       </S.Container>
       <S.DirectoReserve>
-        <Image src="/assets/med.png" width={170} height={30} alt="med" />
+        <Image
+          src="https://i.ibb.co/R2T7Y84/med.png"
+          width={170}
+          height={30}
+          alt="med"
+        />
         <p>Todos os directo reservado</p>
       </S.DirectoReserve>
     </>
