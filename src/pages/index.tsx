@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Banner from "../components/banner";
 import PossivelSaber from "../components/possivel-fazer";
+import HomeStatus from "../components/homeStatus";
 import OfertaFormativa from "../components/oferta-formtiva";
 import ObjectivoApp from "../components/objectivo-app";
 import { Layout } from "../components/layout";
@@ -29,6 +30,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
       </Head>
       <React.Fragment>
         <Banner />
+        <HomeStatus />
         <PossivelSaber />
         <OfertaFormativa />
         <ObjectivoApp />
