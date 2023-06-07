@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import * as S from "./styles";
 import Image from "next/image";
 import { CiGlobe } from "react-icons/ci";
@@ -10,7 +10,7 @@ const OfertaFormativa: React.FC = () => {
       <S.Title>Conheça a nossa Oferta Formativa</S.Title>
       <S.Card>
         <Image
-          src="/assets/engineer-cooperation-male-female.jpg"
+          src="https://i.ibb.co/4VVK303/engineer-cooperation-male-female.jpg"
           alt="IMG"
           width={550}
           height={350}
@@ -47,7 +47,7 @@ const OfertaFormativa: React.FC = () => {
           </Link>
         </S.CardText>
         <Image
-          src="/assets/african-amercan.jpg"
+          src="https://i.ibb.co/F7xrf9j/african-amercan.jpg"
           alt="IMG"
           width={550}
           height={350}

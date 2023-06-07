@@ -1,7 +1,6 @@
 import React from "react";
 import * as S from "./styles";
 import Image from "next/image";
-import Img from "../../../public/assets/young-beautiful-woman.jpg";
 
 import { CiSearch, CiLocationArrow1, CiWavePulse1 } from "react-icons/ci";
 
@@ -12,7 +11,12 @@ const PossivelSaber: React.FC = () => {
       <S.Card>
         <S.ImgContainer>
           <div className="img">
-            <Image src={Img} alt="IMG" width={500} height={400} />
+            <Image
+              src="https://i.ibb.co/kKgb2d7/young-beautiful-woman.jpg"
+              alt="IMG"
+              width={500}
+              height={400}
+            />
           </div>
         </S.ImgContainer>
         <S.CardText>
