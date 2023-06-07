@@ -36,16 +36,21 @@ export const CardBackground = styled.div`
 
 export const CenterContent = styled.div`
   color: #fff;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: auto;
+
   h2 {
     font-size: 2.5rem;
-    font-weight: 400;
-    margin: 1rem;
+    font-weight: 100;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
   }
   span {
     color: #a1d3f0;
-    margin: 2rem;
+    margin-top: 1rem;
   }
 `;
 

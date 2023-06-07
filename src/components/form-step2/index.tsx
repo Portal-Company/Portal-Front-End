@@ -147,22 +147,19 @@ export const StepTwo: React.FC<MyComponentProps> = ({
       {(formik) => (
         <Form>
           <S.FormCard>
-            <S.Paragraph>
-              Para iniciar o processo de inscrição , precisamos de validar os
-              seus dados pessoais.
-            </S.Paragraph>
+            <S.Paragraph>DADOS ESCOLARES</S.Paragraph>
             <S.FormContainer>
               <Field
                 name="tipoCertificacaoEscolar"
                 id="tipoCertificacaoEscolar"
                 component="select"
               >
-                <option>tipo de certificação escolar</option>
+                <option>Tipo de certificação escolar</option>
                 <option value="Declaracao_com_Notas">
-                  Declaracao_com_Notas
+                  Declaracao com Notas
                 </option>
                 <option value="Certificado_de_Habilitaoes">
-                  Certificado_de_Habilitaoes
+                  Certificado de Habilitaoes
                 </option>
               </Field>
               {formik.touched.tipoCertificacaoEscolar &&
@@ -173,7 +170,7 @@ export const StepTwo: React.FC<MyComponentProps> = ({
               ) : null}
 
               <Field name="cursoId" id="curso" component="select">
-                <option>curso pretendido</option>
+                <option>Curso pretendido</option>
                 {courses?.map((item: ICourses, index: number) => (
                   <option value={item?.id} key={index}>
                     {item?.nome}
@@ -186,7 +183,7 @@ export const StepTwo: React.FC<MyComponentProps> = ({
 
               <div>
                 <div className="label">
-                  <label htmlFor="photo">selecione a imagem...</label>
+                  <label htmlFor="photo">Selecione a Imagem...</label>
                 </div>
                 <input
                   id="photo"
@@ -205,7 +202,7 @@ export const StepTwo: React.FC<MyComponentProps> = ({
               <div>
                 <div className="label">
                   <label htmlFor="pdfIdentificacao">
-                    selecione a pdf da identificação...
+                    Selecione o PDF da Identificação...
                   </label>
                 </div>
                 <input
@@ -231,7 +228,7 @@ export const StepTwo: React.FC<MyComponentProps> = ({
               <div>
                 <div className="label">
                   <label htmlFor="pdfCertificacaoEscolar">
-                    selecione o pdf da certificação escolar...
+                    Selecione o PDF da Certificação Escolar...
                   </label>
                 </div>
                 <input
@@ -254,7 +251,7 @@ export const StepTwo: React.FC<MyComponentProps> = ({
                 ) : null}
               </div>
 
-              <button type="submit">Cadastrar</button>
+              <button type="submit">CADASTRAR</button>
             </S.FormContainer>
           </S.FormCard>
         </Form>
