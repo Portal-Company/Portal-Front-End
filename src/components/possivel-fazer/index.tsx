@@ -1,63 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./styles";
 import Image from "next/image";
+
+import Img from "../../../public/assets/img.png";
 
 import { CiSearch, CiLocationArrow1, CiWavePulse1 } from "react-icons/ci";
 
 const PossivelSaber: React.FC = () => {
   return (
     <S.Container>
-      <S.Title>O que é possível fazer no portal?</S.Title>
+      <S.Title>O QUE É POSSÍVEL FAZER NO APP?</S.Title>
+      <S.Linha></S.Linha>
       <S.Card>
-        <S.ImgContainer>
-          <div className="img">
-            <Image
-              src="https://i.ibb.co/kKgb2d7/young-beautiful-woman.jpg"
-              alt="IMG"
-              width={500}
-              height={400}
-            />
-          </div>
-        </S.ImgContainer>
+        <Image src={Img} alt="IMG" width={600} height={400} />
         <S.CardText>
           <div>
-            <h2>Possibilidades e funcionalidades do portal :</h2>
+            <CiSearch />
+            <span>Pesquisar e ver perfil de escola</span>
           </div>
           <div>
-            <div className="icon">
-              <CiSearch />
-            </div>
-            <div>
-              <h3>Pequisar escolas</h3>
-              <span>
-                O portal das escolas permite que você pesquise por qualquer
-                escola que esteja cadastrada no sistema.
-              </span>
-            </div>
-          </div>
-          <div>
-            <div className="icon">
-              <CiWavePulse1 />
-            </div>
-            <div>
-              <h3>Ver perfil de escolas</h3>
-              <span>
-                O portal das escolas permite que você o perfil de qualquer
-                escola cadastrada no sistema.
-              </span>
-            </div>
-          </div>
-          <div>
-            <div className="icon">
-              <CiLocationArrow1 />
-            </div>
-            <div>
-              <h3>Fazer Inscrição</h3>
-              <span>
-                O portal das escolas permite que você inscreva-se em qualquer
-                escola cadastrada no sistema.
-              </span>
-            </div>
+            <CiLocationArrow1 />
+            <span>Fazer Inscrição a qualquer escola</span>
           </div>
         </S.CardText>
       </S.Card>

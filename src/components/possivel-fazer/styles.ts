@@ -4,15 +4,22 @@ export const Container = styled.div`
   background-color: #fff;
   width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  padding: 2rem;
+`;
+
+export const Linha = styled.div`
+  width: 100%;
+  border: 0.1px solid #1c9deb;
+  width: 25rem;
+  height: 0;
 `;
 
 export const Title = styled.h1`
-  margin-top: 5rem;
+  margin-top: 10rem;
   text-align: center;
   font-family: Comfortaa;
-  font-weight: 300;
+
   padding: 1.8rem;
 
   &:before {
@@ -33,23 +40,6 @@ export const Card = styled.div`
   justify-content: center;
   width: 100%;
   flex-wrap: wrap;
-  gap: 2rem;
-`;
-
-export const ImgContainer = styled.div`
-  img {
-    border-radius: 1rem;
-  }
-`;
-
-export const Border = styled.div`
-  width: 400px;
-  height: 400px;
-  border: 2px solid yellow;
-  position: absolute;
-  left: 3rem;
-  top: 3rem;
-  border-radius: 1rem;
 `;
 
 export const CardText = styled.div`
@@ -57,42 +47,23 @@ export const CardText = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 9rem;
-  max-width: 45rem;
+  margin: 3rem 7rem;
+
   div {
-    margin: 1rem 0;
+    margin: 1.3rem 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-family: Comfortaa;
     width: 100%;
-    .icon {
-      width: max-content;
-      border-radius: 50%;
-      background-color: #eee;
-      margin-right: 3rem;
-      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
-      svg {
-        font-size: 2rem;
-        margin: 1rem;
-      }
+    > svg {
+      font-size: 2.9rem;
+      margin: 1rem;
+      color: ${({ theme }) => theme.colors.primary.xblue};
     }
-    div {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      span {
-        margin: 1rem 0;
-        font-size: 1.4rem;
-        color: #999;
-        text-align: justify;
-      }
+
+    span {
+      font-size: 2.1rem;
     }
-  }
-  @media screen and (max-width: 950px) {
-    margin-top: 5rem;
-  }
-  @media screen and (max-width: 500px) {
-    margin: 5rem 0;
   }
 `;
