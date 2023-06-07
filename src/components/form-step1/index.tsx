@@ -1,9 +1,5 @@
 import * as S from "./styles";
-import {
-  MyComponentProps,
-  Values,
-  ValuesR,
-} from "../../views/studentSubscription/type";
+import { MyComponentProps } from "../../views/studentSubscription/type";
 import { Formik, Field, Form, validateYupSchema } from "formik";
 import * as yup from "yup";
 
@@ -26,34 +22,34 @@ export const StepOne: React.FC<MyComponentProps> = ({ next, data }) => {
       validationSchema={yup.object({
         nomeCompleto: yup
           .string()
-          .min(8, "o nome completo deve ter pelo menos 8 caracteres")
-          .required("o nome completo é obrigatório"),
+          .min(8, "O nome completo deve ter pelo menos 8 caracteres")
+          .required("O nome completo é obrigatório"),
         sexo: yup
           .string()
-          .min(1, "selecione o campo")
+          .min(1, "Selecione o campo")
           .required("O sexo é obrigatório"),
         dataNasc: yup
           .string()
-          .min(1, "selecione o campo")
-          .required("a data de nascimento é obrigatório"),
+          .min(1, "Selecione o campo")
+          .required("A data de nascimento é obrigatório"),
         numeroTelefone: yup
           .string()
           .matches(
             /^\9[1-9]\d{7}$/,
             "Por favor, digite um número de telefone válido de Angola"
           )
-          .required("número de telefone é obrigatório"),
+          .required("Número de telefone é obrigatório"),
         email: yup
           .string()
-          .email("digite um email valido")
+          .email("Digite um email valido")
           .required("O email é obrigatorio"),
         tipoIdentificacao: yup
           .string()
-          .min(1, "o campo é obrigatório")
+          .min(1, "O campo é obrigatório")
           .required(),
         codigoDocumento: yup
           .string()
-          .min(5, "degite um código de documento válido")
+          .min(5, "Degite um código de documento válido")
           .required(),
       })}
       onSubmit={handleSubmit}
@@ -61,10 +57,7 @@ export const StepOne: React.FC<MyComponentProps> = ({ next, data }) => {
       {(formik) => (
         <Form>
           <S.FormCard>
-            <S.Paragraph>
-              Para iniciar o processo de inscrição , precisamos de
-              validar os seus dados pessoais.
-            </S.Paragraph>
+            <S.Paragraph>DADOS PESSOAIS</S.Paragraph>
             <S.FormContainer>
               <Field
                 type="text"
@@ -76,7 +69,7 @@ export const StepOne: React.FC<MyComponentProps> = ({ next, data }) => {
               ) : null}
 
               <Field name="sexo" id="sexo" component="select">
-                <option>genero</option>
+                <option>Genero</option>
                 <option value="M">Masculino</option>
                 <option value="F">Feminino</option>
               </Field>
@@ -89,6 +82,7 @@ export const StepOne: React.FC<MyComponentProps> = ({ next, data }) => {
                 type="date"
                 name="dataNasc"
                 min="2007-01-01"
+                //max="2024-01-01"
               />
               {formik.touched.dataNasc && formik.errors.dataNasc ? (
                 <S.ErrorMessage>{formik.errors.dataNasc}</S.ErrorMessage>
@@ -115,11 +109,11 @@ export const StepOne: React.FC<MyComponentProps> = ({ next, data }) => {
               >
                 <option>Tipo de indetificação</option>
                 <option value="Bilhete_de_Identidade">
-                  Bilhete_de_Identidade
+                  Bilhete de Identidade
                 </option>
-                <option value="Cedula_Pessoal">Cedula_Pessoal</option>
+                <option value="Cedula_Pessoal">Cedula Pessoal</option>
                 <option value="Passaporte_Ordinario">
-                  Passaporte_Ordinario
+                  Passaporte Ordinario
                 </option>
               </Field>
               {formik.touched.tipoIdentificacao &&
@@ -138,8 +132,7 @@ export const StepOne: React.FC<MyComponentProps> = ({ next, data }) => {
               formik.errors.codigoDocumento ? (
                 <S.ErrorMessage>{formik.errors.codigoDocumento}</S.ErrorMessage>
               ) : null}
-
-              <button type="submit">Continuar</button>
+              <button type="submit">CONTINUAR</button>
             </S.FormContainer>
           </S.FormCard>
         </Form>

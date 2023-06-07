@@ -39,7 +39,7 @@ const StudentSubscription = () => {
       <CancelModal showModal={showModal} setShowModal={setShowModal} />
       <S.CardBackground>
         <S.CenterContent>
-          <h2>Inscrição de estudante</h2>
+          <h2>INSCRIÇÃO DE ESTUDANDE</h2>
           <span>Aderir</span>
           <Step step={currentStep + 1} />
         </S.CenterContent>
