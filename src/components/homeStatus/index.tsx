@@ -1,5 +1,6 @@
 import React from "react";
 import * as S from "./styles";
+
 import Image from "next/image";
 
 const HomeStatus: React.FC = () => {
@@ -8,6 +9,7 @@ const HomeStatus: React.FC = () => {
       <S.Content>
         <S.TextContainer>
           <h1>CONSULTAR INSCRIÇÃO</h1>
+
           <p>Já podes consultar a sua inscrição com um Cick</p>
           <button type="submit">CONSULTAR</button>
         </S.TextContainer>
