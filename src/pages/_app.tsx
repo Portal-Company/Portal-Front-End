@@ -5,9 +5,11 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "../styles/global";
 import { theme } from "../styles/theme";
 import Loading from "../components/loading";
+
 import Router from "next/router";
 import NProgress from "nprogress";
 import "react-toastify/dist/ReactToastify.css";
+import AOS from "aos";
 
 Router.events.on("routeChangeStart", (url) => {
   NProgress.start();
@@ -40,6 +42,7 @@ function MyApp({ Component, pageProps, err }: AppPropsWithLayout) {
     setTimeout(() => {
       setLoadingPortal(false);
     }, 3000);
+    AOS.init();
   }, []);
 
   return (

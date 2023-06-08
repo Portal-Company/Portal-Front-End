@@ -4,13 +4,13 @@ import * as S from "./styles";
 const PossivelSaber: React.FC = () => {
   return (
     <S.Wrapper>
-      <S.Container>
-        <h2>Subscreva-se para receber actualizações</h2>
-        <S.InputContainer>
-          <S.Input placeholder="Intruduz o seu email" />
-          <S.Button>Enviar</S.Button>
-        </S.InputContainer>
-      </S.Container>
+      <h1>
+        med<span>.gov.ao</span>
+      </h1>
+      <p>
+        &ldquo;Os testes para o processo de adesão nas escolas decorrerá de 20 à
+        24 de Setembro&ldquo;
+      </p>
     </S.Wrapper>
   );
 };
