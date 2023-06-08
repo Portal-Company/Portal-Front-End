@@ -12,8 +12,14 @@ const PossivelSaber: React.FC = () => {
       <S.Title>O QUE É POSSÍVEL FAZER NO APP?</S.Title>
       <S.Linha></S.Linha>
       <S.Card>
-        <Image src={Img} alt="IMG" width={600} height={400} />
-        <S.CardText>
+        <Image
+          src={Img}
+          alt="IMG"
+          width={600}
+          height={400}
+          data-aos="zoom-in"
+        />
+        <S.CardText data-aos="zoom-in-up">
           <div>
             <CiSearch />
             <span>Pesquisar e ver perfil de escola</span>

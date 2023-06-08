@@ -49,10 +49,7 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <a href="#">Escolas</a>
-        </li>
-        <li>
-          <a href="#">Inscrever/se</a>
+          <Link href={"/SearchSchool"}>Escolas</Link>
         </li>
       </S.MenuBar>
     </S.Wrapper>
